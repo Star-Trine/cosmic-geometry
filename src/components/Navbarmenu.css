@@ -1,0 +1,49 @@
+/* NavBarMenu.css */
+
+/* ナビバー全体のコンテナ（背景は黒で高さは固定しない） */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* リストの配置は横並び */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* 各リンクのスタイル */
+.navbar ul li a {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 0 10px #bb99ff, 0 0 20px #cc88ff, 0 0 30px #dd77ff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* ホバー時のアニメーション */
+.navbar ul li a:hover {
+  color: #bb99ff;
+  text-shadow: 0 0 15px #ddbbff, 0 0 25px #cc99ff, 0 0 40px #bb77ff;
+}
+
+/* スマホなど画面幅が狭い場合は文字を小さく間隔も詰める */
+@media (max-width: 600px) {
+  .navbar ul {
+    gap: 1rem;
+  }
+  .navbar ul li a {
+    font-size: 1.2rem;
+  }
+}

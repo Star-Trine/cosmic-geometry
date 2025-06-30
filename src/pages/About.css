@@ -1,0 +1,9 @@
+.container {
+  font-size: 18px;  /* フォントサイズを大きめに */
+  line-height: 1.6; /* 行間も少し広げて読みやすく */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #222;
+  background: rgba(0, 0, 30, 0.2); /* ←透明感を出す */
+  backdrop-filter: blur(0.5px); /* ←ぼかし効果 */
+  padding: 2rem 1rem;
+}

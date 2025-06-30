@@ -1,0 +1,13 @@
+plugins:
+  - name: removeXMLNS
+    active: false
+  - name: removeDimensions
+    active: true
+  - name: removeAttrs
+    params:
+      attrs: '(inkscape|sodipodi|xmlns:inkscape|xmlns:sodipodi|xmlns:svg)'
+  - name: removeComments
+  - name: removeMetadata
+  - name: removeTitle
+  - name: removeDesc
+  - name: removeUselessDefs

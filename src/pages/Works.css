@@ -1,0 +1,53 @@
+.works {
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  color: #e0e7ff;
+  font-size: 1.5rem; /* サイトマップのリンクサイズに合わせて */
+  background: rgba(0, 0, 30, 0.2); /* ←透明感を出す */
+  backdrop-filter: blur(0.5px); /* ←ぼかし効果 */
+  max-width: 800px;
+  margin: 0 auto; /* 中央寄せ */
+}
+
+.works-list {
+  list-style: none;
+  padding: 0;
+}
+
+.works-list li {
+  margin-bottom: 1rem;
+}
+
+.works-list li span {
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.works-list li span:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.works-list li a {
+  font-size: 1.2rem;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block; /* ブロック風にしてマウス判定を広げる */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.works-list li a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+@media (max-width: 600px) {
+  .works {
+    padding: 1rem;
+  }
+  .works-list li a {
+    font-size: 1rem;
+  }
+}

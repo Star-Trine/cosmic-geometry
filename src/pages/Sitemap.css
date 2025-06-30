@@ -1,0 +1,78 @@
+/* Sitemap.css */
+
+.sitemap {
+  background: rgba(0, 0, 30, 0.2); /* works.cssと統一 */
+  backdrop-filter: blur(0.5px); /* ←ぼかし効果 */
+  color: #e0e7ff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto; /* 中央寄せ */
+}
+
+/* タイトル */
+.sitemap h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #00ffff; /* Worksに近い蛍光ブルー */
+  letter-spacing: 0.1rem;
+}
+
+/* リスト */
+.sitemap ul {
+  padding: 0;
+  list-style: none;
+}
+
+/* リストアイテム */
+.sitemap li {
+  margin: 1rem 0;
+}
+
+/* リンク */
+.sitemap a {
+  font-size: 1.2rem; /* Worksのリンクサイズに合わせた */
+  color: #e0e7ff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* ホバー時の色と光り方 */
+.sitemap a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+  transform: scale(1.05);
+}
+
+/* ホバー時の星の擬似要素 */
+.sitemap a::after {
+  content: '';
+  position: relative;
+  display: none;
+  width: 6px;
+  height: 6px;
+  background: #00ffff;
+  border-radius: 50%;
+  margin-left: 8px;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px #00ffff;
+  vertical-align: middle;
+}
+
+.sitemap a:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sitemap li ul {
+  display: none !important;
+}

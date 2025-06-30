@@ -1,0 +1,80 @@
+/* Home.css */
+
+.hero-container {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 30, 0.2); /* works.cssと統一 */
+  backdrop-filter: blur(0.5px);      /* works.cssと統一 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e0e7ff;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+.hero-content {
+  text-align: center;
+  margin-bottom: 2rem;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 255, 255, 0.4);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: 1px 1px 6px rgba(0, 255, 255, 0.3);
+}
+
+/* SVGアニメーションのレイヤーを重ねるためのラッパー */
+.svg-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* フッターを右下に */
+.space-footer {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* メディアクエリ */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .svg-wrapper {
+    height: 300px;
+  }
+}
