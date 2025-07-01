@@ -30,10 +30,10 @@ function StarCanvas() {
       const width = window.innerWidth;
       if(width <= 400) {
         //小さいスマホ用
-        starCount = 60;
+        starCount = 40;
       } else if (width <= 760) {
         //一般的なスマホ
-        starCount = 100;
+        starCount = 70;
       } else {
         //Pcやタブレット
         starCount = 150;
