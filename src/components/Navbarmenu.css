@@ -6,9 +6,12 @@
   bottom: 0;
   width: 100%;
   background: black;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
   display: flex;
   justify-content: center;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   z-index: 1000;
   box-sizing: border-box;
 }
@@ -16,21 +19,23 @@
 /* リストの配置は横並び */
 .navbar ul {
   list-style: none;
-  display: flex;
+  display: inline-flex;
   gap: 2rem;
   margin: 0;
   padding: 0;
   justify-content: center;
+  white-space: nowrap;
 }
 
 /* 各リンクのスタイル */
 .navbar ul li a {
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: white;
   text-decoration: none;
   text-shadow: 0 0 10px #bb99ff, 0 0 20px #cc88ff, 0 0 30px #dd77ff;
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 0.3rem 0.6rem;
 }
 
 /* ホバー時のアニメーション */
