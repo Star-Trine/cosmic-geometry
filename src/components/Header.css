@@ -28,14 +28,12 @@ header.header {
 /* ↓スマホ・タブレット用の表示調整 */
 @media (max-width: 768px) {
   header.header {
-    height: 200px
-    aspect-ratio: auto;
+    height: 360px
   }
 }
 
 @media (max-width: 400px) {
   header.header {
-    height: 100px:
-    aspect-ratio: auto;
+    height: 240px:
   }
 }
