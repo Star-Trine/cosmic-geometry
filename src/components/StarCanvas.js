@@ -25,7 +25,7 @@ function StarCanvas() {
     let stars = [];
 
     function initStars() {
-      let starCount:
+      let starCount;
 
       const width = window.innerWidth;
       if(width <= 400) {
@@ -38,7 +38,7 @@ function StarCanvas() {
         //Pcやタブレット
         starCount = 150;
       }
-      
+
       stars = Array(150).fill().map(() => {
         const colorIndex = Math.floor(Math.random() * starColors.length);
         return {
