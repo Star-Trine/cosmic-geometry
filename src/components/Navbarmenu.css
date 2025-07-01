@@ -6,12 +6,11 @@
   bottom: 0;
   width: 100%;
   background: black;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  white-space: nowrap;
   padding: 0.5rem 1rem;
   z-index: 1000;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
 /* リストの配置は横並び */
@@ -44,8 +43,17 @@
 
 /* スマホなど画面幅が狭い場合は文字を小さく間隔も詰める */
 @media (max-width: 600px) {
+  .navbar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
   .navbar ul {
+    display: inline-flex;
     gap: 0.8rem;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
   }
   .navbar ul li a {
     font-size: 1.1rem;
