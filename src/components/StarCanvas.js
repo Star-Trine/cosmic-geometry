@@ -31,7 +31,7 @@ function StarCanvas() {
       if(width <= 400) {
         //小さいスマホ用
         starCount = 20;
-      } else if (width <= 760) {
+      } else if (width <= 600) {
         //一般的なスマホ
         starCount = 40;
       } else {

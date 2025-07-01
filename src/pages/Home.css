@@ -70,7 +70,10 @@
 /* メディアクエリ */
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2.5rem;
+    white-space: nowrap; /* 折り返しを許可 しない*/
+    font-size: 2.0rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .hero-content p {
@@ -88,14 +91,14 @@
   }
 
   .hero-content h1 {
-    white-space: nowrap; /* 折り返しを許可 */
-    font-size: 1.6rem;   /* フォントサイズを小さめに */
+    white-space: nowrap; /* 折り返しを許可 しない*/
+    font-size: 1.8rem;   /* フォントサイズを小さめに */
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .hero-content p {
-    font-size: 1rem; /* サブタイトルも少し小さく */
+    font-size: 0.8rem; /* サブタイトルも少し小さく */
   }
 
   .svg-wrapper {

@@ -3,7 +3,7 @@ export default function About(){
   return(
     <div className={styles.container}>
       <section className="about-section" style={{ maxWidth: '800px', margin: 'auto', padding: '2rem' }}>
-      <h1>About Cosmic Geometry</h1>
+      <h1>Cosmic Geometry</h1>
         <p>
         このサイトは、宇宙の根源に刻まれた「星々の記憶」を、<br />
         アートと数学の視点から紐解き、表現することを目指しています。

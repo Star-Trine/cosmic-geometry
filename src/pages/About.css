@@ -7,3 +7,42 @@
   backdrop-filter: blur(0.5px); /* ←ぼかし効果 */
   padding: 2rem 1rem;
 }
+
+/* メディアクエリ */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    white-space: nowrap; /* 折り返しを許可 しない*/
+    font-size: 2.0rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .svg-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-content {
+    padding: 0 0.5rem; /* 横のパディングを減らす */
+  }
+
+  .hero-content h1 {
+    white-space: nowrap; /* 折り返しを許可 しない*/
+    font-size: 1.8rem;   /* フォントサイズを小さめに */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem; /* サブタイトルも少し小さく */
+  }
+
+  .svg-wrapper {
+    height: 180px; /* SVGアニメーションの高さも調整 */
+  }
+}
