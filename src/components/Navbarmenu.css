@@ -16,7 +16,8 @@
 /* リストの配置は横並び */
 .navbar ul {
   list-style: none;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   gap: 2rem;
   margin: 0;
   padding: 0;
