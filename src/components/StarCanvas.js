@@ -1,4 +1,4 @@
-// components/StarCanvas.js
+import './StarCanvas.css';
 import { useEffect, useRef } from 'react';
 
 function StarCanvas() {
@@ -7,36 +7,51 @@ function StarCanvas() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
 
-    //星の色の候補（青紫の黒い背景に映える色）
+    // 星の色候補
     const starColors = [
-      'rgba(155, 149, 255, ALPHA)',  // 薄紫
-      'rgba(176, 167, 255, ALPHA)',  // ラベンダー
-      'rgba(112, 120, 255, ALPHA)',  // 青みがかった紫
-      'rgba(160, 231, 255, ALPHA)',  // 薄いシアン
-      'rgba(102, 204, 238, ALPHA)',  // 明るいシアン
-      'rgba(255, 170, 212, ALPHA)',  // ピンク
-      'rgba(255, 148, 183, ALPHA)',  // 薄ピンク
-      'rgba(255, 250, 205, ALPHA)',  // クリームイエロー
-      'rgba(173, 255, 47, ALPHA)',   // 黄緑
+      'rgba(155, 149, 255, ALPHA)',
+      'rgba(176, 167, 255, ALPHA)',
+      'rgba(112, 120, 255, ALPHA)',
+      'rgba(160, 231, 255, ALPHA)',
+      'rgba(102, 204, 238, ALPHA)',
+      'rgba(255, 170, 212, ALPHA)',
+      'rgba(255, 148, 183, ALPHA)',
+      'rgba(255, 250, 205, ALPHA)',
+      'rgba(173, 255, 47, ALPHA)',
     ];
 
-    // 星を初期化
-    let stars = Array(150).fill().map(() => {
-      const colorIndex = Math.floor(Math.random() * starColors.length);
-      return {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 1.5 + 0.5,
-        alpha: Math.random(),
-        delta: Math.random() * 0.02,
-        baseColor: starColors[colorIndex],
-      };
-    });
+    let stars = [];
 
-    // 星を描画するアニメーションループ
+    function initStars() {
+      stars = Array(150).fill().map(() => {
+        const colorIndex = Math.floor(Math.random() * starColors.length);
+        return {
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          r: Math.random() * 1.5 + 0.5,
+          alpha: Math.random(),
+          delta: Math.random() * 0.02,
+          baseColor: starColors[colorIndex],
+        };
+      });
+    }
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // いったんリセット
+      ctx.scale(dpr, dpr);
+
+      initStars();
+    }
+
     function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
       stars.forEach((star) => {
         star.alpha += star.delta;
         if (star.alpha <= 0 || star.alpha >= 1) {
@@ -51,37 +66,16 @@ function StarCanvas() {
       requestAnimationFrame(drawStars);
     }
 
-    // キャンバスのサイズ設定
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    resizeCanvas();
     drawStars();
 
-    // ウィンドウリサイズ対応
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', handleResize);
-
+    window.addEventListener('resize', resizeCanvas);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        zIndex: -1,
-        background: 'radial-gradient(ellipse at center, #000022 0%, #000000 100%)',
-      }}
-    />
-  );
+  return <canvas ref={canvasRef} className="star-canvas" />;
 }
 
 export default StarCanvas;
