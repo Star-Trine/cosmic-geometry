@@ -62,3 +62,16 @@
     padding: 0.2rem 0.4rem;
   }
 }
+
+@media (max-width: 375px) {
+  .navbar {
+    padding: 0.2rem 0.4rem;
+  }
+  .navbar ul li a {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.3rem;
+  }
+  .navbar ul {
+    gap: 0.5rem;
+  }
+}
