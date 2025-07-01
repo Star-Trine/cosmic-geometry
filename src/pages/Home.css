@@ -24,6 +24,9 @@
 }
 
 .hero-content h1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 4rem;
   font-family: 'Orbitron', sans-serif;
   margin-bottom: 1rem;
@@ -76,5 +79,25 @@
 
   .svg-wrapper {
     height: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-content {
+    padding: 0 1rem; /* 横のパディングを減らす */
+  }
+
+  .hero-content h1 {
+    white-space: normal; /* 折り返しを許可 */
+    font-size: 1.8rem;   /* フォントサイズを小さめに */
+    word-break: break-word; /* 単語の途中で折り返し可能に */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* サブタイトルも少し小さく */
+  }
+
+  .svg-wrapper {
+    height: 200px; /* SVGアニメーションの高さも調整 */
   }
 }
