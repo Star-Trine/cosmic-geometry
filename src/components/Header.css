@@ -6,7 +6,7 @@ header.header {
   max-width: 1920px;
   margin: 0 auto;
   aspect-ratio: 1980 / 300;
-  background: transparent; /* ← 背景削除 */
+  background: transparent;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -23,4 +23,17 @@ header.header {
   top: 0;
   left: 0;
   transition: opacity 2s ease;
+}
+
+/* ↓スマホ・タブレット用の表示調整 */
+@media (max-width: 768px) {
+  header.header {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+@media (max-width: 400px) {
+  header.header {
+    aspect-ratio: 1.2 / 1;
+  }
 }

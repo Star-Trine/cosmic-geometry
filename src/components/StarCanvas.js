@@ -30,11 +30,11 @@ function StarCanvas() {
 
   const width = window.innerWidth;
   if (width <= 400) {
-    starCount = 20;
+    starCount = 40;
     rMin = 0.3;
     rMax = 0.8;
   } else if (width <= 600) {
-    starCount = 30;
+    starCount = 60;
     rMin = 0.5;
     rMax = 1.0;
   } else {
