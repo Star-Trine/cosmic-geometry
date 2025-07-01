@@ -25,6 +25,20 @@ function StarCanvas() {
     let stars = [];
 
     function initStars() {
+      let starCount:
+
+      const width = window.innerWidth;
+      if(width <= 400) {
+        //小さいスマホ用
+        starCount = 60;
+      } else if (width <= 760) {
+        //一般的なスマホ
+        starCount = 100;
+      } else {
+        //Pcやタブレット
+        starCount = 150;
+      }
+      
       stars = Array(150).fill().map(() => {
         const colorIndex = Math.floor(Math.random() * starColors.length);
         return {
