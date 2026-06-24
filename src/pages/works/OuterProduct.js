@@ -1,4 +1,4 @@
-// TimeGeometryCross.jsx
+// OuterProduct.js
 import React, { useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
@@ -13,14 +13,16 @@ function ArrowVector({ direction, color }) {
   useEffect(() => {
     if (!ref.current) return;
 
+    const current = ref.current;
+
     const dir = new THREE.Vector3(...direction).normalize();
     const origin = new THREE.Vector3(0, 0, 0);
     const arrowHelper = new THREE.ArrowHelper(dir, origin, arrowLength, color);
 
-    ref.current.add(arrowHelper);
+    current.add(arrowHelper);
 
     return () => {
-      if (ref.current) ref.current.remove(arrowHelper);
+      current.remove(arrowHelper);
     };
   }, [direction, color]);
 
