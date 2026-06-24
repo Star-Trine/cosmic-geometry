@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import './TimeGeometry3d.css';
@@ -8,7 +8,6 @@ const arrowLength = 4; // ベクトルの長さを調整
 
 function ArrowVector({ direction, color }) {
   const ref = useRef();
-  const { scene } = useThree();
 
   useEffect(() => {
     const dir = new THREE.Vector3(...direction).normalize();

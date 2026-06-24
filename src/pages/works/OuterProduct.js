@@ -1,6 +1,6 @@
 // TimeGeometryCross.jsx
 import React, { useRef, useEffect } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import './InnerProduct.css'; // CSSは内積版と同じでもOK
