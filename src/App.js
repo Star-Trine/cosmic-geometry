@@ -16,6 +16,7 @@ import TimeGeometry3d from './pages/works/TimeGeometry3d';
 import InnerProduct from './pages/works/InnerProduct';
 import OuterProduct from './pages/works/OuterProduct';
 import LinearMap from './pages/works/LinearMap';
+import CelestialSphere from './pages/works/CelestialSphere';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               <Route path="/works/inner-product" element={<InnerProduct />} />
               <Route path="/works/outer-product" element={<OuterProduct />} />
               <Route path="/works/linear-map" element={<LinearMap />} />
+              <Route path="/works/Celestial-sphere" element={<CelestialSphere />} />
             </Routes>
           </main>
 

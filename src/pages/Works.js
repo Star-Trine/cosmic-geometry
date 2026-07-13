@@ -11,7 +11,8 @@ function Works() {
         <li><Link to="/works/time-geometry-3d">時間幾何学 3次元アニメーション</Link></li>
         <li><Link to="/works/inner-product"><span>内積の可視化</span></Link></li>
         <li><Link to="/works/outer-product">外積の可視化</Link></li>
-        <li><Link to="/works/linear-map">線形写像</Link></li>  {/* ← 追加 */}
+        <li><Link to="/works/linear-map">線形写像</Link></li>  
+        <li><Link to="/works/celestial-sphere"><span>天球（Celestial Sphere）</span></Link></li>
         {/* ここに作品が増えていく */}
       </ul>
     </div>
