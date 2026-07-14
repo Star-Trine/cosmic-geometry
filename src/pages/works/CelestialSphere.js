@@ -1,14 +1,127 @@
 // CelestialSphere.js
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import './CelestialSphere.css';
+import { stars } from './celestialSphere/starData';
+import { asterisms } from'./celestialSphere/asterismData';
 
 const SPHERE_RADIUS = 3;
 const EARTH_RADIUS = 0.45;
 const ECLIPTIC_TILT = THREE.MathUtils.degToRad(23.4);
+
+function celestialToCartesian(raHours, decDegrees, radius = SPHERE_RADIUS) {
+  const ra = THREE.MathUtils.degToRad(raHours * 15);
+  const dec = THREE.MathUtils.degToRad(decDegrees);
+
+  return [
+    radius * Math.cos(dec) * Math.cos(ra),
+    radius * Math.sin(dec),
+    radius * Math.cos(dec) * Math.sin(ra),
+  ];
+}
+function StarPoints() {
+  const [hoveredStarId, setHoveredStarId] = useState(null);
+
+  return (
+    <group>
+      {stars.map((star) => {
+        const position = celestialToCartesian(
+          star.ra,
+          star.dec,
+          SPHERE_RADIUS * 1.01
+        );
+
+        const size = Math.max(
+          0.02,
+          0.06 - star.magnitude * 0.01
+        );
+
+        const isHovered = hoveredStarId === star.id;
+
+        return (
+          <group
+            key={star.id}
+            position={position}
+          >
+            <mesh
+              onPointerOver={(event) => {
+                event.stopPropagation();
+                setHoveredStarId(star.id);
+                document.body.style.cursor = 'pointer';
+              }}
+              onPointerOut={() => {
+                setHoveredStarId(null);
+                document.body.style.cursor = 'default';
+              }}
+            >
+              <sphereGeometry args={[size, 16, 16]} />
+              <meshBasicMaterial color={star.color ?? '#ffffff'} />
+            </mesh>
+
+            {isHovered && (
+              <Text
+                position={[0, size + 0.12, 0]}
+                fontSize={0.16}
+                color="#ffffff"
+                anchorX="center"
+                anchorY="bottom"
+              >
+                {star.nameJa}
+              </Text>
+            )}
+          </group>
+        );
+      })}
+    </group>
+  );
+}
+
+function AsterismLines() {
+  const lineSegments = useMemo(() => {
+    const points = [];
+
+    asterisms.forEach((asterism) => {
+      asterism.connections.forEach(([startId, endId]) => {
+        const startStar = stars.find((star) => star.id === startId);
+        const endStar = stars.find((star) => star.id === endId);
+
+        if (!startStar || !endStar) return;
+
+        const startPosition = celestialToCartesian(
+          startStar.ra,
+          startStar.dec,
+          SPHERE_RADIUS * 1.005
+        );
+
+        const endPosition = celestialToCartesian(
+          endStar.ra,
+          endStar.dec,
+          SPHERE_RADIUS * 1.005
+        );
+
+        points.push(
+          new THREE.Vector3(...startPosition),
+          new THREE.Vector3(...endPosition)
+        );
+      });
+    });
+
+    return new THREE.BufferGeometry().setFromPoints(points);
+  }, []);
+
+  return (
+    <lineSegments geometry={lineSegments}>
+      <lineBasicMaterial
+        color="#88ccff"
+        transparent
+        opacity={0.75}
+      />
+    </lineSegments>
+  );
+}
 
 // 3D空間に円周を描く
 function CircleLine({
@@ -195,6 +308,8 @@ function CelestialSphereModel() {
         黄道
       </Text>
 
+      <StarPoints />  
+      <AsterismLines />
       <Earth />
     </group>
   );
