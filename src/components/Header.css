@@ -24,7 +24,7 @@ header.header {
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   header.header {
     height: clamp(220px, 58vw, 300px);
     aspect-ratio: auto;
