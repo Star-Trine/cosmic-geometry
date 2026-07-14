@@ -4,8 +4,6 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import './Home.css';
 
-import StarCanvas from '../components/StarCanvas'; // 背景の星アニメーション
-
 // SVG各種
 import { ReactComponent as Circle }           from '../components/svg/circle.svg';
 import { ReactComponent as SeedOfLife }       from '../components/svg/seedoflife.svg';
@@ -74,7 +72,6 @@ export default function Home() {
 
   return (
     <div className="hero-container">
-      <StarCanvas /> {/* 背景の星 */}
 
       <div className="hero-content">
         <h1 ref={titleRef}>Cosmic Geometry</h1>
