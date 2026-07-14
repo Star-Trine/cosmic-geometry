@@ -1,45 +1,38 @@
+/* src/components/Header.css */
+
 header.header {
   position: relative;
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  aspect-ratio: 1920 / 300;
+  aspect-ratio: 1980 / 300;
   background: transparent;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   user-select: none;
   z-index: 0;
 }
 
-.zodiac-track {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  transition: transform 1s ease;
-}
-
 .zodiac-svg {
-  display: block;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 2s ease;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   header.header {
-    height: clamp(220px, 58vw, 300px);
-    aspect-ratio: auto;
+    height: 360px;
   }
+}
 
-  .zodiac-track {
-    width: 400%;
-    height: 100%;
-    transform: translateX(
-      calc(var(--slide-index) * -25%)
-    );
-  }
-
-  .zodiac-svg {
-    width: 100%;
-    height: 100%;
+@media (max-width: 400px) {
+  header.header {
+    height: 240px;
   }
 }
