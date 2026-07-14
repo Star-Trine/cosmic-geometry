@@ -90,3 +90,9 @@ body {
     filter: brightness(1.5);
   }
 }
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0.5rem 0 2rem;
+  }
+}
