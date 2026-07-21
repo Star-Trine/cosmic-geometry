@@ -1,0 +1,32 @@
+/* Concepts.css */
+
+.concepts {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #e5e7eb;
+}
+
+.concepts h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.concepts p {
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.concepts h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.concepts ul {
+  padding-left: 1.5rem;
+}
+
+.concepts li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
