@@ -1,9 +1,9 @@
-//TimeGeometry3d.js
+// TimeVectorSpace.js
 import React, { useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
-import './TimeGeometry3d.css';
+import './TimeVectorSpace.css';
 
 const arrowLength = 4; // ベクトルの長さを調整
 
@@ -51,9 +51,9 @@ function VectorLabel({ position, label }) {
   );
 }
 
-export default function TimeGeometry3d() {
+export default function TimeVectorSpace() {
   return (
-    <div className = "timegeometry3d-wrapper">
+    <div className = "time-vector-space-wrapper">
     <Canvas camera={{ position: [6, 6, 6], fov: 50 }}>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
