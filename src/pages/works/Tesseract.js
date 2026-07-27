@@ -1,8 +1,6 @@
 import { useMemo, useRef, useState, } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import * as THREE from 'three';
-import DensityParticles from '../../components/DensityParticles';
 import TesseractDensityParticles from '../../components/TesseractDensityParticles';
 import './Tesseract.css';
 
