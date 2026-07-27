@@ -2,6 +2,7 @@
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import StarCanvas from './components/StarCanvas';
+import 'katex/dist/katex.min.css';
 
 // ===== Styles =====
 import './App.css';

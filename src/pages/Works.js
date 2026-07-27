@@ -19,7 +19,7 @@ const worksCategories = [
         path: '/works/platonic-solids',
       },
       {
-        title: 'テッセラクト（4次元投影）',
+        title: 'テッセラクト（4次元密度可視化）',
         path: '/works/tesseract',
       },
     ],
