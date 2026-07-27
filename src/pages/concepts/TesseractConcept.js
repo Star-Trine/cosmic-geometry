@@ -1,7 +1,6 @@
 import './TesseractConcept.css';
-import { BlockMath, InlineMath } from 'react-katex';
-import { Link } from "react-router-dom";
 import { BlockMath } from 'react-katex';
+import { Link } from "react-router-dom";
 
 const dimensionSteps = [
   {
