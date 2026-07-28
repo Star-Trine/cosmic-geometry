@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <title>Cosmic Geometry Emotion Wheel Base</title>
+  <desc>Editable SVG base with eight emotion sectors and three radial levels. Japanese labels intentionally omitted for later editing in Inkscape.</desc>
+
+  <defs>
+    <radialGradient id="backgroundGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#14233a" stop-opacity="0.68"/>
+      <stop offset="52%" stop-color="#090d18" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#02040a" stop-opacity="1"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="strongGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="ringLine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#9ed7ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+
+  <g id="background">
+    <rect width="1200" height="1200" fill="#02040a"/>
+    <circle cx="600" cy="600" r="545" fill="url(#backgroundGlow)"/>
+    <circle cx="600" cy="600" r="470" fill="none" stroke="#4aa8ff" stroke-opacity="0.07" stroke-width="2"/>
+    <circle cx="600" cy="600" r="505" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+  </g>
+  <g id="halo" filter="url(#strongGlow)" opacity="0.28">
+    <circle cx="600" cy="600" r="430" fill="none" stroke="#6bbcff" stroke-width="18"/>
+  </g>
+  <g id="emotion-joy">
+    <path id="joy-level-1" d="M 600.000,600.000 L 602.042,470.016 A 130,130 0 0 1 690.469,506.644 L 600.000,600.000 A 0,0 0 0 0 600.000,600.000 Z" fill="#FFD84D" fill-opacity="0.96" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.2" filter="url(#softGlow)"/>
+    <path id="joy-level-2" d="M 602.168,462.017 L 604.241,330.033 A 270,270 0 0 1 787.896,406.106 L 696.036,500.899 A 138,138 0 0 0 602.168,462.017 Z" fill="#FFD84D" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.1"/>
+    <path id="joy-level-3" d="M 604.367,322.034 L 606.754,170.053 A 430,430 0 0 1 899.243,291.206 L 793.464,400.361 A 278,278 0 0 0 604.367,322.034 Z" fill="#FFD84D" fill-opacity="0.42" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="emotion-trust">
+    <path id="trust-level-1" d="M 600.000,600.000 L 693.356,509.531 A 130,130 0 0 1 729.984,597.958 L 600.000,600.000 A 0,0 0 0 0 600.000,600.000 Z" fill="#79E36A" fill-opacity="0.96" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.2" filter="url(#softGlow)"/>
+    <path id="trust-level-2" d="M 699.101,503.964 L 793.894,412.104 A 270,270 0 0 1 869.967,595.759 L 737.983,597.832 A 138,138 0 0 0 699.101,503.964 Z" fill="#79E36A" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.1"/>
+    <path id="trust-level-3" d="M 799.639,406.536 L 908.794,300.757 A 430,430 0 0 1 1029.947,593.246 L 877.966,595.633 A 278,278 0 0 0 799.639,406.536 Z" fill="#79E36A" fill-opacity="0.42" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="emotion-fear">
+    <path id="fear-level-1" d="M 600.000,600.000 L 729.984,602.042 A 130,130 0 0 1 693.356,690.469 L 600.000,600.000 A 0,0 0 0 0 600.000,600.000 Z" fill="#42D6B5" fill-opacity="0.96" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.2" filter="url(#softGlow)"/>
+    <path id="fear-level-2" d="M 737.983,602.168 L 869.967,604.241 A 270,270 0 0 1 793.894,787.896 L 699.101,696.036 A 138,138 0 0 0 737.983,602.168 Z" fill="#42D6B5" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.1"/>
+    <path id="fear-level-3" d="M 877.966,604.367 L 1029.947,606.754 A 430,430 0 0 1 908.794,899.243 L 799.639,793.464 A 278,278 0 0 0 877.966,604.367 Z" fill="#42D6B5" fill-opacity="0.42" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="emotion-surprise">
+    <path id="surprise-level-1" d="M 600.000,600.000 L 690.469,693.356 A 130,130 0 0 1 602.042,729.984 L 600.000,600.000 A 0,0 0 0 0 600.000,600.000 Z" fill="#4EA3FF" fill-opacity="0.96" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.2" filter="url(#softGlow)"/>
+    <path id="surprise-level-2" d="M 696.036,699.101 L 787.896,793.894 A 270,270 0 0 1 604.241,869.967 L 602.168,737.983 A 138,138 0 0 0 696.036,699.101 Z" fill="#4EA3FF" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.1"/>
+    <path id="surprise-level-3" d="M 793.464,799.639 L 899.243,908.794 A 430,430 0 0 1 606.754,1029.947 L 604.367,877.966 A 278,278 0 0 0 793.464,799.639 Z" fill="#4EA3FF" fill-opacity="0.42" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="emotion-sadness">
+    <path id="sadness-level-1" d="M 600.000,600.000 L 597.958,729.984 A 130,130 0 0 1 509.531,693.356 L 600.000,600.000 A 0,0 0 0 0 600.000,600.000 Z" fill="#5F6BFF" fill-opacity="0.96" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.2" filter="url(#softGlow)"/>
+    <path id="sadness-level-2" d="M 597.832,737.983 L 595.759,869.967 A 270,270 0 0 1 412.104,793.894 L 503.964,699.101 A 138,138 0 0 0 597.832,737.983 Z" fill="#5F6BFF" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.1"/>
+    <path id="sadness-level-3" d="M 595.633,877.966 L 593.246,1029.947 A 430,430 0 0 1 300.757,908.794 L 406.536,799.639 A 278,278 0 0 0 595.633,877.966 Z" fill="#5F6BFF" fill-opacity="0.42" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="emotion-disgust">
+    <path id="disgust-level-1" d="M 600.000,600.000 L 506.644,690.469 A 130,130 0 0 1 470.016,602.042 L 600.000,600.000 A 0,0 0 0 0 600.000,600.000 Z" fill="#B264FF" fill-opacity="0.96" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.2" filter="url(#softGlow)"/>
+    <path id="disgust-level-2" d="M 500.899,696.036 L 406.106,787.896 A 270,270 0 0 1 330.033,604.241 L 462.017,602.168 A 138,138 0 0 0 500.899,696.036 Z" fill="#B264FF" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.1"/>
+    <path id="disgust-level-3" d="M 400.361,793.464 L 291.206,899.243 A 430,430 0 0 1 170.053,606.754 L 322.034,604.367 A 278,278 0 0 0 400.361,793.464 Z" fill="#B264FF" fill-opacity="0.42" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="emotion-anger">
+    <path id="anger-level-1" d="M 600.000,600.000 L 470.016,597.958 A 130,130 0 0 1 506.644,509.531 L 600.000,600.000 A 0,0 0 0 0 600.000,600.000 Z" fill="#FF4F5E" fill-opacity="0.96" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.2" filter="url(#softGlow)"/>
+    <path id="anger-level-2" d="M 462.017,597.832 L 330.033,595.759 A 270,270 0 0 1 406.106,412.104 L 500.899,503.964 A 138,138 0 0 0 462.017,597.832 Z" fill="#FF4F5E" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.1"/>
+    <path id="anger-level-3" d="M 322.034,595.633 L 170.053,593.246 A 430,430 0 0 1 291.206,300.757 L 400.361,406.536 A 278,278 0 0 0 322.034,595.633 Z" fill="#FF4F5E" fill-opacity="0.42" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="emotion-anticipation">
+    <path id="anticipation-level-1" d="M 600.000,600.000 L 509.531,506.644 A 130,130 0 0 1 597.958,470.016 L 600.000,600.000 A 0,0 0 0 0 600.000,600.000 Z" fill="#FF9A3D" fill-opacity="0.96" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.2" filter="url(#softGlow)"/>
+    <path id="anticipation-level-2" d="M 503.964,500.899 L 412.104,406.106 A 270,270 0 0 1 595.759,330.033 L 597.832,462.017 A 138,138 0 0 0 503.964,500.899 Z" fill="#FF9A3D" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.1"/>
+    <path id="anticipation-level-3" d="M 406.536,400.361 L 300.757,291.206 A 430,430 0 0 1 593.246,170.053 L 595.633,322.034 A 278,278 0 0 0 406.536,400.361 Z" fill="#FF9A3D" fill-opacity="0.42" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="structure" fill="none">
+    <circle cx="600" cy="600" r="130" stroke="url(#ringLine)" stroke-width="2"/>
+    <circle cx="600" cy="600" r="270" stroke="url(#ringLine)" stroke-width="2"/>
+    <circle cx="600" cy="600" r="430" stroke="url(#ringLine)" stroke-width="2.5"/>
+    <circle cx="600" cy="600" r="58" stroke="#ffffff" stroke-opacity="0.32" stroke-width="1.5"/>
+    <circle cx="600" cy="600" r="18" fill="#ffffff" fill-opacity="0.85" stroke="#9ed7ff" stroke-opacity="0.8" stroke-width="2" filter="url(#softGlow)"/>
+  </g>
+  <g id="radial-guides" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1">
+    <line x1="600.000" y1="542.000" x2="600.000" y2="170.000"/>
+    <line x1="641.012" y1="558.988" x2="904.056" y2="295.944"/>
+    <line x1="658.000" y1="600.000" x2="1030.000" y2="600.000"/>
+    <line x1="641.012" y1="641.012" x2="904.056" y2="904.056"/>
+    <line x1="600.000" y1="658.000" x2="600.000" y2="1030.000"/>
+    <line x1="558.988" y1="641.012" x2="295.944" y2="904.056"/>
+    <line x1="542.000" y1="600.000" x2="170.000" y2="600.000"/>
+    <line x1="558.988" y1="558.988" x2="295.944" y2="295.944"/>
+  </g>
+  <g id="label-guides" opacity="0" fill="none" stroke="#ffffff" stroke-dasharray="8 8">
+    <circle cx="600" cy="600" r="205"/>
+    <circle cx="600" cy="600" r="350"/>
+    <circle cx="600" cy="600" r="485"/>
+  </g>
+  <g id="label-anchors" opacity="0">
+    <circle id="joy-label-anchor-1" cx="629.849" cy="527.937" r="5" fill="#ffffff"/>
+    <circle id="joy-label-anchor-2" cx="676.537" cy="415.224" r="5" fill="#ffffff"/>
+    <circle id="joy-label-anchor-3" cx="733.939" cy="276.642" r="5" fill="#ffffff"/>
+    <circle id="joy-label-anchor-4" cx="785.601" cy="151.918" r="5" fill="#ffffff"/>
+    <circle id="trust-label-anchor-1" cx="672.063" cy="570.151" r="5" fill="#ffffff"/>
+    <circle id="trust-label-anchor-2" cx="784.776" cy="523.463" r="5" fill="#ffffff"/>
+    <circle id="trust-label-anchor-3" cx="923.358" cy="466.061" r="5" fill="#ffffff"/>
+    <circle id="trust-label-anchor-4" cx="1048.082" cy="414.399" r="5" fill="#ffffff"/>
+    <circle id="fear-label-anchor-1" cx="672.063" cy="629.849" r="5" fill="#ffffff"/>
+    <circle id="fear-label-anchor-2" cx="784.776" cy="676.537" r="5" fill="#ffffff"/>
+    <circle id="fear-label-anchor-3" cx="923.358" cy="733.939" r="5" fill="#ffffff"/>
+    <circle id="fear-label-anchor-4" cx="1048.082" cy="785.601" r="5" fill="#ffffff"/>
+    <circle id="surprise-label-anchor-1" cx="629.849" cy="672.063" r="5" fill="#ffffff"/>
+    <circle id="surprise-label-anchor-2" cx="676.537" cy="784.776" r="5" fill="#ffffff"/>
+    <circle id="surprise-label-anchor-3" cx="733.939" cy="923.358" r="5" fill="#ffffff"/>
+    <circle id="surprise-label-anchor-4" cx="785.601" cy="1048.082" r="5" fill="#ffffff"/>
+    <circle id="sadness-label-anchor-1" cx="570.151" cy="672.063" r="5" fill="#ffffff"/>
+    <circle id="sadness-label-anchor-2" cx="523.463" cy="784.776" r="5" fill="#ffffff"/>
+    <circle id="sadness-label-anchor-3" cx="466.061" cy="923.358" r="5" fill="#ffffff"/>
+    <circle id="sadness-label-anchor-4" cx="414.399" cy="1048.082" r="5" fill="#ffffff"/>
+    <circle id="disgust-label-anchor-1" cx="527.937" cy="629.849" r="5" fill="#ffffff"/>
+    <circle id="disgust-label-anchor-2" cx="415.224" cy="676.537" r="5" fill="#ffffff"/>
+    <circle id="disgust-label-anchor-3" cx="276.642" cy="733.939" r="5" fill="#ffffff"/>
+    <circle id="disgust-label-anchor-4" cx="151.918" cy="785.601" r="5" fill="#ffffff"/>
+    <circle id="anger-label-anchor-1" cx="527.937" cy="570.151" r="5" fill="#ffffff"/>
+    <circle id="anger-label-anchor-2" cx="415.224" cy="523.463" r="5" fill="#ffffff"/>
+    <circle id="anger-label-anchor-3" cx="276.642" cy="466.061" r="5" fill="#ffffff"/>
+    <circle id="anger-label-anchor-4" cx="151.918" cy="414.399" r="5" fill="#ffffff"/>
+    <circle id="anticipation-label-anchor-1" cx="570.151" cy="527.937" r="5" fill="#ffffff"/>
+    <circle id="anticipation-label-anchor-2" cx="523.463" cy="415.224" r="5" fill="#ffffff"/>
+    <circle id="anticipation-label-anchor-3" cx="466.061" cy="276.642" r="5" fill="#ffffff"/>
+    <circle id="anticipation-label-anchor-4" cx="414.399" cy="151.918" r="5" fill="#ffffff"/>
+  </g>
+  <g id="cosmic-accents" fill="none" stroke-linecap="round">
+    <path d="M 180,745 A 470,470 0 0 1 350,240" stroke="#6bbcff" stroke-opacity="0.18" stroke-width="3"/>
+    <path d="M 865,1010 A 470,470 0 0 0 1050,690" stroke="#ffffff" stroke-opacity="0.11" stroke-width="2"/>
+    <path d="M 245,930 A 515,515 0 0 0 950,1025" stroke="#b86cff" stroke-opacity="0.12" stroke-width="2"/>
+  </g>
+</svg>

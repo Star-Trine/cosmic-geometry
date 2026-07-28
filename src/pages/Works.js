@@ -134,8 +134,8 @@ const worksCategories = [
         path: '/works/oscillator',
       },
       {
-        title: 'フーリエ級数',
-        path: '/works/fourier-series',
+        title: '感情の波（Emotion Wave）',
+        path: '/works/emotion-wave',
       },
       {
         title: 'フーリエ変換（FFT）',

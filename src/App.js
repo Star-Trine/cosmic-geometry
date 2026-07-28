@@ -43,7 +43,7 @@ import ComplexPlaneViewer from './pages/works/ComplexPlaneViewer';
 import EulerFormulaVisualizer from './pages/works/EulerFormulaVisualizer';
 import ComplexMappingViewer from './pages/works/ComplexMappingViewer';
 import Oscillator from './pages/works/Oscillator';
-import FourierSeries from './pages/works/FourierSeries';
+import EmotionWave from './pages/works/EmotionWave';
 import FourierTransform from './pages/works/FourierTransform';
 import Synthesizer from './pages/works/Synthesizer';
 import AdsrEnvelope from './pages/works/AdsrEnvelope';
@@ -72,7 +72,7 @@ import ComplexPlaneViewerConcept from './pages/concepts/ComplexPlaneViewerConcep
 import EulerFormulaVisualizerConcept from './pages/concepts/EulerFormulaVisualizerConcept';
 import ComplexMappingViewerConcept from './pages/concepts/ComplexMappingViewerConcept';
 import OscillatorConcept from './pages/concepts/OscillatorConcept';
-import FourierSeriesConcept from './pages/concepts/FourierSeriesConcept';
+import EmotionWaveConcept from './pages/concepts/EmotionWaveConcept';
 import FourierTransformConcept from './pages/concepts/FourierTransformConcept';
 import SynthesizerConcept from './pages/concepts/SynthesizerConcept';
 import AdsrEnvelopeConcept from './pages/concepts/AdsrEnvelopeConcept';
@@ -122,7 +122,7 @@ function App() {
   <Route path="/works/euler-formula-visualizer" element={<EulerFormulaVisualizer />} />
   <Route path="/works/complex-mapping-viewer" element={<ComplexMappingViewer />} />
   <Route path="/works/oscillator" element={<Oscillator />} />
-  <Route path="/works/fourier-series" element={<FourierSeries />} />
+  <Route path="/works/emotion-wave" element={<EmotionWave />} />
   <Route path="/works/fourier-transform" element={<FourierTransform />} />
   <Route path="/works/synthesizer" element={<Synthesizer />} />
   <Route path="/works/adsr-envelope" element={<AdsrEnvelope />} />
@@ -169,7 +169,7 @@ function App() {
   <Route path="/concepts/euler-formula-visualizer" element={<EulerFormulaVisualizerConcept />} />
   <Route path="/concepts/complex-mapping-viewer" element={<ComplexMappingViewerConcept />} />
   <Route path="/concepts/oscillator" element={<OscillatorConcept />} />
-  <Route path="/concepts/fourier-series" element={<FourierSeriesConcept />} />
+  <Route path="/concepts/emotion-wave" element={<EmotionWaveConcept />} />
   <Route path="/concepts/fourier-transform" element={<FourierTransformConcept />} />
   <Route path="/concepts/synthesizer" element={<SynthesizerConcept />} />
   <Route path="/concepts/adsr-envelope" element={<AdsrEnvelopeConcept />} />

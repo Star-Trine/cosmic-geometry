@@ -1,0 +1,39 @@
+.emotion-wave-concept {
+  --accent: #ff9c9c;
+  --accent-soft: rgba(255, 156, 156, 0.14);
+
+  background:
+    radial-gradient(
+      circle at 15% 12%,
+      rgba(188, 65, 111, 0.2),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 82% 34%,
+      rgba(70, 93, 189, 0.17),
+      transparent 30%
+    ),
+    #050713;
+}
+
+.concept-figure {
+  margin-bottom: 4rem;
+}
+
+/* Emotion Wave内のカード同士に余白をつける */
+.emotion-wave-concept .concept-card + .concept-card {
+  margin-top: 2.5rem;
+}
+
+.concept-figure img {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.concept-list {
+  padding-left: 1.4rem;
+  margin: 1.5rem 0;
+}

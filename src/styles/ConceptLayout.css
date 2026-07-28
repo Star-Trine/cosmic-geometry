@@ -1,0 +1,323 @@
+.concept-page {
+  --background: #050713;
+  --panel: rgba(255, 255, 255, 0.045);
+  --panel-strong: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.14);
+  --text: #f4f5ff;
+  --subtext: #b9bed6;
+  --accent: #9da8ff;
+  --accent-soft: rgba(157, 168, 255, 0.14);
+
+  min-height: 100vh;
+  padding: 6rem clamp(1.25rem, 5vw, 6rem);
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(83, 73, 170, 0.2),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 35%,
+      rgba(39, 94, 150, 0.16),
+      transparent 28%
+    ),
+    var(--background);
+}
+
+.concept-hero,
+.concept-section {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+/* Hero */
+
+.concept-hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 3rem 7rem;
+}
+
+.concept-eyebrow,
+.section-label {
+  margin: 0 0 0.8rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.concept-hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.concept-subtitle {
+  margin: 1.8rem 0 0;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.concept-lead {
+  max-width: 720px;
+  margin: 1.5rem 0 0;
+  color: var(--subtext);
+  font-size: 1.05rem;
+  line-height: 2;
+}
+
+/* Sections */
+
+.concept-section {
+  padding-block: 6rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.section-number {
+  margin: 0.15rem 0 0;
+  color: var(--subtext);
+  font-size: 0.85rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.section-text {
+  color: var(--subtext);
+  font-size: 1.02rem;
+  line-height: 2;
+}
+
+.section-text p:first-child {
+  margin-top: 0;
+}
+
+.narrow-text {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+/* Panels */
+
+.concept-card {
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: var(--panel);
+}
+
+.concept-quote {
+  margin: 0;
+  padding: 2rem;
+  border-left: 2px solid var(--accent);
+  background: var(--panel);
+}
+
+.concept-quote p {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+  line-height: 1.55;
+}
+
+/* Formula */
+
+.formula-card {
+  margin-block: 2.5rem;
+  padding: 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: var(--panel);
+}
+
+.formula-label {
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.formula {
+  margin: 1rem 0;
+  color: var(--text);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  white-space: nowrap;
+}
+
+/* Lists */
+
+.concept-list {
+  padding-left: 1.4rem;
+}
+
+.concept-list li {
+  margin-bottom: 0.7rem;
+  color: var(--subtext);
+  line-height: 1.8;
+}
+
+/* Images */
+
+.concept-figure {
+  width: min(820px, 100%);
+  margin: 3.5rem auto 0;
+}
+
+.concept-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background: var(--panel);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.concept-figure figcaption {
+  margin-top: 1rem;
+  color: var(--subtext);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .concept-page {
+    padding-inline: 1.1rem;
+  }
+
+  .concept-hero {
+    min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+  }
+
+  .section-heading {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .concept-hero h1 {
+    font-size: clamp(2.7rem, 15vw, 4rem);
+  }
+
+  .concept-section {
+    padding-block: 4.5rem;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-number {
+    margin-bottom: 0.7rem;
+  }
+
+  .concept-card,
+  .formula-card {
+    padding: 1.4rem;
+  }
+}
+
+/* Interactive Work */
+
+.interactive-card {
+  margin-top: 3rem;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: var(--panel);
+}
+
+.interactive-card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.6rem;
+}
+
+.interactive-card p {
+  margin: 0 auto 2rem;
+  max-width: 640px;
+  color: var(--subtext);
+  line-height: 1.8;
+}
+
+.interactive-button {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--accent-soft);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.interactive-button:hover {
+  transform: translateY(-2px);
+  background: var(--accent);
+  color: #050713;
+}
+
+/* Interactive links */
+
+.concept-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.2rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.primary-link {
+  color: #0c1023;
+  background: var(--text);
+}
+
+.secondary-link {
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.primary-link:hover,
+.secondary-link:hover {
+  transform: translateY(-2px);
+}
+
+.primary-link.is-disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}

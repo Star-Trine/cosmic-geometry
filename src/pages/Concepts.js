@@ -134,8 +134,8 @@ const conceptCategories = [
         path: '/concepts/oscillator',
       },
       {
-        title: 'フーリエ級数',
-        path: '/concepts/fourier-series',
+        title: '感情の波（Emotion Wave）',
+        path: '/concepts/emotion-wave',
       },
       {
         title: 'フーリエ変換（FFT）',
