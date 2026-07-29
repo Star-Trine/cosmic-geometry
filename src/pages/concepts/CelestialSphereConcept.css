@@ -1,3 +1,187 @@
 .celestial-sphere-concept {
+  --background: #030814;
+  --panel: rgba(110, 165, 255, 0.055);
+  --panel-strong: rgba(110, 165, 255, 0.1);
+  --border: rgba(150, 195, 255, 0.18);
+  --accent: #8fc7ff;
+  --accent-soft: rgba(96, 168, 255, 0.14);
+
+  position: relative;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 50% 8%,
+      rgba(56, 112, 210, 0.2),
+      transparent 33%
+    ),
+    radial-gradient(
+      circle at 88% 42%,
+      rgba(52, 196, 215, 0.1),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 12% 72%,
+      rgba(94, 80, 190, 0.11),
+      transparent 28%
+    ),
+    var(--background);
+}
+
+.celestial-sphere-concept::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(143, 199, 255, 0.65) 1px, transparent 1.5px);
+
+  background-position:
+    0 0,
+    35px 55px;
+
+  background-size:
+    120px 120px,
+    180px 180px;
+}
+
+.celestial-sphere-concept .concept-figure {
+  width: min(960px, 100%);
+}
+
+.celestial-sphere-concept .concept-figure img {
+  border-color: rgba(143, 199, 255, 0.3);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.45),
+    0 0 45px rgba(72, 147, 255, 0.12);
+}
+
+.celestial-data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.celestial-data-card {
+  min-width: 0;
   padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(143, 199, 255, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
+}
+
+.celestial-data-card h3 {
+  margin: 0 0 0.8rem;
+  color: var(--text);
+  font-family: monospace;
+  font-size: 1.15rem;
+}
+
+.celestial-data-card > p {
+  color: var(--subtext);
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .celestial-data-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Current implementation details */
+
+.celestial-data-list {
+  margin: 1.8rem 0 0;
+}
+
+.celestial-data-list > div {
+  padding-block: 1.1rem;
+  border-top: 1px solid var(--border);
+}
+
+.celestial-data-list dt {
+  margin-bottom: 0.45rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.celestial-data-list dd {
+  margin: 0;
+  color: var(--subtext);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.celestial-next-phase {
+  width: min(820px, 100%);
+  margin: 3rem auto 0;
+}
+
+.celestial-next-phase h3 {
+  margin: 0 0 1.2rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+/* Model structure */
+
+.celestial-structure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.celestial-structure-card {
+  min-width: 0;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(143, 199, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+}
+
+.structure-number {
+  margin: 0 0 1.5rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+}
+
+.celestial-structure-card h3 {
+  margin: 0 0 0.9rem;
+  font-size: 1.35rem;
+}
+
+.celestial-structure-card p:not(.structure-number) {
+  margin: 0 0 1.4rem;
+  color: var(--subtext);
+  line-height: 1.8;
+}
+
+.celestial-structure-card span {
+  display: block;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .celestial-structure-grid {
+    grid-template-columns: 1fr;
+  }
 }

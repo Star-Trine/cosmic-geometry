@@ -16,23 +16,25 @@ header.header {
 }
 
 .zodiac-svg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
   transition: opacity 2s ease;
 }
 
 @media (max-width: 768px) {
   header.header {
-    height: 360px;
+    height: auto;
+    min-height: 120px;
+    aspect-ratio: 3 / 1;
   }
 }
 
 @media (max-width: 400px) {
   header.header {
-    height: 240px;
+    min-height: 100px;
+    aspect-ratio: 3.2 / 1;
   }
 }
