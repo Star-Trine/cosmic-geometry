@@ -3,10 +3,11 @@ import './TimeGeometryConcept.css';
 export default function TimeGeometryConcept() {
   return (
     <main className="time-geometry-concept">
-      <h1>時間同期実験</h1>
+      <h1>Time Synchronization Experiment（時間同期実験）</h1>
+      <p>Original Theory</p>
       <p>
-        このページでは、作品の設計思想、コンセプト、数学的背景、
-        使用技術、実装方法、制作メモなどをまとめます。
+        複数の時間ベクトルの動きと同期を可視化し、
+        時間同士の関係を探究する実験です。
       </p>
     </main>
   );

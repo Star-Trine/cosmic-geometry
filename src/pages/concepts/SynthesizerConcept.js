@@ -3,10 +3,11 @@ import './SynthesizerConcept.css';
 export default function SynthesizerConcept() {
   return (
     <main className="synthesizer-concept">
-      <h1>シンセサイザー</h1>
+      <h1>Synthesizer（シンセサイザー）</h1>
+      <p>Interactive Learning</p>
       <p>
-        このページでは、作品の設計思想、コンセプト、数学的背景、
-        使用技術、実装方法、制作メモなどをまとめます。
+        オシレーター、ADSR、エフェクトチェーンを操作し、
+        音の生成から加工までを波形やスペクトルとともに体験する作品です。
       </p>
     </main>
   );

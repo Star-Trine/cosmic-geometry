@@ -2,6 +2,10 @@
   --accent: #ff9c9c;
   --accent-soft: rgba(255, 156, 156, 0.14);
 
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+
   background:
     radial-gradient(
       circle at 15% 12%,
@@ -36,4 +40,130 @@
 .concept-list {
   padding-left: 1.4rem;
   margin: 1.5rem 0;
+}
+
+/* ========================================
+   Emotion Wave Concept - Responsive
+======================================== */
+
+@media (max-width: 768px) {
+  .emotion-wave-concept {
+    overflow-x: hidden;
+  }
+
+  /* ページ内の主要コンテナ */
+  .emotion-wave-concept .concept-container,
+  .emotion-wave-concept .concept-content,
+  .emotion-wave-concept .concept-hero,
+  .emotion-wave-concept .concept-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .emotion-wave-concept .concept-container,
+  .emotion-wave-concept .concept-content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* WAVE LABORATORY / CONCEPT */
+  .emotion-wave-concept .concept-category,
+  .emotion-wave-concept .concept-kicker,
+  .emotion-wave-concept .concept-label {
+    font-size: clamp(0.8rem, 3.6vw, 1rem);
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  /* 日本語・英語タイトル */
+  .emotion-wave-concept .concept-title,
+  .emotion-wave-concept .concept-title-ja,
+  .emotion-wave-concept .concept-title-jp,
+  .emotion-wave-concept .concept-title-en {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+  }
+
+  .emotion-wave-concept .concept-title-ja,
+  .emotion-wave-concept .concept-title-jp {
+    font-size: clamp(3rem, 15vw, 5rem);
+    line-height: 1;
+  }
+
+  .emotion-wave-concept .concept-title-en {
+    font-size: clamp(2.7rem, 13vw, 4.5rem);
+    line-height: 0.98;
+  }
+
+  /* ひとつのh1内に両タイトルがある場合 */
+  .emotion-wave-concept h1.concept-title {
+    font-size: clamp(2.8rem, 13vw, 4.6rem);
+    line-height: 1;
+  }
+
+  /* キャッチコピー */
+  .emotion-wave-concept .concept-lead,
+  .emotion-wave-concept .concept-subtitle {
+    max-width: 100%;
+    font-size: clamp(1.25rem, 5.5vw, 1.75rem);
+    line-height: 1.7;
+    white-space: normal;
+    word-break: normal;
+  }
+
+  /* 本文 */
+  .emotion-wave-concept p,
+  .emotion-wave-concept li {
+    max-width: 100%;
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+  }
+
+  .emotion-wave-concept .concept-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.25rem;
+  }
+
+  .emotion-wave-concept .concept-card + .concept-card {
+    margin-top: 1.5rem;
+  }
+
+  .concept-figure {
+    margin-bottom: 2.5rem;
+  }
+
+  .concept-list {
+    padding-left: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .emotion-wave-concept .concept-container,
+  .emotion-wave-concept .concept-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .emotion-wave-concept .concept-title-ja,
+  .emotion-wave-concept .concept-title-jp {
+    font-size: clamp(2.7rem, 14vw, 4rem);
+  }
+
+  .emotion-wave-concept .concept-title-en {
+    font-size: clamp(2.5rem, 12.5vw, 3.6rem);
+  }
+
+  .emotion-wave-concept h1.concept-title {
+    font-size: clamp(2.5rem, 12.5vw, 3.6rem);
+  }
 }

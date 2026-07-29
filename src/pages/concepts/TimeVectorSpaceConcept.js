@@ -3,10 +3,11 @@ import './TimeVectorSpaceConcept.css';
 export default function TimeVectorSpaceConcept() {
   return (
     <main className="time-vector-space-concept">
-      <h1>時間ベクトル空間</h1>
+      <h1>Time Vector Space（時間ベクトル空間）</h1>
+      <p>Original Theory</p>
       <p>
-        このページでは、作品の設計思想、コンセプト、数学的背景、
-        使用技術、実装方法、制作メモなどをまとめます。
+        時間をベクトル空間として捉え、複数の時間軸の関係を
+        幾何学的に表現するための基礎モデルです。
       </p>
     </main>
   );

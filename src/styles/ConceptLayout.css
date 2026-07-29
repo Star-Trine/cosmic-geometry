@@ -8,6 +8,11 @@
   --accent: #9da8ff;
   --accent-soft: rgba(157, 168, 255, 0.14);
 
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
   min-height: 100vh;
   padding: 6rem clamp(1.25rem, 5vw, 6rem);
   color: var(--text);
@@ -199,16 +204,41 @@
 }
 
 /* Responsive */
-
 @media (max-width: 700px) {
   .concept-page {
     padding-inline: 1.1rem;
+  }
+
+  .concept-hero,
+  .concept-section,
+  .interactive-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .concept-hero {
     min-height: auto;
     padding-top: 2rem;
     padding-bottom: 5rem;
+  }
+
+  .concept-hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.4rem, 11vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .concept-eyebrow,
+  .concept-subtitle,
+  .concept-lead,
+  .section-text {
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .section-heading {
@@ -218,7 +248,8 @@
 
 @media (max-width: 460px) {
   .concept-hero h1 {
-    font-size: clamp(2.7rem, 15vw, 4rem);
+    font-size: clamp(2.2rem, 10.5vw, 3.2rem);
+    line-height: 1.08;
   }
 
   .concept-section {
@@ -235,6 +266,9 @@
 
   .concept-card,
   .formula-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 1.4rem;
   }
 }

@@ -11,15 +11,15 @@ const conceptCategories = [
     englishTitle: 'Sacred Geometry',
     concepts: [
       {
-        title: 'マカバとベクトル平衡体',
-        path: '/concepts/merkaba-vector-equilibrium',
-      },
-      {
-        title: 'プラトン立体',
+        title: 'Platonic Solids（プラトン立体）',
         path: '/concepts/platonic-solids',
       },
       {
-        title: 'テッセラクト（4次元密度可視化）',
+        title: 'Merkaba & Vector Equilibrium（マカバとベクトル平衡体）',
+        path: '/concepts/merkaba-vector-equilibrium',
+      },
+      {
+        title: 'Tesseract（テッセラクト）',
         path: '/concepts/tesseract',
       },
     ],
@@ -30,24 +30,16 @@ const conceptCategories = [
     englishTitle: 'Astronomy',
     concepts: [
       {
-        title: '天球',
+        title: 'Celestial Sphere（天球）',
         path: '/concepts/celestial-sphere',
       },
       {
-        title: '重力波観測所',
+        title: 'Gravity Wave Observatory（重力波観測所）',
         path: '/concepts/gravity-wave-observatory',
       },
       {
-        title: '太陽系',
-        path: '/concepts/solar-system',
-      },
-      {
-        title: '系外惑星',
-        path: '/concepts/exoplanets',
-      },
-      {
-        title: '星座・アステリズム',
-        path: '/concepts/constellations-asterisms',
+        title: 'Zero Point（ゼロ・ポイント）',
+        path: '/concepts/zero-point',
       },
     ],
   },
@@ -57,24 +49,12 @@ const conceptCategories = [
     englishTitle: 'Astrology',
     concepts: [
       {
-        title: '黄道十二星座',
-        path: '/concepts/zodiac',
+        title: 'Horoscope（ホロスコープ）',
+        path: '/concepts/horoscope',
       },
       {
-        title: 'ネイタルチャート',
-        path: '/concepts/natal-chart',
-      },
-      {
-        title: 'ハウス',
-        path: '/concepts/astrological-houses',
-      },
-      {
-        title: 'アスペクト',
-        path: '/concepts/aspects',
-      },
-      {
-        title: 'トランジット',
-        path: '/concepts/transits',
+        title: '27720 Circle System（27720円体系）',
+        path: '/concepts/27720-circle-system',
       },
     ],
   },
@@ -84,43 +64,24 @@ const conceptCategories = [
     englishTitle: 'Time Geometry',
     concepts: [
       {
-        title: '時間ベクトル空間',
+        title: 'Time Vector Space（時間ベクトル空間）',
         path: '/concepts/time-vector-space',
       },
       {
-        title: '時間ベクトルの内積',
+        title: 'Inner Product（内積）',
         path: '/concepts/inner-product',
       },
       {
-        title: '時間ベクトルの外積',
+        title: 'Outer Product（外積）',
         path: '/concepts/outer-product',
       },
       {
-        title: '時間ベクトルの線形写像',
+        title: 'Linear Transformation（線形変換）',
         path: '/concepts/linear-map',
       },
       {
-        title: '時間同期実験',
+        title: 'Time Synchronization Experiment（時間同期実験）',
         path: '/concepts/time-geometry',
-      },
-    ],
-  },
-  {
-    id: 'complex-geometry',
-    title: '複素幾何学',
-    englishTitle: 'Complex Geometry',
-    concepts: [
-      {
-        title: '複素平面ビューワー',
-        path: '/concepts/complex-plane-viewer',
-      },
-      {
-        title: 'オイラーの公式ビジュアライザー',
-        path: '/concepts/euler-formula-visualizer',
-      },
-      {
-        title: '複素写像ビューワー',
-        path: '/concepts/complex-mapping-viewer',
       },
     ],
   },
@@ -130,35 +91,30 @@ const conceptCategories = [
     englishTitle: 'Wave Laboratory',
     concepts: [
       {
-        title: 'オシレーター',
-        path: '/concepts/oscillator',
-      },
-      {
-        title: '感情の波（Emotion Wave）',
+        title: 'Emotion Wave（感情の波）',
         path: '/concepts/emotion-wave',
-      },
-      {
-        title: 'フーリエ変換（FFT）',
-        path: '/concepts/fourier-transform',
       },
     ],
   },
   {
     id: 'digital-audio',
-    title: 'DTM・音響',
-    englishTitle: 'Digital Audio',
+    title: '音響・DTM',
+    englishTitle: 'Sound / DTM',
     concepts: [
       {
-        title: 'シンセサイザー',
+        title: 'Synthesizer（シンセサイザー）',
         path: '/concepts/synthesizer',
       },
+    ],
+  },
+  {
+    id: 'complex-geometry',
+    title: '複素幾何学',
+    englishTitle: 'Complex Geometry',
+    concepts: [
       {
-        title: 'ADSRエンベロープ',
-        path: '/concepts/adsr-envelope',
-      },
-      {
-        title: 'エフェクトチェーン',
-        path: '/concepts/effect-chain',
+        title: 'Complex Geometry（複素幾何学）',
+        path: '/concepts/complex-geometry',
       },
     ],
   },
@@ -199,7 +155,7 @@ function Concepts() {
                 aria-controls={`${category.id}-concepts`}
               >
                 <span>
-                  {category.title} ({category.englishTitle})
+                  {category.englishTitle}（{category.title}）
                 </span>
 
                 <span

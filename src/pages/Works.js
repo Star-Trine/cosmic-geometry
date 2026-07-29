@@ -11,15 +11,15 @@ const worksCategories = [
     englishTitle: 'Sacred Geometry',
     works: [
       {
-        title: 'マカバとベクトル平衡体',
-        path: '/works/merkaba-vector-equilibrium',
-      },
-      {
-        title: 'プラトン立体',
+        title: 'Platonic Solids（プラトン立体）',
         path: '/works/platonic-solids',
       },
       {
-        title: 'テッセラクト（4次元密度可視化）',
+        title: 'Merkaba & Vector Equilibrium（マカバとベクトル平衡体）',
+        path: '/works/merkaba-vector-equilibrium',
+      },
+      {
+        title: 'Tesseract（テッセラクト）',
         path: '/works/tesseract',
       },
     ],
@@ -30,24 +30,16 @@ const worksCategories = [
     englishTitle: 'Astronomy',
     works: [
       {
-        title: '天球',
+        title: 'Celestial Sphere（天球）',
         path: '/works/celestial-sphere',
       },
       {
-        title: '重力波観測所',
+        title: 'Gravity Wave Observatory（重力波観測所）',
         path: '/works/gravity-wave-observatory',
       },
       {
-        title: '太陽系',
-        path: '/works/solar-system',
-      },
-      {
-        title: '系外惑星',
-        path: '/works/exoplanets',
-      },
-      {
-        title: '星座・アステリズム',
-        path: '/works/constellations-asterisms',
+        title: 'Zero Point（ゼロ・ポイント）',
+        path: '/works/zero-point',
       },
     ],
   },
@@ -57,24 +49,12 @@ const worksCategories = [
     englishTitle: 'Astrology',
     works: [
       {
-        title: '黄道十二星座',
-        path: '/works/zodiac',
+        title: 'Horoscope（ホロスコープ）',
+        path: '/works/horoscope',
       },
       {
-        title: 'ネイタルチャート',
-        path: '/works/natal-chart',
-      },
-      {
-        title: 'ハウス',
-        path: '/works/astrological-houses',
-      },
-      {
-        title: 'アスペクト',
-        path: '/works/aspects',
-      },
-      {
-        title: 'トランジット',
-        path: '/works/transits',
+        title: '27720 Circle System（27720円体系）',
+        path: '/works/27720-circle-system',
       },
     ],
   },
@@ -84,43 +64,24 @@ const worksCategories = [
     englishTitle: 'Time Geometry',
     works: [
       {
-        title: '時間ベクトル空間',
+        title: 'Time Vector Space（時間ベクトル空間）',
         path: '/works/time-vector-space',
       },
       {
-        title: '時間ベクトルの内積',
+        title: 'Inner Product（内積）',
         path: '/works/inner-product',
       },
       {
-        title: '時間ベクトルの外積',
+        title: 'Outer Product（外積）',
         path: '/works/outer-product',
       },
       {
-        title: '時間ベクトルの線形写像',
+        title: 'Linear Transformation（線形変換）',
         path: '/works/linear-map',
       },
       {
-        title: '時間同期実験',
+        title: 'Time Synchronization Experiment（時間同期実験）',
         path: '/works/time-geometry',
-      },
-    ],
-  },
-  {
-    id: 'complex-geometry',
-    title: '複素幾何学',
-    englishTitle: 'Complex Geometry',
-    works: [
-      {
-        title: '複素平面ビューワー',
-        path: '/works/complex-plane-viewer',
-      },
-      {
-        title: 'オイラーの公式ビジュアライザー',
-        path: '/works/euler-formula-visualizer',
-      },
-      {
-        title: '複素写像ビューワー',
-        path: '/works/complex-mapping-viewer',
       },
     ],
   },
@@ -130,35 +91,30 @@ const worksCategories = [
     englishTitle: 'Wave Laboratory',
     works: [
       {
-        title: 'オシレーター',
-        path: '/works/oscillator',
-      },
-      {
-        title: '感情の波（Emotion Wave）',
+        title: 'Emotion Wave（感情の波）',
         path: '/works/emotion-wave',
-      },
-      {
-        title: 'フーリエ変換（FFT）',
-        path: '/works/fourier-transform',
       },
     ],
   },
   {
     id: 'digital-audio',
-    title: 'DTM・音響',
-    englishTitle: 'Digital Audio',
+    title: '音響・DTM',
+    englishTitle: 'Sound / DTM',
     works: [
       {
-        title: 'シンセサイザー',
+        title: 'Synthesizer（シンセサイザー）',
         path: '/works/synthesizer',
       },
+    ],
+  },
+  {
+    id: 'complex-geometry',
+    title: '複素幾何学',
+    englishTitle: 'Complex Geometry',
+    works: [
       {
-        title: 'ADSRエンベロープ',
-        path: '/works/adsr-envelope',
-      },
-      {
-        title: 'エフェクトチェーン',
-        path: '/works/effect-chain',
+        title: 'Complex Geometry（複素幾何学）',
+        path: '/works/complex-geometry',
       },
     ],
   },
@@ -194,7 +150,7 @@ function Works() {
                 aria-controls={`${category.id}-works`}
               >
                 <span>
-                  {category.title} ({category.englishTitle})
+                  {category.englishTitle}（{category.title}）
                 </span>
 
                 <span

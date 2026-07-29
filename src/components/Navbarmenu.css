@@ -45,33 +45,40 @@
 /* スマホなど画面幅が狭い場合は文字を小さく間隔も詰める */
 @media (max-width: 600px) {
   .navbar {
+    justify-content: flex-start;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    padding: 1rem 0.5rem;
+    padding: 1rem 0;
   }
+
   .navbar ul {
-    display: inline-flex;
+    flex-shrink: 0;
     gap: 0.8rem;
-    white-space: nowrap;
-    padding: 0;
+    width: max-content;
+    padding: 0 1rem;
     margin: 0;
   }
+
   .navbar ul li a {
+    display: block;
     font-size: 0.8rem;
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem 0.4rem;
   }
 }
 
 @media (max-width: 375px) {
   .navbar {
-    padding: 1.2rem 0.4rem;
+    padding: 1rem 0;
   }
-  .navbar ul li a {
-    font-size: 0.7rem;
-    padding: 0.35rem 0.5rem;
-  }
+
   .navbar ul {
     gap: 0.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .navbar ul li a {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.35rem;
   }
 }

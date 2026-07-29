@@ -3,10 +3,11 @@ import './MerkabaVectorEquilibriumConcept.css';
 export default function MerkabaVectorEquilibriumConcept() {
   return (
     <main className="merkaba-vector-equilibrium-concept">
-      <h1>マカバとベクトル平衡体</h1>
+      <h1>Merkaba & Vector Equilibrium（マカバとベクトル平衡体）</h1>
+      <p>Interactive Learning</p>
       <p>
-        このページでは、作品の設計思想、コンセプト、数学的背景、
-        使用技術、実装方法、制作メモなどをまとめます。
+        ベクトル平衡体とマカバの幾何学的な関係を、
+        立体の変形や回転を通して体験するインタラクティブ作品です。
       </p>
     </main>
   );

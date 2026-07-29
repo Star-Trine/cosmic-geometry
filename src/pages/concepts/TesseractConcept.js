@@ -50,7 +50,7 @@ export default function TesseractConcept() {
       <header className="tesseract-hero">
         <p className="tesseract-eyebrow">CONCEPT / HIGHER DIMENSION</p>
 
-        <h1>テッセラクト</h1>
+        <h1>Tesseract（テッセラクト）</h1>
 
         <p className="tesseract-subtitle">
           4次元空間は、どのように見えるのだろう。

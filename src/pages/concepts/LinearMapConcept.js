@@ -3,10 +3,11 @@ import './LinearMapConcept.css';
 export default function LinearMapConcept() {
   return (
     <main className="linear-map-concept">
-      <h1>時間ベクトルの線形写像</h1>
+      <h1>Linear Transformation（線形変換）</h1>
+      <p>Original Theory</p>
       <p>
-        このページでは、作品の設計思想、コンセプト、数学的背景、
-        使用技術、実装方法、制作メモなどをまとめます。
+        時間ベクトルに線形変換を適用し、
+        時間の関係がどのように変化するかを観察する試みです。
       </p>
     </main>
   );

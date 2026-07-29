@@ -16,9 +16,7 @@ export default function EmotionWaveConcept() {
         </p>
 
         <h1>
-          感情の波
-          <br />
-          Emotion Wave
+          Emotion Wave（感情の波）
         </h1>
 
         <p className="concept-subtitle">

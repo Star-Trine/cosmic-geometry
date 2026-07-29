@@ -3,10 +3,11 @@ import './CelestialSphereConcept.css';
 export default function CelestialSphereConcept() {
   return (
     <main className="celestial-sphere-concept">
-      <h1>天球</h1>
+      <h1>Celestial Sphere（天球）</h1>
+      <p>Interactive Learning</p>
       <p>
-        このページでは、作品の設計思想、コンセプト、数学的背景、
-        使用技術、実装方法、制作メモなどをまとめます。
+        地球を中心に、天の赤道、黄道、天の極、恒星の配置を
+        3次元空間で観察する天球モデルです。
       </p>
     </main>
   );

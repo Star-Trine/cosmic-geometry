@@ -3,10 +3,11 @@ import './OuterProductConcept.css';
 export default function OuterProductConcept() {
   return (
     <main className="outer-product-concept">
-      <h1>時間ベクトルの外積</h1>
+      <h1>Outer Product（外積）</h1>
+      <p>Original Theory</p>
       <p>
-        このページでは、作品の設計思想、コンセプト、数学的背景、
-        使用技術、実装方法、制作メモなどをまとめます。
+        時間ベクトル同士の外積から生まれる方向と大きさを、
+        新しい関係軸として可視化する試みです。
       </p>
     </main>
   );
