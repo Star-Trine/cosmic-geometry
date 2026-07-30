@@ -24,9 +24,6 @@ import Sitemap from './pages/Sitemap';
 import CelestialSphere from './pages/works/CelestialSphere';
 import TimeGeometry from './pages/works/TimeGeometry';
 import TimeVectorSpace from './pages/works/TimeVectorSpace';
-import InnerProduct from './pages/works/InnerProduct';
-import OuterProduct from './pages/works/OuterProduct';
-import LinearMap from './pages/works/LinearMap';
 import MerkabaVectorEquilibrium from './pages/works/MerkabaVectorEquilibrium';
 import PlatonicSolids from './pages/works/PlatonicSolids';
 import CircleSystem27720 from './pages/works/CircleSystem27720';
@@ -49,9 +46,6 @@ import ZeroPointConcept from './pages/concepts/ZeroPointConcept';
 import HoroscopeConcept from './pages/concepts/HoroscopeConcept';
 import TimeGeometryConcept from './pages/concepts/TimeGeometryConcept';
 import TimeVectorSpaceConcept from './pages/concepts/TimeVectorSpaceConcept';
-import InnerProductConcept from './pages/concepts/InnerProductConcept';
-import OuterProductConcept from './pages/concepts/OuterProductConcept';
-import LinearMapConcept from './pages/concepts/LinearMapConcept';
 import ComplexGeometryConcept from './pages/concepts/ComplexGeometryConcept';
 import EmotionWaveConcept from './pages/concepts/EmotionWaveConcept';
 import SynthesizerConcept from './pages/concepts/SynthesizerConcept';
@@ -88,9 +82,6 @@ function App() {
   <Route path="/works/horoscope" element={<Horoscope />} />
   <Route path="/works/time-vector-space" element={<TimeVectorSpace />} />
   <Route path="/works/time-geometry" element={<TimeGeometry />} />
-  <Route path="/works/inner-product" element={<InnerProduct />} />
-  <Route path="/works/outer-product" element={<OuterProduct />} />
-  <Route path="/works/linear-map" element={<LinearMap />} />
   <Route path="/works/complex-geometry" element={<ComplexGeometry />} />
   <Route path="/works/emotion-wave" element={<EmotionWave />} />
   <Route path="/works/synthesizer" element={<Synthesizer />} />
@@ -114,18 +105,6 @@ function App() {
   <Route
     path="/concepts/time-geometry"
     element={<TimeGeometryConcept />}
-  />
-  <Route
-    path="/concepts/inner-product"
-    element={<InnerProductConcept />}
-  />
-  <Route
-    path="/concepts/outer-product"
-    element={<OuterProductConcept />}
-  />
-  <Route
-    path="/concepts/linear-map"
-    element={<LinearMapConcept />}
   />
   <Route path="/concepts/complex-geometry" element={<ComplexGeometryConcept />} />
   <Route path="/concepts/emotion-wave" element={<EmotionWaveConcept />} />

@@ -68,18 +68,6 @@ const worksCategories = [
         path: '/works/time-vector-space',
       },
       {
-        title: 'Inner Product（内積）',
-        path: '/works/inner-product',
-      },
-      {
-        title: 'Outer Product（外積）',
-        path: '/works/outer-product',
-      },
-      {
-        title: 'Linear Transformation（線形変換）',
-        path: '/works/linear-map',
-      },
-      {
         title: 'Time Synchronization Experiment（時間同期実験）',
         path: '/works/time-geometry',
       },
