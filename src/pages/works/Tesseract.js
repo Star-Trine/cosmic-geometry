@@ -339,19 +339,28 @@ export default function Tesseract() {
   );
 };
   return (
-    <main className="tesseract">
-      <header className="tesseract__header">
-        <p className="tesseract__eyebrow">
-          Generation of Dimensions
-        </p>
+  <main className="tesseract">
+  <header className="tesseract__header">
+    <div className="tesseract__header-content">
+      <p className="tesseract__eyebrow">
+        Generation of Dimensions
+      </p>
 
-        <h1>テッセラクト（4次元密度可視化）</h1>
+      <h1>テッセラクト（4次元密度可視化）</h1>
 
-        <p className="tesseract__description">
-          前の次元の図形を複製し、新しい軸方向へ移動させ、
-          対応する頂点同士を結ぶことで次元を生成します。
-        </p>
-      </header>
+      <p className="tesseract__description">
+        前の次元の図形を複製し、新しい軸方向へ移動させ、
+        対応する頂点同士を結ぶことで次元を生成します。
+      </p>
+    </div>
+
+    <a
+      href="/concepts/tesseract"
+      className="tesseract__concept-link"
+    >
+      Conceptを見る
+    </a>
+  </header>
 
       <section className="tesseract__viewer">
         <div className="tesseract__stage-label">

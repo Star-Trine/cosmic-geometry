@@ -317,37 +317,48 @@ function CelestialSphereModel() {
 
 export default function CelestialSphere() {
   return (
-    <div className="celestial-sphere">
-      <h2>Celestial Sphere</h2>
-
-      <div className="celestial-sphere-canvas">
-        <Canvas
-          camera={{
-            position: [6.5, 4.5, 6.5],
-            fov: 45,
-          }}
+    <div className="celestial-sphere-work">
+      <div className="celestial-sphere__concept-area">
+        <a
+          href="/concepts/celestial-sphere"
+          className="celestial-sphere__concept-link"
         >
-          <ambientLight intensity={1.1} />
-          <directionalLight
-            position={[5, 6, 5]}
-            intensity={1.5}
-          />
-
-          <CelestialSphereModel />
-
-          <OrbitControls
-            enablePan={false}
-            enableDamping
-            dampingFactor={0.06}
-            minDistance={1.2}
-            maxDistance={16}
-          />
-        </Canvas>
+          Conceptを見る
+        </a>
       </div>
 
-      <p>
-        地球を中心に、天の赤道・黄道・天の極を外側から観察する天球モデル
-      </p>
+      <div className="celestial-sphere">
+        <h2>Celestial Sphere</h2>
+
+        <div className="celestial-sphere-canvas">
+          <Canvas
+            camera={{
+              position: [6.5, 4.5, 6.5],
+              fov: 45,
+            }}
+          >
+            <ambientLight intensity={1.1} />
+            <directionalLight
+              position={[5, 6, 5]}
+              intensity={1.5}
+            />
+
+            <CelestialSphereModel />
+
+            <OrbitControls
+              enablePan={false}
+              enableDamping
+              dampingFactor={0.06}
+              minDistance={1.2}
+              maxDistance={16}
+            />
+          </Canvas>
+        </div>
+
+        <p>
+          地球を中心に、天の赤道・黄道・天の極を外側から観察する天球モデル
+        </p>
+      </div>
     </div>
   );
 }

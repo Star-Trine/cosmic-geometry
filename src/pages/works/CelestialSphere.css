@@ -1,36 +1,67 @@
-.celestial-sphere {
+.celestial-sphere-work {
   width: 80vw;
-  max-width: 1000px;          /* 描画領域より少し余裕を持たせる */
-  margin: 1rem auto;     /* 上下マージン＋中央寄せ */
+  max-width: 1000px;
+  margin: 1rem auto;
+}
+
+.celestial-sphere__concept-area {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.8rem;
+}
+
+.celestial-sphere {
+  width: 100%;
+  margin: 0;
   padding: 1rem;
-  background-color: rgba(0, 0, 34, 0.7); /* 背景に暗い透過色 */
-  border-radius: 12px;
-  color: #e0e7ff;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(101, 75, 180, 0.18),
+      rgba(7, 5, 20, 0.48) 55%,
+      rgba(4, 3, 12, 0.72)
+    );
+
+  border: 1px solid rgba(183, 167, 255, 0.22);
+  border-radius: 24px;
+
+  color: #f7f5ff;
   font-family: 'Arial', sans-serif;
-  box-shadow: 0 0 10px #00ffffaa;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35),
+    inset 0 0 80px rgba(120, 90, 220, 0.06);
+
   user-select: none;
 }
 
 .celestial-sphere h2 {
+  margin: 0 0 0.5rem;
+  color: #f7f5ff;
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
   text-align: center;
-  color: #e0e7ff;
 }
 
 .celestial-sphere svg {
   display: block;
   margin: 0 auto 1rem auto;
-  background-color: #000022;
+
+  background: rgba(7, 5, 20, 0.48);
+  border: 1px solid rgba(183, 167, 255, 0.16);
   border-radius: 50%;
-  box-shadow: 0 0 15px #00ffffaa;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.3),
+    inset 0 0 50px rgba(120, 90, 220, 0.05);
 }
 
 .celestial-sphere p {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #aaaaff;
   margin-top: 0;
+  color: rgba(247, 245, 255, 0.58);
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .celestial-sphere-canvas {
@@ -40,4 +71,47 @@
 
 .celestial-sphere-canvas canvas {
   display: block;
+}
+
+.celestial-sphere__concept-link {
+  flex-shrink: 0;
+  padding: 0.75rem 1.1rem;
+
+  border: 1px solid rgba(156, 149, 255, 0.2);
+  border-radius: 999px;
+
+  color: #f5f4ff;
+  text-decoration: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(78, 216, 255, 0.08),
+      rgba(157, 123, 255, 0.1)
+    );
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.celestial-sphere__concept-link:hover {
+  border-color: rgba(78, 216, 255, 0.55);
+  box-shadow: 0 0 25px rgba(78, 216, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 560px) {
+  .celestial-sphere-work {
+    width: calc(100% - 20px);
+  }
+
+  .celestial-sphere__concept-area {
+    justify-content: flex-start;
+  }
+
+  .celestial-sphere {
+    border-radius: 18px;
+  }
 }

@@ -1,33 +1,147 @@
+.time-geometry-work {
+  --panel: rgba(255, 255, 255, 0.045);
+  --panel-strong: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.14);
+  --text: #f4f5ff;
+  --subtext: #b9bed6;
+  --accent: #9da8ff;
+
+  box-sizing: border-box;
+  width: min(680px, calc(100% - 2rem));
+  margin: 3rem auto;
+}
+
+.time-geometry-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.time-geometry-concept-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 120px;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.2rem;
+  box-sizing: border-box;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text);
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(78, 216, 255, 0.08),
+      rgba(157, 123, 255, 0.1)
+    );
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.time-geometry-concept-link:hover {
+  border-color: rgba(183, 167, 255, 0.55);
+  box-shadow: 0 0 25px rgba(120, 90, 220, 0.14);
+  transform: translateY(-2px);
+}
+
 .time-geometry {
-  width: 320px;          /* SVGより少し余裕を持たせる */
-  margin: 1rem auto;     /* 上下マージン＋中央寄せ */
-  padding: 1rem;
-  background-color: rgba(0, 0, 34, 0.7); /* 背景に暗い透過色 */
-  border-radius: 12px;
-  color: #e0e7ff;
-  font-family: 'Arial', sans-serif;
-  box-shadow: 0 0 10px #00ffffaa;
+  box-sizing: border-box;
+  width: 100%;
+  padding: clamp(1.5rem, 4vw, 3rem);
+
+  color: var(--text);
+  text-align: center;
   user-select: none;
+
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(105, 93, 190, 0.14),
+      transparent 42%
+    ),
+    var(--panel);
+
+  backdrop-filter: blur(18px);
 }
 
 .time-geometry h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  color: #e0e7ff;
+  margin: 0 0 2rem;
+
+  color: var(--text);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
 }
 
 .time-geometry svg {
   display: block;
-  margin: 0 auto 1rem auto;
-  background-color: #000022;
+  width: min(360px, 100%);
+  height: auto;
+  margin: 0 auto 2rem;
+
+  border: 1px solid var(--border);
   border-radius: 50%;
-  box-shadow: 0 0 15px #00ffffaa;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(47, 52, 104, 0.28),
+      rgba(3, 5, 18, 0.92) 70%
+    );
+
+  box-shadow:
+    inset 0 0 45px rgba(116, 100, 210, 0.08),
+    0 0 35px rgba(105, 90, 190, 0.1);
 }
 
 .time-geometry p {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #aaaaff;
-  margin-top: 0;
+  max-width: 520px;
+  margin: 0 auto;
+
+  color: var(--subtext);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .time-geometry-work {
+    width: calc(100% - 2rem);
+    margin-block: 2rem;
+  }
+
+  .time-geometry-actions {
+    justify-content: center;
+  }
+
+  .time-geometry {
+    padding: 1.5rem 1rem;
+    border-radius: 1.25rem;
+  }
+
+  .time-geometry h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+  }
+
+  .time-geometry svg {
+    width: min(300px, 100%);
+    margin-bottom: 1.5rem;
+  }
+
+  .time-geometry-concept-link {
+    min-width: 120px;
+  }
 }

@@ -26,12 +26,13 @@
 }
 
 .emotion-wave-header {
-  width: min(1440px, 100%);
-  margin: 0 auto 2rem;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 2rem;
+
+  width: min(1440px, 100%);
+  margin: 0 auto 2rem;
 }
 
 .emotion-wave-eyebrow,
@@ -50,17 +51,58 @@
   line-height: 1;
 }
 
-.emotion-wave-header > div > p:last-child {
+.emotion-wave-header-content > p:last-child {
   margin: 1rem 0 0;
   color: var(--subtext);
   line-height: 1.8;
 }
 
+.emotion-wave-header-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.75rem;
+}
+
+.emotion-wave-concept-link,
 .emotion-reset-button {
-  padding: 0.75rem 1.4rem;
+  min-width: 120px;
+  padding: 0.75rem 1.2rem;
+  box-sizing: border-box;
+
   border: 1px solid var(--border);
   border-radius: 999px;
+
   color: var(--text);
+  font: inherit;
+  line-height: normal;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.emotion-wave-concept-link {
+  text-decoration: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(78, 216, 255, 0.08),
+      rgba(157, 123, 255, 0.1)
+    );
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.emotion-wave-concept-link:hover {
+  border-color: rgba(183, 167, 255, 0.55);
+  box-shadow: 0 0 25px rgba(120, 90, 220, 0.14);
+  transform: translateY(-2px);
+}
+
+.emotion-reset-button {
   background: var(--panel);
   cursor: pointer;
 }
@@ -70,11 +112,12 @@
 }
 
 .emotion-wave-layout {
-  width: min(1440px, 100%);
-  margin-inline: auto;
   display: grid;
   grid-template-columns: minmax(260px, 330px) minmax(0, 1fr);
   gap: 1.5rem;
+
+  width: min(1440px, 100%);
+  margin-inline: auto;
 }
 
 .emotion-control-panel,
@@ -164,6 +207,7 @@
   position: relative;
   min-height: 420px;
   overflow: hidden;
+
   border: 1px solid var(--border);
   border-radius: 1.25rem;
 
@@ -206,8 +250,10 @@
   position: absolute;
   inset: 50% auto auto 50%;
   margin: 0;
+
   color: var(--subtext);
   text-align: center;
+
   transform: translate(-50%, -50%);
 }
 
@@ -220,8 +266,10 @@
 
 .emotion-status-card {
   padding: 1.4rem;
+
   border: 1px solid var(--border);
   border-radius: 1rem;
+
   background: var(--panel);
 }
 
@@ -253,6 +301,11 @@
   .visual-heading {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .emotion-wave-header-actions {
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 
   .emotion-controls,

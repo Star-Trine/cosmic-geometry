@@ -149,27 +149,36 @@ export default function EmotionWave() {
 
   return (
     <main className="emotion-wave-work">
-      <header className="emotion-wave-header">
-        <div>
-          <p className="emotion-wave-eyebrow">
-            COSMIC GEOMETRY / INTERACTIVE WORK
-          </p>
+  <header className="emotion-wave-header">
+    <div className="emotion-wave-header-content">
+      <p className="emotion-wave-eyebrow">
+        COSMIC GEOMETRY / INTERACTIVE WORK
+      </p>
 
-          <h1>Emotion Wave</h1>
+      <h1>Emotion Wave</h1>
 
-          <p>
-            感情の強度を操作し、重なり合う波の変化を観察する。
-          </p>
-        </div>
+      <p>
+        感情の強度を操作し、重なり合う波の変化を観察する。
+      </p>
+    </div>
 
-        <button
-          type="button"
-          className="emotion-reset-button"
-          onClick={resetEmotions}
-        >
-          Reset
-        </button>
-      </header>
+    <div className="emotion-wave-header-actions">
+      <a
+        href="/concepts/emotion-wave"
+        className="emotion-wave-concept-link"
+      >
+        Conceptを見る
+      </a>
+
+      <button
+        type="button"
+        className="emotion-reset-button"
+        onClick={resetEmotions}
+      >
+        Reset
+      </button>
+    </div>
+  </header>
 
       <div className="emotion-wave-layout">
         <aside className="emotion-control-panel">
