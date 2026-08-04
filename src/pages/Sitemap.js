@@ -9,6 +9,7 @@ function Sitemap(){
           <li><a href="/about">このサイトについて</a></li>
           <li><a href="/works">作品</a></li>
           <li><a href="/concepts">コンセプト</a></li>
+          <li><a href="/tech-notes">技術ノート</a></li>
           <li><a href="/contact">お問い合わせ</a></li>
         </ul>
       </div>

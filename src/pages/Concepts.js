@@ -119,7 +119,7 @@ function Concepts() {
 
   return (
     <main className="concepts">
-      <h1>Concepts</h1>
+      <h1>Concepts(設計思想)</h1>
 
       <p>
         このページでは、各作品の設計思想、数学的背景、実装方法、

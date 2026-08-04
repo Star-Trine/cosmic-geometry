@@ -17,6 +17,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Works from './pages/Works';
 import Concepts from './pages/Concepts';
+import TechNotes from './pages/TechNotes';
 import Contact from './pages/Contact';
 import Sitemap from './pages/Sitemap';
 
@@ -49,6 +50,21 @@ import TimeVectorSpaceConcept from './pages/concepts/TimeVectorSpaceConcept';
 import ComplexGeometryConcept from './pages/concepts/ComplexGeometryConcept';
 import EmotionWaveConcept from './pages/concepts/EmotionWaveConcept';
 import SynthesizerConcept from './pages/concepts/SynthesizerConcept';
+
+// ===== TechNotes =====
+import PlatonicSolidsTechNote from './pages/techNotes/PlatonicSolidsTechNote';
+import MerkabaVectorEquilibriumTechNote from './pages/techNotes/MerkabaVectorEquilibriumTechNote';
+import TesseractTechNote from './pages/techNotes/TesseractTechNote';
+import CelestialSphereTechNote from './pages/techNotes/CelestialSphereTechNote';
+import GravityWaveObservatoryTechNote from './pages/techNotes/GravityWaveObservatoryTechNote';
+import ZeroPointTechNote from './pages/techNotes/ZeroPointTechNote';
+import HoroscopeTechNote from './pages/techNotes/HoroscopeTechNote';
+import CircleSystem27720TechNote from './pages/techNotes/CircleSystem27720TechNote';
+import TimeVectorSpaceTechNote from './pages/techNotes/TimeVectorSpaceTechNote';
+import TimeGeometryTechNote from './pages/techNotes/TimeGeometryTechNote';
+import EmotionWaveTechNote from './pages/techNotes/EmotionWaveTechNote';
+import SynthesizerTechNote from './pages/techNotes/SynthesizerTechNote';
+import ComplexGeometryTechNote from './pages/techNotes/ComplexGeometryTechNote';
 function App() {
   return (
     <>
@@ -68,6 +84,7 @@ function App() {
   <Route path="/about" element={<About />} />
   <Route path="/works" element={<Works />} />
   <Route path="/concepts" element={<Concepts />} />
+  <Route path="/tech-notes" element={<TechNotes />} />
   <Route path="/contact" element={<Contact />} />
   <Route path="/sitemap" element={<Sitemap />} />
 
@@ -109,6 +126,21 @@ function App() {
   <Route path="/concepts/complex-geometry" element={<ComplexGeometryConcept />} />
   <Route path="/concepts/emotion-wave" element={<EmotionWaveConcept />} />
   <Route path="/concepts/synthesizer" element={<SynthesizerConcept />} />
+
+  {/* TechNotes */}
+  <Route path="/tech-notes/platonic-solids" element={<PlatonicSolidsTechNote />} />
+  <Route path="/tech-notes/merkaba-vector-equilibrium" element={<MerkabaVectorEquilibriumTechNote />} />
+  <Route path="/tech-notes/tesseract" element={<TesseractTechNote />} />
+  <Route path="/tech-notes/celestial-sphere" element={<CelestialSphereTechNote />} />
+  <Route path="/tech-notes/gravity-wave-observatory" element={<GravityWaveObservatoryTechNote />} />
+  <Route path="/tech-notes/zero-point" element={<ZeroPointTechNote />} />
+  <Route path="/tech-notes/horoscope" element={<HoroscopeTechNote />} />
+  <Route path="/tech-notes/27720-circle-system" element={<CircleSystem27720TechNote />} />
+  <Route path="/tech-notes/time-vector-space" element={<TimeVectorSpaceTechNote />} />
+  <Route path="/tech-notes/time-geometry" element={<TimeGeometryTechNote />} />
+  <Route path="/tech-notes/emotion-wave" element={<EmotionWaveTechNote />} />
+  <Route path="/tech-notes/synthesizer" element={<SynthesizerTechNote />} />
+  <Route path="/tech-notes/complex-geometry" element={<ComplexGeometryTechNote />} />
 </Routes>
           </main>
 

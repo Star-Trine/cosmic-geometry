@@ -42,6 +42,26 @@
   text-shadow: 0 0 15px #ddbbff, 0 0 25px #cc99ff, 0 0 40px #bb77ff;
 }
 
+@media (max-width: 900px) {
+  .navbar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navbar ul {
+    flex-shrink: 0;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .navbar ul li a {
+    font-size: 1rem;
+    padding-inline: 0.45rem;
+  }
+}
+
 /* スマホなど画面幅が狭い場合は文字を小さく間隔も詰める */
 @media (max-width: 600px) {
   .navbar {

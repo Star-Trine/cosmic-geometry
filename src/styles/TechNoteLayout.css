@@ -1,0 +1,154 @@
+.tech-note-page {
+  --tech-note-background: #050713;
+  --tech-note-panel: rgba(255, 255, 255, 0.045);
+  --tech-note-border: rgba(255, 255, 255, 0.14);
+  --tech-note-text: #f4f5ff;
+  --tech-note-subtext: #b9bed6;
+  --tech-note-accent: #9da8ff;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 5rem clamp(1.25rem, 5vw, 6rem) 8rem;
+  box-sizing: border-box;
+  color: var(--tech-note-text);
+  background:
+    radial-gradient(circle at 18% 10%, rgba(61, 103, 174, 0.2), transparent 31%),
+    radial-gradient(circle at 84% 34%, rgba(104, 70, 175, 0.16), transparent 28%),
+    var(--tech-note-background);
+}
+
+.tech-note-hero,
+.tech-note-section {
+  width: min(1040px, 100%);
+  margin-inline: auto;
+}
+
+.tech-note-hero {
+  padding-block: 2rem 5rem;
+}
+
+.tech-note-eyebrow {
+  margin: 0 0 0.9rem;
+  color: var(--tech-note-accent);
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.tech-note-hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.tech-note-work-title {
+  margin: 1.2rem 0 0;
+  color: var(--tech-note-subtext);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  line-height: 1.5;
+}
+
+.tech-note-intro {
+  max-width: 760px;
+  margin: 2rem 0 0;
+  color: var(--tech-note-subtext);
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.tech-note-section {
+  padding-block: 4.5rem;
+  border-top: 1px solid var(--tech-note-border);
+}
+
+.tech-note-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.tech-note-section-number {
+  margin: 0.25rem 0 0;
+  color: var(--tech-note-accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.tech-note-section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.tech-note-section-text {
+  max-width: 760px;
+  margin-inline: auto;
+  color: var(--tech-note-subtext);
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.tech-note-section-text p {
+  margin: 0;
+}
+
+.tech-note-section-text p + p {
+  margin-top: 0.8rem;
+}
+
+.tech-note-card {
+  padding: 1.7rem;
+  border: 1px solid var(--tech-note-border);
+  border-radius: 1rem;
+  background: var(--tech-note-panel);
+}
+
+.tech-note-list {
+  padding-left: 1.4rem;
+}
+
+.tech-note-list li {
+  margin-bottom: 0.7rem;
+  color: var(--tech-note-subtext);
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .tech-note-page {
+    padding: 3rem 1.1rem 7rem;
+  }
+
+  .tech-note-hero {
+    padding-bottom: 4rem;
+  }
+
+  .tech-note-section {
+    padding-block: 3.5rem;
+  }
+
+  .tech-note-section-heading {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .tech-note-hero h1 {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  .tech-note-section-heading {
+    display: block;
+  }
+
+  .tech-note-section-number {
+    margin-bottom: 0.65rem;
+  }
+
+  .tech-note-card {
+    padding: 1.25rem;
+  }
+}
