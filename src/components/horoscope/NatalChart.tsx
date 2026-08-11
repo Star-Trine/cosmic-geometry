@@ -4,7 +4,6 @@ export default function NatalChart() {
 
   const outerRadius = 220;
   const innerRadius = 170;
-  const ascLongitude = 210;
 
   const ascAngle = 180;
   const ascRadian = (ascAngle * Math.PI) / 180;
