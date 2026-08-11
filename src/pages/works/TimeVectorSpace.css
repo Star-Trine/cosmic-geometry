@@ -65,7 +65,16 @@
   letter-spacing: 0.1em;
 }
 
-.time-vector-work__concept-link {
+.time-vector-work__header-actions {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.time-vector-work__concept-link,
+.time-vector-work__tech-note-link {
   flex-shrink: 0;
   padding: 0.75rem 1.1rem;
   border: 1px solid var(--border);
@@ -86,7 +95,8 @@
     transform 180ms ease;
 }
 
-.time-vector-work__concept-link:hover {
+.time-vector-work__concept-link:hover,
+.time-vector-work__tech-note-link:hover {
   border-color: rgba(78, 216, 255, 0.55);
   box-shadow: 0 0 25px rgba(78, 216, 255, 0.12);
   transform: translateY(-2px);
@@ -591,8 +601,9 @@ p:not(.time-vector-result-card__label) + p {
     gap: 1.2rem;
   }
 
-  .time-vector-work__concept-link {
+  .time-vector-work__header-actions {
     justify-self: start;
+    justify-content: flex-start;
   }
 
   .time-vector-modes button {

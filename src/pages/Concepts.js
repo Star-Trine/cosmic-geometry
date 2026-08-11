@@ -6,103 +6,58 @@ import './Concepts.css';
 
 const conceptCategories = [
   {
-    id: 'sacred-geometry',
-    title: '神聖幾何学',
-    englishTitle: 'Sacred Geometry',
+    id: 'interpretation',
+    title: '既存概念の再解釈・拡張',
+    englishTitle: 'Interpretation',
     concepts: [
-      {
-        title: 'Platonic Solids（プラトン立体）',
-        path: '/concepts/platonic-solids',
-      },
-      {
-        title: 'Merkaba & Vector Equilibrium（マカバとベクトル平衡体）',
-        path: '/concepts/merkaba-vector-equilibrium',
-      },
       {
         title: 'Tesseract（テッセラクト）',
         path: '/concepts/tesseract',
+        summary: '見えない第4の空間軸を、次元生成と3次元投影から観察する。',
       },
-    ],
-  },
-  {
-    id: 'astronomy',
-    title: '天文学',
-    englishTitle: 'Astronomy',
-    concepts: [
       {
         title: 'Celestial Sphere（天球）',
         path: '/concepts/celestial-sphere',
+        summary: '星座だけでなく、星が配置される天球構造そのものを観察する。',
       },
-      {
-        title: 'Gravity Wave Observatory（重力波観測所）',
-        path: '/concepts/gravity-wave-observatory',
-      },
-      {
-        title: 'Zero Point（ゼロ・ポイント）',
-        path: '/concepts/zero-point',
-      },
-    ],
-  },
-  {
-    id: 'astrology',
-    title: '占星学',
-    englishTitle: 'Astrology',
-    concepts: [
       {
         title: 'Horoscope（ホロスコープ）',
         path: '/concepts/horoscope',
-      },
-      {
-        title: '27720 Circle System（27720円体系）',
-        path: '/concepts/27720-circle-system',
+        summary: '出生図に含まれる天体・ハウス・アスペクトの構造を視覚表現へ変換する。',
       },
     ],
   },
   {
-    id: 'time-geometry',
-    title: '時間幾何学',
-    englishTitle: 'Time Geometry',
+    id: 'original-theory',
+    title: '独自理論・独自体系',
+    englishTitle: 'Original Theory',
     concepts: [
       {
         title: 'Time Vector Space（時間ベクトル空間）',
         path: '/concepts/time-vector-space',
+        summary: '時間をベクトル空間として捉え、関係・方向・変換を数学的に探究する。',
       },
       {
         title: 'Time Synchronization Experiment（時間同期実験）',
         path: '/concepts/time-geometry',
+        summary: '異なる速度を持つ複数の時間が、一時的に同期する状態を観察する。',
       },
-    ],
-  },
-  {
-    id: 'wave-laboratory',
-    title: '波動実験室',
-    englishTitle: 'Wave Laboratory',
-    concepts: [
       {
         title: 'Emotion Wave（感情の波）',
         path: '/concepts/emotion-wave',
+        summary: '感情を波として捉え、重なりから生まれる干渉と調和を可視化する。',
       },
     ],
   },
   {
-    id: 'digital-audio',
-    title: '音響・DTM',
-    englishTitle: 'Sound / DTM',
+    id: 'sensory-experiments',
+    title: '感覚表現の実験',
+    englishTitle: 'Sensory Experiments',
     concepts: [
       {
         title: 'Synthesizer（シンセサイザー）',
         path: '/concepts/synthesizer',
-      },
-    ],
-  },
-  {
-    id: 'complex-geometry',
-    title: '複素幾何学',
-    englishTitle: 'Complex Geometry',
-    concepts: [
-      {
-        title: 'Complex Geometry（複素幾何学）',
-        path: '/concepts/complex-geometry',
+        summary: '音の生成と加工を、波形やスペクトルとともに体験する。',
       },
     ],
   },
@@ -119,10 +74,10 @@ function Concepts() {
 
   return (
     <main className="concepts">
-      <h1>Concepts(設計思想)</h1>
+      <h1>Concepts (設計思想)</h1>
 
       <p>
-        このページでは、各作品の設計思想、数学的背景、実装方法、
+        このページでは、各作品の設計思想、数学的背景、
         制作メモなどをまとめています。
       </p>
 
@@ -161,7 +116,14 @@ function Concepts() {
                 >
                   {category.concepts.map((concept) => (
                     <li key={concept.path}>
-                      <Link to={concept.path}>{concept.title}</Link>
+                      <Link to={concept.path}>
+                        <span className="concepts-item-title">
+                          {concept.title}
+                        </span>
+                        <span className="concepts-item-summary">
+                          {concept.summary}
+                        </span>
+                      </Link>
                     </li>
                   ))}
                 </ul>

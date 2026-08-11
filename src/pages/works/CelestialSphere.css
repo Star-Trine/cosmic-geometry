@@ -7,6 +7,7 @@
 .celestial-sphere__concept-area {
   display: flex;
   justify-content: flex-end;
+  gap: 0.75rem;
   margin-bottom: 0.8rem;
 }
 
@@ -73,7 +74,8 @@
   display: block;
 }
 
-.celestial-sphere__concept-link {
+.celestial-sphere__concept-link,
+.celestial-sphere__tech-note-link {
   flex-shrink: 0;
   padding: 0.75rem 1.1rem;
 
@@ -96,7 +98,8 @@
     transform 180ms ease;
 }
 
-.celestial-sphere__concept-link:hover {
+.celestial-sphere__concept-link:hover,
+.celestial-sphere__tech-note-link:hover {
   border-color: rgba(78, 216, 255, 0.55);
   box-shadow: 0 0 25px rgba(78, 216, 255, 0.12);
   transform: translateY(-2px);
@@ -108,6 +111,7 @@
   }
 
   .celestial-sphere__concept-area {
+    flex-wrap: wrap;
     justify-content: flex-start;
   }
 

@@ -1,82 +1,324 @@
+/* src/pages/TechNotes.css */
+
 .tech-notes {
-  width: min(960px, 100%);
+  width: min(880px, 100%);
   margin: 0 auto;
-  padding: 2rem 1rem 6rem;
+  padding: 3rem 1.5rem 6rem;
   box-sizing: border-box;
 }
 
+.tech-notes h1 {
+  margin-bottom: 1rem;
+}
+
 .tech-notes-intro {
-  margin-bottom: 2rem;
+  margin: 0 0 2.5rem;
   color: rgba(224, 231, 255, 0.78);
   line-height: 1.8;
 }
 
+
+/* =========================
+   Category List
+========================= */
+
 .tech-notes-category-list {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
+
+/* =========================
+   Category
+========================= */
+
 .tech-notes-category {
+  position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
+
+  border: 1px solid rgba(140, 180, 255, 0.18);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(80, 120, 200, 0.025),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
 }
+
+
+/* 左側の構造ライン */
+.tech-notes-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 2px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(130, 170, 255, 0.55),
+    rgba(130, 170, 255, 0.08)
+  );
+
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+
+/* =========================
+   Category Button
+========================= */
 
 .tech-notes-category-button {
   width: 100%;
-  padding: 1.2rem 1.4rem;
+  padding: 1.4rem 1.6rem 1.4rem 1.8rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+
   border: 0;
+
   color: inherit;
   background: transparent;
+
   font: inherit;
   text-align: left;
+
   cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    padding-left 0.25s ease;
 }
 
 .tech-notes-category-button:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(120, 160, 230, 0.04);
+  padding-left: 2rem;
 }
 
 .tech-notes-category-button span:first-child {
   font-size: 1.2rem;
   font-weight: 600;
+  letter-spacing: 0.015em;
 }
+
+
+/* =========================
+   Category Icon
+========================= */
 
 .tech-notes-category-icon {
   flex-shrink: 0;
-  font-size: 1.4rem;
+
+  font-size: 1.35rem;
+  font-weight: 300;
+
+  opacity: 0.72;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
+
+.tech-notes-category-button:hover .tech-notes-category-icon {
+  opacity: 1;
+}
+
+.tech-notes-category.is-open .tech-notes-category-icon {
+  transform: rotate(180deg);
+}
+
+
+/* =========================
+   Open State
+========================= */
+
+.tech-notes-category.is-open {
+  border-color: rgba(140, 180, 255, 0.32);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(80, 120, 200, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+
+/* 開いた部分の区切り */
+.tech-notes-category.is-open .tech-notes-list {
+  border-top: 1px solid rgba(140, 180, 255, 0.1);
+}
+
+
+/* =========================
+   TechNote List
+========================= */
 
 .tech-notes-list {
   margin: 0;
-  padding: 0 1.4rem 1.4rem 3rem;
+  padding: 1rem 1.6rem 1.6rem 2rem;
+
+  list-style: none;
 }
 
+
+/* 各TechNoteをノードっぽく */
 .tech-notes-list li {
-  margin-top: 1rem;
+  position: relative;
+
+  margin: 0;
+  padding: 0.9rem 0 0.9rem 1.6rem;
 }
+
+
+/* ノード */
+.tech-notes-list li::before {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  top: 1.55rem;
+
+  width: 7px;
+  height: 7px;
+
+  border: 1px solid rgba(150, 190, 255, 0.65);
+  border-radius: 50%;
+
+  background: rgba(20, 30, 55, 0.9);
+
+}
+
+
+/* ノードから伸びる短い線 */
+.tech-notes-list li::after {
+  content: '';
+
+  position: absolute;
+  left: 7px;
+  top: 1.78rem;
+
+  width: 9px;
+  height: 1px;
+
+  background: rgba(150, 190, 255, 0.22);
+
+}
+
+
+/* 項目同士の区切り */
+.tech-notes-list li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================
+   Links
+========================= */
 
 .tech-notes-list a {
+  display: block;
+
   color: inherit;
+
   font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+
   text-decoration: none;
+
+  opacity: 0.9;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .tech-notes-list a:hover {
-  text-decoration: underline;
+  opacity: 1;
+  transform: translateX(4px);
 }
+
+.tech-notes-item-title,
+.tech-notes-item-type,
+.tech-notes-item-labels {
+  display: block;
+}
+
+.tech-notes-item-type {
+  margin-top: 0.25rem;
+  color: rgba(183, 205, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.tech-notes-item-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+}
+
+.tech-notes-technology,
+.tech-notes-status {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid rgba(150, 190, 255, 0.24);
+  border-radius: 999px;
+  color: rgba(224, 233, 255, 0.82);
+  background: rgba(100, 145, 220, 0.07);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.tech-notes-technology.is-considering {
+  border-style: dashed;
+  color: rgba(224, 231, 255, 0.58);
+  background: transparent;
+}
+
+.tech-notes-status {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(224, 231, 255, 0.64);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================
+   Responsive
+========================= */
 
 @media (max-width: 560px) {
   .tech-notes {
-    padding-inline: 0.8rem;
+    padding: 2rem 0.8rem 5rem;
+  }
+
+  .tech-notes-intro {
+    margin-bottom: 2rem;
+  }
+
+  .tech-notes-category-list {
+    gap: 1rem;
   }
 
   .tech-notes-category-button {
-    padding: 1rem;
+    padding: 1.15rem 1rem 1.15rem 1.25rem;
+  }
+
+  .tech-notes-category-button:hover {
+    padding-left: 1.25rem;
   }
 
   .tech-notes-category-button span:first-child {
@@ -84,6 +326,10 @@
   }
 
   .tech-notes-list {
-    padding: 0 1rem 1.2rem 2rem;
+    padding: 0.8rem 1rem 1.2rem 1.4rem;
+  }
+
+  .tech-notes-list li {
+    padding-left: 1.5rem;
   }
 }

@@ -170,6 +170,13 @@ export default function EmotionWave() {
         Conceptを見る
       </a>
 
+      <a
+        href="/tech-notes/emotion-wave"
+        className="emotion-wave-tech-note-link"
+      >
+        TechNoteを見る
+      </a>
+
       <button
         type="button"
         className="emotion-reset-button"

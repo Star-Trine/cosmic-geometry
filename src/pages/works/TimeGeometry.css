@@ -14,10 +14,12 @@
 .time-geometry-actions {
   display: flex;
   justify-content: flex-end;
+  gap: 0.75rem;
   margin-bottom: 1rem;
 }
 
-.time-geometry-concept-link {
+.time-geometry-concept-link,
+.time-geometry-tech-note-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +50,8 @@
     transform 180ms ease;
 }
 
-.time-geometry-concept-link:hover {
+.time-geometry-concept-link:hover,
+.time-geometry-tech-note-link:hover {
   border-color: rgba(183, 167, 255, 0.55);
   box-shadow: 0 0 25px rgba(120, 90, 220, 0.14);
   transform: translateY(-2px);
@@ -123,6 +126,7 @@
   }
 
   .time-geometry-actions {
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -141,7 +145,8 @@
     margin-bottom: 1.5rem;
   }
 
-  .time-geometry-concept-link {
+  .time-geometry-concept-link,
+  .time-geometry-tech-note-link {
     min-width: 120px;
   }
 }

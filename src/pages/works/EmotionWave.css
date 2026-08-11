@@ -65,6 +65,7 @@
 }
 
 .emotion-wave-concept-link,
+.emotion-wave-tech-note-link,
 .emotion-reset-button {
   min-width: 120px;
   padding: 0.75rem 1.2rem;
@@ -80,7 +81,8 @@
   white-space: nowrap;
 }
 
-.emotion-wave-concept-link {
+.emotion-wave-concept-link,
+.emotion-wave-tech-note-link {
   text-decoration: none;
 
   background:
@@ -96,7 +98,8 @@
     transform 180ms ease;
 }
 
-.emotion-wave-concept-link:hover {
+.emotion-wave-concept-link:hover,
+.emotion-wave-tech-note-link:hover {
   border-color: rgba(183, 167, 255, 0.55);
   box-shadow: 0 0 25px rgba(120, 90, 220, 0.14);
   transform: translateY(-2px);

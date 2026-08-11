@@ -52,6 +52,12 @@ const TimeGeometry = () => {
         >
           Conceptを見る
         </a>
+        <a
+          href="/tech-notes/time-geometry"
+          className="time-geometry-tech-note-link"
+        >
+          TechNoteを見る
+        </a>
       </div>
 
       <section className="time-geometry">

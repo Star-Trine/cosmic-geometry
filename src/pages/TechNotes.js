@@ -4,65 +4,68 @@ import './TechNotes.css';
 
 const techNoteCategories = [
   {
-    id: 'sacred-geometry',
-    title: '神聖幾何学',
-    englishTitle: 'Sacred Geometry',
+    id: 'interpretation',
+    title: '既存概念の再解釈・拡張',
+    englishTitle: 'Interpretation',
     techNotes: [
-      { title: 'Platonic Solids（プラトン立体）', path: '/tech-notes/platonic-solids' },
-      { title: 'Merkaba & Vector Equilibrium（マカバとベクトル平衡体）', path: '/tech-notes/merkaba-vector-equilibrium' },
-      { title: 'Tesseract（テッセラクト）', path: '/tech-notes/tesseract' },
+      {
+        title: 'Tesseract（テッセラクト）',
+        path: '/tech-notes/tesseract',
+        type: '4D Projection / Particle Visualization',
+        technologies: ['React', 'JavaScript', 'R3F', 'Three.js'],
+      },
+      {
+        title: 'Celestial Sphere（天球）',
+        path: '/tech-notes/celestial-sphere',
+        type: 'Celestial Coordinate Visualization',
+        technologies: ['React', 'JavaScript', 'R3F', 'Three.js'],
+      },
+      {
+        title: 'Horoscope（ホロスコープ）',
+        path: '/tech-notes/horoscope',
+        type: 'Natal Chart / Visual Profile',
+        technologies: ['React', 'TypeScript', 'SVG'],
+        consideringTechnologies: ['Node.js', 'External Astrology API'],
+      },
     ],
   },
   {
-    id: 'astronomy',
-    title: '天文学',
-    englishTitle: 'Astronomy',
+    id: 'original-theory',
+    title: '独自理論・独自体系',
+    englishTitle: 'Original Theory',
     techNotes: [
-      { title: 'Celestial Sphere（天球）', path: '/tech-notes/celestial-sphere' },
-      { title: 'Gravity Wave Observatory（重力波観測所）', path: '/tech-notes/gravity-wave-observatory' },
-      { title: 'Zero Point（ゼロ・ポイント）', path: '/tech-notes/zero-point' },
+      {
+        title: 'Time Vector Space（時間ベクトル空間）',
+        path: '/tech-notes/time-vector-space',
+        type: 'Interactive 3D Mathematics',
+        technologies: ['React', 'JavaScript', 'R3F', 'Three.js', 'KaTeX'],
+      },
+      {
+        title: 'Time Synchronization Experiment（時間同期実験）',
+        path: '/tech-notes/time-geometry',
+        type: 'SVG Vector Animation',
+        technologies: ['React', 'JavaScript', 'SVG', 'CSS'],
+      },
+      {
+        title: 'Emotion Wave（感情の波）',
+        path: '/tech-notes/emotion-wave',
+        type: 'Interactive Wave Visualization',
+        technologies: ['React', 'JavaScript', 'SVG', 'CSS'],
+      },
     ],
   },
   {
-    id: 'astrology',
-    title: '占星学',
-    englishTitle: 'Astrology',
+    id: 'sensory-experiments',
+    title: '感覚表現の実験',
+    englishTitle: 'Sensory Experiments',
     techNotes: [
-      { title: 'Horoscope（ホロスコープ）', path: '/tech-notes/horoscope' },
-      { title: '27720 Circle System（27720円体系）', path: '/tech-notes/27720-circle-system' },
-    ],
-  },
-  {
-    id: 'time-geometry',
-    title: '時間幾何学',
-    englishTitle: 'Time Geometry',
-    techNotes: [
-      { title: 'Time Vector Space（時間ベクトル空間）', path: '/tech-notes/time-vector-space' },
-      { title: 'Time Synchronization Experiment（時間同期実験）', path: '/tech-notes/time-geometry' },
-    ],
-  },
-  {
-    id: 'wave-laboratory',
-    title: '波動実験室',
-    englishTitle: 'Wave Laboratory',
-    techNotes: [
-      { title: 'Emotion Wave（感情の波）', path: '/tech-notes/emotion-wave' },
-    ],
-  },
-  {
-    id: 'digital-audio',
-    title: '音響・DTM',
-    englishTitle: 'Sound / DTM',
-    techNotes: [
-      { title: 'Synthesizer（シンセサイザー）', path: '/tech-notes/synthesizer' },
-    ],
-  },
-  {
-    id: 'complex-geometry',
-    title: '複素幾何学',
-    englishTitle: 'Complex Geometry',
-    techNotes: [
-      { title: 'Complex Geometry（複素幾何学）', path: '/tech-notes/complex-geometry' },
+      {
+        title: 'Synthesizer（シンセサイザー）',
+        path: '/tech-notes/synthesizer',
+        type: 'Audio Interaction / Planned Work',
+        technologies: [],
+        status: 'Coming Soon',
+      },
     ],
   },
 ];
@@ -107,7 +110,40 @@ export default function TechNotes() {
                 <ul id={`${category.id}-tech-notes`} className="tech-notes-list">
                   {category.techNotes.map((techNote) => (
                     <li key={techNote.path}>
-                      <Link to={techNote.path}>{techNote.title}</Link>
+                      <Link to={techNote.path}>
+                        <span className="tech-notes-item-title">
+                          {techNote.title}
+                        </span>
+                        <span className="tech-notes-item-type">
+                          {techNote.type}
+                        </span>
+
+                        <span className="tech-notes-item-labels">
+                          {techNote.technologies.map((technology) => (
+                            <span
+                              key={technology}
+                              className="tech-notes-technology"
+                            >
+                              {technology}
+                            </span>
+                          ))}
+
+                          {techNote.consideringTechnologies?.map((technology) => (
+                            <span
+                              key={technology}
+                              className="tech-notes-technology is-considering"
+                            >
+                              検討中: {technology}
+                            </span>
+                          ))}
+
+                          {techNote.status && (
+                            <span className="tech-notes-status">
+                              {techNote.status}
+                            </span>
+                          )}
+                        </span>
+                      </Link>
                     </li>
                   ))}
                 </ul>

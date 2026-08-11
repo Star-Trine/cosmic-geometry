@@ -6,62 +6,28 @@ import './Works.css';
 
 const worksCategories = [
   {
-    id: 'sacred-geometry',
-    title: '神聖幾何学',
-    englishTitle: 'Sacred Geometry',
+    id: 'interpretation',
+    title: '既存概念の再解釈・拡張',
+    englishTitle: 'Interpretation',
     works: [
-      {
-        title: 'Platonic Solids（プラトン立体）',
-        path: '/works/platonic-solids',
-      },
-      {
-        title: 'Merkaba & Vector Equilibrium（マカバとベクトル平衡体）',
-        path: '/works/merkaba-vector-equilibrium',
-      },
       {
         title: 'Tesseract（テッセラクト）',
         path: '/works/tesseract',
       },
-    ],
-  },
-  {
-    id: 'astronomy',
-    title: '天文学',
-    englishTitle: 'Astronomy',
-    works: [
       {
         title: 'Celestial Sphere（天球）',
         path: '/works/celestial-sphere',
       },
       {
-        title: 'Gravity Wave Observatory（重力波観測所）',
-        path: '/works/gravity-wave-observatory',
-      },
-      {
-        title: 'Zero Point（ゼロ・ポイント）',
-        path: '/works/zero-point',
-      },
-    ],
-  },
-  {
-    id: 'astrology',
-    title: '占星学',
-    englishTitle: 'Astrology',
-    works: [
-      {
         title: 'Horoscope（ホロスコープ）',
         path: '/works/horoscope',
       },
-      {
-        title: '27720 Circle System（27720円体系）',
-        path: '/works/27720-circle-system',
-      },
     ],
   },
   {
-    id: 'time-geometry',
-    title: '時間幾何学',
-    englishTitle: 'Time Geometry',
+    id: 'original-theory',
+    title: '独自理論・独自体系',
+    englishTitle: 'Original Theory',
     works: [
       {
         title: 'Time Vector Space（時間ベクトル空間）',
@@ -71,13 +37,6 @@ const worksCategories = [
         title: 'Time Synchronization Experiment（時間同期実験）',
         path: '/works/time-geometry',
       },
-    ],
-  },
-  {
-    id: 'wave-laboratory',
-    title: '波動実験室',
-    englishTitle: 'Wave Laboratory',
-    works: [
       {
         title: 'Emotion Wave（感情の波）',
         path: '/works/emotion-wave',
@@ -85,24 +44,13 @@ const worksCategories = [
     ],
   },
   {
-    id: 'digital-audio',
-    title: '音響・DTM',
-    englishTitle: 'Sound / DTM',
+    id: 'sensory-experiments',
+    title: '感覚表現の実験',
+    englishTitle: 'Sensory Experiments',
     works: [
       {
         title: 'Synthesizer（シンセサイザー）',
         path: '/works/synthesizer',
-      },
-    ],
-  },
-  {
-    id: 'complex-geometry',
-    title: '複素幾何学',
-    englishTitle: 'Complex Geometry',
-    works: [
-      {
-        title: 'Complex Geometry（複素幾何学）',
-        path: '/works/complex-geometry',
       },
     ],
   },
@@ -119,7 +67,12 @@ function Works() {
 
   return (
     <main className="works">
-      <h1>作品一覧</h1>
+      <h1>Work (作品一覧)</h1>
+
+
+    <p className="works-intro">
+      数学・宇宙・時間・感覚をテーマに制作した、Cosmic Geometryの作品をまとめています。
+    </p>
 
       <div className="works-category-list">
         {worksCategories.map((category) => {

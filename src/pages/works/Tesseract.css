@@ -41,10 +41,17 @@
   line-height: 1.9;
 }
 
-.tesseract__concept-link {
+.tesseract__header-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.75rem;
+  margin-top: 24px;
+}
+
+.tesseract__concept-link,
+.tesseract__tech-note-link {
   flex-shrink: 0;
   align-self: flex-start;
-  margin-top: 24px;
   padding: 0.75rem 1.1rem;
 
   border: 1px solid rgba(183, 167, 255, 0.22);
@@ -67,7 +74,8 @@
     transform 180ms ease;
 }
 
-.tesseract__concept-link:hover {
+.tesseract__concept-link:hover,
+.tesseract__tech-note-link:hover {
   border-color: rgba(183, 167, 255, 0.55);
   box-shadow: 0 0 25px rgba(120, 90, 220, 0.14);
   transform: translateY(-2px);
@@ -175,8 +183,9 @@
     gap: 1.2rem;
   }
 
-  .tesseract__concept-link {
+  .tesseract__header-actions {
     align-self: flex-start;
+    flex-wrap: wrap;
     margin-top: 0;
   }
 

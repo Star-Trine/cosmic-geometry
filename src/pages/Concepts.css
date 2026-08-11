@@ -1,34 +1,88 @@
 /* src/pages/Concepts.css */
 
 .concepts {
-  max-width: 960px;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 2rem 1rem 4rem;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+.concepts h1 {
+  margin-bottom: 1rem;
 }
 
 .concepts > p {
-  margin-bottom: 2rem;
-  line-height: 1.8;
+  margin: 0 0 3rem;
+  line-height: 1.9;
+  opacity: 0.82;
 }
+
+
+/* =========================
+   Category List
+========================= */
 
 .concepts-category-list {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
+
+/* =========================
+   Category
+========================= */
+
 .concepts-category {
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
+  position: relative;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.008)
+    );
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
+
+
+/* 小さな光のライン */
+.concepts-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.16),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   Category Button
+========================= */
 
 .concepts-category-button {
   width: 100%;
-  padding: 1.2rem 1.4rem;
+  padding: 1.55rem 1.7rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
 
   color: inherit;
   font: inherit;
@@ -37,35 +91,149 @@
   background: transparent;
   border: none;
   cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    padding-left 0.3s ease;
 }
 
 .concepts-category-button:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.025);
+  padding-left: 1.9rem;
 }
 
 .concepts-category-button span:first-child {
   font-size: 1.2rem;
   font-weight: 600;
+  letter-spacing: 0.015em;
 }
 
+
+/* =========================
+   Category Icon
+========================= */
+
 .concepts-category-icon {
-  font-size: 1.4rem;
+  flex-shrink: 0;
+
+  font-size: 1.35rem;
+  font-weight: 300;
+
+  opacity: 0.72;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
+
+.concepts-category-button:hover .concepts-category-icon {
+  opacity: 1;
+}
+
+.concepts-category.is-open .concepts-category-icon {
+  transform: rotate(180deg);
+}
+
+
+/* =========================
+   Open State
+========================= */
+
+.concepts-category.is-open {
+  border-color: rgba(255, 255, 255, 0.2);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+
+/* 開いた時の区切り */
+.concepts-category.is-open .concepts-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================
+   Concept List
+========================= */
 
 .concepts-list {
   margin: 0;
-  padding: 0 1.4rem 1.4rem 3rem;
+  padding: 1.1rem 1.7rem 1.7rem;
+
+  list-style: none;
 }
 
+
+/* 各Concept */
 .concepts-list li {
-  margin-top: 0.7rem;
+  position: relative;
+
+  margin: 0;
+  padding: 0.85rem 0 0.85rem 1.5rem;
 }
+
+
+/* 小さなシンボル */
+.concepts-list li::before {
+  content: '◇';
+
+  position: absolute;
+  left: 0;
+  top: 0.85rem;
+
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+
+
+/* Concept同士の細い区切り */
+.concepts-list li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+
+/* =========================
+   Links
+========================= */
 
 .concepts-list a {
+  display: block;
+
   color: inherit;
   text-decoration: none;
+
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+
+  opacity: 0.88;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .concepts-list a:hover {
-  text-decoration: underline;
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.concepts-item-title,
+.concepts-item-summary {
+  display: block;
+}
+
+.concepts-item-title {
+  font-weight: 600;
+}
+
+.concepts-item-summary {
+  margin-top: 0.35rem;
+  color: rgba(224, 231, 255, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.7;
 }

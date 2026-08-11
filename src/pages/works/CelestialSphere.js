@@ -325,6 +325,12 @@ export default function CelestialSphere() {
         >
           Conceptを見る
         </a>
+        <a
+          href="/tech-notes/celestial-sphere"
+          className="celestial-sphere__tech-note-link"
+        >
+          TechNoteを見る
+        </a>
       </div>
 
       <div className="celestial-sphere">

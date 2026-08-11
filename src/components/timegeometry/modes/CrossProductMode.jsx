@@ -251,12 +251,20 @@ export default function CrossProductMode({ navigation }) {
             <span>時間ベクトルの外積</span>
           </h1>
         </div>
-        <a
-          href="/concepts/time-vector-space"
-          className="time-vector-work__concept-link"
-        >
-          Conceptを見る
-        </a>
+        <div className="time-vector-work__header-actions">
+          <a
+            href="/concepts/time-vector-space"
+            className="time-vector-work__concept-link"
+          >
+            Conceptを見る
+          </a>
+          <a
+            href="/tech-notes/time-vector-space"
+            className="time-vector-work__tech-note-link"
+          >
+            TechNoteを見る
+          </a>
+        </div>
       </header>
 
       {navigation}

@@ -354,12 +354,20 @@ export default function Tesseract() {
       </p>
     </div>
 
-    <a
-      href="/concepts/tesseract"
-      className="tesseract__concept-link"
-    >
-      Conceptを見る
-    </a>
+    <div className="tesseract__header-actions">
+      <a
+        href="/concepts/tesseract"
+        className="tesseract__concept-link"
+      >
+        Conceptを見る
+      </a>
+      <a
+        href="/tech-notes/tesseract"
+        className="tesseract__tech-note-link"
+      >
+        TechNoteを見る
+      </a>
+    </div>
   </header>
 
       <section className="tesseract__viewer">
