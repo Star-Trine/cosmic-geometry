@@ -7,7 +7,7 @@ export default function About(){
         <br>
         </br>
         <p>
-          Cosmic Geometryは、宇宙・時間・感覚・神秘をテーマに、
+          Cosmic Geometryは、幾何学、波動、宇宙などをテーマに、
           インタラクティブな表現を探究する個人制作プロジェクトです。<br /><br />
 
           フロントエンド表現にはReact、バックエンド構築にはNode.jsを用い、

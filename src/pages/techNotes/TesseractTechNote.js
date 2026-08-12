@@ -1,5 +1,6 @@
 import '../../styles/TechNoteLayout.css';
 import './TesseractTechNote.css';
+import { Link } from 'react-router-dom';
 
 const sections = [
   {
@@ -118,6 +119,17 @@ export default function TesseractTechNote() {
           </div>
         </section>
       ))}
+
+      <section className="tech-note-section tech-note-interactive">
+        <div className="tech-note-section-heading">
+          <h2>Interactive Work</h2>
+        </div>
+        <div className="tech-note-interactive-card">
+          <Link to="/works/tesseract" className="tech-note-interactive-button">
+            Interactive Workを開く
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

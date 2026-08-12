@@ -1,0 +1,131 @@
+.site-architecture {
+  --architecture-background: #050713;
+  --architecture-panel: rgba(255, 255, 255, 0.045);
+  --architecture-border: rgba(255, 255, 255, 0.14);
+  --architecture-text: #f4f5ff;
+  --architecture-subtext: #b9bed6;
+  --architecture-accent: #9da8ff;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 5rem clamp(1.25rem, 5vw, 6rem) 8rem;
+  box-sizing: border-box;
+  color: var(--architecture-text);
+  background:
+    radial-gradient(circle at 18% 10%, rgba(61, 103, 174, 0.18), transparent 31%),
+    radial-gradient(circle at 84% 34%, rgba(104, 70, 175, 0.14), transparent 28%),
+    var(--architecture-background);
+}
+
+.site-architecture-hero,
+.site-architecture-sections {
+  width: min(1040px, 100%);
+  margin-inline: auto;
+}
+
+.site-architecture-hero {
+  padding-block: 2rem 5rem;
+}
+
+.site-architecture-eyebrow {
+  margin: 0 0 0.9rem;
+  color: var(--architecture-accent);
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.site-architecture-hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.site-architecture-intro {
+  max-width: 760px;
+  margin: 2rem 0 0;
+  color: var(--architecture-subtext);
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.site-architecture-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.site-architecture-section {
+  min-width: 0;
+  padding: 2rem;
+  border: 1px solid var(--architecture-border);
+  border-radius: 1rem;
+  background: var(--architecture-panel);
+}
+
+.site-architecture-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.site-architecture-section-number {
+  margin-top: 0.2rem;
+  color: var(--architecture-accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+}
+
+.site-architecture-section h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.site-architecture-section p {
+  margin: 0;
+  color: var(--architecture-subtext);
+  font-size: 0.96rem;
+  line-height: 1.9;
+}
+
+.site-architecture-status {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--architecture-border);
+  border-radius: 999px;
+  color: var(--architecture-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .site-architecture {
+    padding: 3rem 1.1rem 2rem;
+  }
+
+  .site-architecture-hero {
+    padding-bottom: 4rem;
+  }
+
+  .site-architecture-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .site-architecture-hero h1 {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  .site-architecture-section {
+    padding: 1.25rem;
+  }
+}

@@ -71,7 +71,7 @@ function Works() {
 
 
     <p className="works-intro">
-      数学・宇宙・時間・感覚をテーマに制作した、Cosmic Geometryの作品をまとめています。
+      幾何学、波動、宇宙などをテーマに制作した、Cosmic Geometryの作品をまとめています。
     </p>
 
       <div className="works-category-list">

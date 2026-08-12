@@ -16,8 +16,7 @@
 
   color: #e0e7ff;
   background: rgba(0, 0, 30, 0.2);
-  backdrop-filter: blur(0.5px);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(220, 240, 255, 0.06);
 }
 
 .hero-content {

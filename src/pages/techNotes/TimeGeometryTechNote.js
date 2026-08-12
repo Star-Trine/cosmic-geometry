@@ -1,77 +1,80 @@
 import '../../styles/TechNoteLayout.css';
 import './TimeGeometryTechNote.css';
+import { Link } from 'react-router-dom';
 
 const sections = [
   {
     number: '01',
     title: 'Overview（概要）',
     paragraphs: [
-      'この作品の技術的な目的と、実装全体の概要を紹介します。',
-      '作品のコンセプトを、どのような技術と構成で実現しているかを整理します。',
+      'Time Synchronization Experimentは、3本の時間ベクトル t1・t2・t3 を異なる速度で回転させ、一時的に角度が近づく状態を「同期」として可視化する作品です。',
+      '一般的な数学として角度、ラジアン変換、三角関数、円周上の座標計算を使用し、異なる回転速度を持つベクトルを時間軸として扱う部分と、角度差10度以内を同期とみなす条件は、本作品における独自の可視化モデルです。',
     ],
   },
   {
     number: '02',
-    title: 'Technology Stack（使用技術）',
+    title: 'State Management（状態管理）',
     paragraphs: [
-      'この作品で使用しているライブラリ、フレームワーク、描画技術について紹介します。',
-      '各技術を採用した理由についても、今後追記します。',
+      'ReactのuseStateを使い、3本の時間ベクトルの現在角度を angles として保持しています。初期値は t1 = 0度、t2 = 90度、t3 = 180度です。',
+      'setAnglesはstateを更新するためにReactから渡される関数です。角度が更新されるとコンポーネントが再レンダリングされ、新しい角度を使ってSVGの位置が再計算されます。',
     ],
   },
   {
     number: '03',
-    title: 'Component Structure（コンポーネント構成）',
+    title: 'Animation Flow（アニメーション）',
     paragraphs: [
-      '画面を構成する主要なコンポーネントと、それぞれの役割を整理します。',
-      'コンポーネント同士の関係や責務について、コードを確認しながら追記します。',
+      'useEffect内でsetIntervalを開始し、約16ミリ秒ごとにsetAnglesを呼び出しています。',
+      '更新時には現在のstateをprevとして受け取り、t1は1度、t2は0.8度、t3は0.5度ずつ加算します。360度を超えた値は % 360 によって0〜359度の範囲へ戻します。',
     ],
   },
   {
     number: '04',
-    title: 'Data Flow（データフロー）',
+    title: 'Coordinate Calculation（座標計算）',
     paragraphs: [
-      'データがどこで定義され、どのように各コンポーネントへ渡されているかを説明します。',
-      '状態管理、プロパティ、イベント処理などの流れも整理します。',
+      'angleToCoords関数では、度数法で保持している角度をラジアンへ変換し、Math.cosとMath.sinを使ってSVG上のx・y座標を計算します。',
+      'SVGの中心は (150, 150)、ベクトル長は100です。各時間ベクトルの角度から円周上の終点座標を求め、その値をSVGのline要素へ渡します。',
     ],
   },
   {
     number: '05',
-    title: 'Rendering and Calculation（描画・計算の仕組み）',
+    title: 'Synchronization Logic（同期判定）',
     paragraphs: [
-      '画面上の図形、アニメーション、3Dモデル、数値結果がどのように描画・計算されているかを紹介します。',
-      '作品固有の数式や座標変換についても、今後詳しく解説します。',
+      'isSynchro関数は、2つの角度の差を計算し、その差が10度未満の場合を同期状態と判定します。',
+      '358度と2度のように0度と360度の境界をまたぐ場合も近い角度として扱うため、差が350度を超える場合も同期と判定しています。',
+      '現在はt1とt2、またはt1とt3が同期した場合に、t1の色をシアンへ変更します。',
     ],
   },
   {
     number: '06',
-    title: 'Interaction Design（インタラクション設計）',
+    title: 'SVG Rendering（SVG描画）',
     paragraphs: [
-      'ユーザーの操作と画面表示が、どのように連動しているかを整理します。',
-      'ボタン、スライダー、カメラ操作、モード切り替えなどの実装を紹介します。',
+      '3本のベクトルはSVGのline要素として描画しています。始点はすべて中心座標 (150, 150) で固定し、angleToCoordsで求めた座標を終点 x2・y2 に使用します。',
+      'state更新による再レンダリングと座標計算が繰り返されることで、3本の線が異なる速度で回転しているように見えます。',
     ],
   },
   {
     number: '07',
-    title: 'Challenges and Solutions（課題と解決方法）',
+    title: 'CSS and Responsive Design（CSS・レスポンシブ）',
     paragraphs: [
-      '実装中に発生した問題と、その原因、解決方法を記録します。',
-      '描画、レイアウト、パフォーマンス、レスポンシブ対応などの課題を順次追加します。',
+      '作品全体は最大幅680pxのパネルとして構成し、CSS変数で背景、境界線、文字色などを管理しています。',
+      'radial-gradientやbackdrop-filterを使ってCosmic Geometry共通の半透明・発光表現を作り、SVGはwidth: min()によって画面幅に応じて縮小します。',
+      '600px以下ではボタンを折り返し可能にし、パネルのpadding、タイトルサイズ、SVGサイズを縮小してモバイル表示へ対応しています。',
     ],
   },
   {
     number: '08',
     title: 'AI-assisted Development（AIを活用した開発）',
     paragraphs: [
-      '設計、実装、デバッグ、コード整理の各段階で、AIをどのように活用したかを記録します。',
-      'AIが生成したコードをどのように確認し、修正し、作品へ取り入れたかも整理します。',
+      '実装ではAIとの対話を活用しながら、Reactのstate管理、時間更新処理、角度からSVG座標への変換、同期判定のロジックを整理しました。',
+      'TechNote作成時には実際のJSXとCSSを確認し、コードの処理を自分で理解しながら技術内容を整理しています。',
     ],
   },
   {
     number: '09',
     title: 'Future Development（今後の拡張）',
     paragraphs: [
-      '今後追加したい機能や、改善を検討している技術的な課題を整理します。',
-      '作品単体の拡張だけでなく、他の作品やデータとの接続についても記録します。',
+      '現在は自動再生のみですが、再生・停止、回転速度の変更、同期判定角度の調整、各ベクトルの数値表示などを追加する余地があります。',
+      '今後は、時間軸同士の同期関係をより詳しく観察できるインタラクションや可視化方法も検討できます。',
     ],
   },
 ];
@@ -82,16 +85,9 @@ export default function TimeGeometryTechNote() {
       <header className="tech-note-hero">
         <p className="tech-note-eyebrow">TechNote（技術解説）</p>
         <h1>TechNote</h1>
-        <p className="tech-note-work-title">Time Synchronization Experiment（時間同期実験）</p>
-        <div className="tech-note-intro">
-          <p>
-            このページでは、作品の実装に使用した技術、コンポーネント構成、
-            データの流れ、描画や計算の仕組みについて整理します。
-          </p>
-          <p>
-            内容は今後、実際のコードを確認しながら順次更新します。
-          </p>
-        </div>
+        <p className="tech-note-work-title">
+          Time Synchronization Experiment（時間同期実験）
+        </p>
       </header>
 
       {sections.map((section) => (
@@ -100,6 +96,7 @@ export default function TimeGeometryTechNote() {
             <p className="tech-note-section-number">{section.number}</p>
             <h2>{section.title}</h2>
           </div>
+
           <div className="tech-note-section-text tech-note-card">
             {section.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
@@ -107,7 +104,17 @@ export default function TimeGeometryTechNote() {
           </div>
         </section>
       ))}
+
+      <section className="tech-note-section tech-note-interactive">
+        <div className="tech-note-section-heading">
+          <h2>Interactive Work</h2>
+        </div>
+        <div className="tech-note-interactive-card">
+          <Link to="/works/time-geometry" className="tech-note-interactive-button">
+            Interactive Workを開く
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
-

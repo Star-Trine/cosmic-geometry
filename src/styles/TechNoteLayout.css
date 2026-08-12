@@ -116,6 +116,45 @@
   line-height: 1.8;
 }
 
+.tech-note-interactive .tech-note-section-heading {
+  justify-content: center;
+  text-align: center;
+}
+
+.tech-note-interactive-card {
+  display: flex;
+  justify-content: center;
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 2rem;
+  border: 1px solid var(--tech-note-border);
+  border-radius: 1rem;
+  background: var(--tech-note-panel);
+}
+
+.tech-note-interactive-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 3rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid var(--tech-note-accent);
+  border-radius: 999px;
+  color: var(--tech-note-text);
+  background: rgba(157, 168, 255, 0.14);
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.tech-note-interactive-button:hover {
+  color: #050713;
+  background: var(--tech-note-accent);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 700px) {
   .tech-note-page {
     padding: 3rem 1.1rem 0;
@@ -154,5 +193,14 @@
 
   .tech-note-card {
     padding: 1.25rem;
+  }
+
+  .tech-note-interactive-card {
+    padding: 1.25rem;
+  }
+
+  .tech-note-interactive-button {
+    width: 100%;
+    padding-inline: 0.75rem;
   }
 }

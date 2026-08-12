@@ -19,6 +19,7 @@ import Works from './pages/Works';
 import Concepts from './pages/Concepts';
 import TechNotes from './pages/TechNotes';
 import Contact from './pages/Contact';
+import SiteArchitecture from './pages/SiteArchitecture';
 import Sitemap from './pages/Sitemap';
 
 // ===== Works =====
@@ -86,6 +87,7 @@ function App() {
   <Route path="/concepts" element={<Concepts />} />
   <Route path="/tech-notes" element={<TechNotes />} />
   <Route path="/contact" element={<Contact />} />
+  <Route path="/site-architecture" element={<SiteArchitecture />} />
   <Route path="/sitemap" element={<Sitemap />} />
 
   {/* Works */}
