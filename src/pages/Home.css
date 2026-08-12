@@ -79,6 +79,8 @@
   .hero-container {
     height: auto;
     min-height: 0;
+    flex: 1;
+    align-self: stretch;
     padding: 1rem;
 
     justify-content: flex-start;
@@ -102,7 +104,8 @@
 
   .space-footer {
     position: static;
-    margin-top: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
     text-align: center;
   }
 }

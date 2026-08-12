@@ -111,3 +111,15 @@ body {
     font-size: clamp(2rem, 10vw, 4rem);
   }
 }
+
+@media (max-width: 600px) {
+  .main-content {
+    padding-bottom: calc(2rem + var(--mobile-navbar-height));
+  }
+}
+
+@media (max-width: 375px) {
+  .main-content {
+    padding-bottom: calc(1rem + var(--mobile-navbar-height));
+  }
+}

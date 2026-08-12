@@ -405,6 +405,7 @@
 @media (max-width: 700px) {
   .tesseract-concept {
     padding-inline: 1.1rem;
+    padding-bottom: 0;
   }
 
   .tesseract-hero {
@@ -420,6 +421,10 @@
 
   .section-heading {
     gap: 0.8rem;
+  }
+
+  .concept-section:last-child {
+    padding-bottom: 2rem;
   }
 }
 

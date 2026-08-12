@@ -176,6 +176,7 @@
   .tesseract {
     width: min(100% - 20px, 1200px);
     padding-top: 28px;
+    padding-bottom: 2rem;
   }
 
   .tesseract__header {
