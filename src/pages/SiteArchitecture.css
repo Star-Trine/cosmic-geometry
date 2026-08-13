@@ -93,6 +93,18 @@
   line-height: 1.9;
 }
 
+.site-architecture-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--architecture-text);
+  text-underline-offset: 0.25em;
+}
+
+.site-architecture-link:hover,
+.site-architecture-link:focus-visible {
+  color: var(--architecture-accent);
+}
+
 .site-architecture-status {
   display: inline-block;
   margin-top: 0.75rem;

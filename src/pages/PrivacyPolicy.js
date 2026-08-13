@@ -13,8 +13,19 @@ const policySections = [
   },
   {
     title: 'メール送信',
-    content:
-      'Contact Formのメール送信処理にはResendを利用します。問い合わせ情報はメール配送に必要な範囲で同サービスにより処理されます。',
+    content: (
+      <>
+        Contact Formのメール送信処理には
+        <a
+          href="https://resend.com/docs/introduction"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resend
+        </a>
+        を利用します。問い合わせ情報はメール配送に必要な範囲で同サービスにより処理されます。
+      </>
+    ),
   },
   {
     title: '保存について',
@@ -33,8 +44,19 @@ const policySections = [
   },
   {
     title: 'アクセス解析',
-    content:
-      '今後、アクセス状況の把握・サイト改善を目的としてVercel Web Analyticsを導入する場合があります。現時点では未導入です。導入時には、本ポリシーを実際の運用内容に合わせて更新します。',
+    content: (
+      <>
+        今後、アクセス状況の把握・サイト改善を目的として
+        <a
+          href="https://vercel.com/docs/analytics"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Vercel Web Analytics
+        </a>
+        を導入する場合があります。現時点では未導入です。導入時には、本ポリシーを実際の運用内容に合わせて更新します。
+      </>
+    ),
   },
   {
     title: '開示・訂正・削除等',
@@ -74,7 +96,7 @@ export default function PrivacyPolicy() {
 
       <footer className="privacy-policy-dates">
         <p>制定日：2026年8月13日</p>
-        <p>最終改定日：2026年8月13日</p>
+        <p>最終改定日：2026年8月14日</p>
       </footer>
     </main>
   );

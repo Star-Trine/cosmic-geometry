@@ -12,6 +12,7 @@ function Sitemap(){
           <li><a href="/tech-notes">技術ノート</a></li>
           <li><a href="/contact">お問い合わせ</a></li>
           <li><a href="/site-architecture">サイト設計</a></li>
+          <li><a href="/privacy-policy">プライバシーポリシー</a></li>
         </ul>
       </div>
   );

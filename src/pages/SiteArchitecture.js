@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './SiteArchitecture.css';
 
 const architectureSections = [
@@ -43,20 +44,26 @@ const architectureSections = [
   },
   {
     title: 'Backend Status',
-    status: 'Experimental',
+    status: 'Current',
     description:
-      'Node.jsとTypeScriptによるbackendは現在試作段階です。Frontendとは接続されておらず、現行サイトの動作には使用していません。',
+      'Contact Formは、/api/contactのVercel Functionで入力を検証し、Resendを通じてメールを送信します。リポジトリ内のbackend/はNode.jsとTypeScriptによる別系統の試作環境であり、本番Contact APIには使用していません。',
   },
   {
     title: 'Planned / Future Architecture',
     status: 'Planned',
     description:
-      'API、Database、Authenticationなどは将来の構想です。採用技術や接続方法を含め、現時点では未実装です。',
+      'Contact API以外のAPI拡張、Database、Authenticationなどは将来の構想です。採用技術や接続方法を含め、現時点では未実装です。',
   },
   {
     title: 'Design & Development Records',
     description:
       'docs、Markdown設計資料、Concept参考資料、SVG原稿、screenshots、設計仕様書などを、制作過程を振り返るための記録として整理しています。',
+  },
+  {
+    title: 'Privacy and Contact Data',
+    description:
+      'Contact Formでは回答に必要な情報を扱い、入力検証やIPアドレスを用いたSpam対策を行います。詳しい取り扱いはPrivacy Policyに記載しています。',
+    privacyLink: true,
   },
 ];
 
@@ -89,6 +96,11 @@ export default function SiteArchitecture() {
               </div>
             </div>
             <p>{section.description}</p>
+            {section.privacyLink && (
+              <Link className="site-architecture-link" to="/privacy-policy">
+                プライバシーポリシーを見る
+              </Link>
+            )}
           </section>
         ))}
       </div>

@@ -190,17 +190,8 @@ export default async function contactHandler(
   const contactTo = process.env.CONTACT_TO;
   const contactFrom = process.env.CONTACT_FROM;
 
-  console.log('Contact environment check:', {
-    hasApiKey: Boolean(apiKey),
-    hasContactTo: Boolean(contactTo),
-    hasContactFrom: Boolean(contactFrom),
-  });
-
   if (!apiKey || !contactTo || !contactFrom) {
-    console.error(
-      'Contact API environment variables are missing.'
-    );
-
+    console.error('Contact API environment variables are missing.');
     return sendGenericError(response, 500);
   }
 
@@ -226,7 +217,6 @@ export default async function contactHandler(
 
     if (error) {
       console.error('Resend error:', error);
-
       return sendGenericError(response, 502);
     }
 
@@ -236,7 +226,6 @@ export default async function contactHandler(
     });
   } catch (error) {
     console.error('Contact API error:', error);
-
     return sendGenericError(response, 500);
   }
 }

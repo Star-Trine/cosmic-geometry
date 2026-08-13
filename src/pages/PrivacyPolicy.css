@@ -86,6 +86,18 @@
   margin: 0 auto;
 }
 
+.privacy-policy-section a {
+  color: var(--privacy-text);
+  text-underline-offset: 0.25em;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.privacy-policy-section a:hover,
+.privacy-policy-section a:focus-visible {
+  color: var(--privacy-accent);
+  text-shadow: 0 0 10px rgba(157, 168, 255, 0.45);
+}
+
 .privacy-policy-dates {
   padding-top: 3rem;
   border-top: 1px solid var(--privacy-border);
