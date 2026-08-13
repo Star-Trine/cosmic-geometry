@@ -1,0 +1,121 @@
+.privacy-policy {
+  --privacy-background: #050713;
+  --privacy-panel: rgba(255, 255, 255, 0.045);
+  --privacy-border: rgba(255, 255, 255, 0.14);
+  --privacy-text: #f4f5ff;
+  --privacy-subtext: #b9bed6;
+  --privacy-accent: #9da8ff;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 5rem clamp(1.25rem, 5vw, 6rem) 8rem;
+  box-sizing: border-box;
+  color: var(--privacy-text);
+  background:
+    radial-gradient(circle at 18% 10%, rgba(61, 103, 174, 0.18), transparent 31%),
+    radial-gradient(circle at 84% 34%, rgba(104, 70, 175, 0.14), transparent 28%),
+    var(--privacy-background);
+}
+
+.privacy-policy-hero,
+.privacy-policy-sections,
+.privacy-policy-dates {
+  width: min(900px, 100%);
+  margin-inline: auto;
+}
+
+.privacy-policy-hero {
+  padding-block: 2rem 5rem;
+}
+
+.privacy-policy-eyebrow {
+  margin: 0 0 0.9rem;
+  color: var(--privacy-accent);
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.privacy-policy-hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.privacy-policy-hero > p:last-child,
+.privacy-policy-section > p,
+.privacy-policy-dates {
+  color: var(--privacy-subtext);
+  line-height: 2;
+}
+
+.privacy-policy-hero > p:last-child {
+  max-width: 720px;
+  margin-top: 2rem;
+}
+
+.privacy-policy-section {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--privacy-border);
+}
+
+.privacy-policy-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.privacy-policy-heading span {
+  margin-top: 0.2rem;
+  color: var(--privacy-accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+}
+
+.privacy-policy-heading h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.25;
+}
+
+.privacy-policy-section > p {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.privacy-policy-dates {
+  padding-top: 3rem;
+  border-top: 1px solid var(--privacy-border);
+  font-size: 0.85rem;
+}
+
+.privacy-policy-dates p {
+  margin: 0.25rem 0;
+}
+
+@media (max-width: 700px) {
+  .privacy-policy {
+    padding: 3rem 1.1rem 2rem;
+  }
+
+  .privacy-policy-hero {
+    padding-bottom: 4rem;
+  }
+
+  .privacy-policy-section {
+    padding-block: 2.75rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .privacy-policy {
+    padding-inline: 0.75rem;
+  }
+
+  .privacy-policy-hero h1 {
+    overflow-wrap: anywhere;
+  }
+}
