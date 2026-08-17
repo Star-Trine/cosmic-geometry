@@ -1,5 +1,5 @@
 .site-architecture {
-  --architecture-background: #050713;
+  --architecture-background: rgba(5, 7, 19, 0.7);
   --architecture-panel: rgba(255, 255, 255, 0.045);
   --architecture-border: rgba(255, 255, 255, 0.14);
   --architecture-text: #f4f5ff;
@@ -9,7 +9,7 @@
   width: 100%;
   min-width: 0;
   min-height: 100vh;
-  padding: 5rem clamp(1.25rem, 5vw, 6rem) 8rem;
+  padding: 1rem clamp(1.25rem, 5vw, 6rem) 8rem;
   box-sizing: border-box;
   color: var(--architecture-text);
   background:
@@ -25,7 +25,7 @@
 }
 
 .site-architecture-hero {
-  padding-block: 2rem 5rem;
+  padding-block: 0 5rem;
 }
 
 .site-architecture-eyebrow {
@@ -117,9 +117,22 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 1024px) {
+  .site-architecture {
+    padding-top: 0;
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-architecture {
+    padding-top: 1.5rem;
+  }
+}
+
 @media (max-width: 700px) {
   .site-architecture {
-    padding: 3rem 1.1rem 2rem;
+    padding: 1.5rem 1rem 2rem;
   }
 
   .site-architecture-hero {

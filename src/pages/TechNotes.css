@@ -3,7 +3,7 @@
 .tech-notes {
   width: min(880px, 100%);
   margin: 0 auto;
-  padding: 3rem 1.5rem 6rem;
+  padding: 1rem 1.5rem 6rem;
   box-sizing: border-box;
 }
 
@@ -300,10 +300,25 @@
    Responsive
 ========================= */
 
-@media (max-width: 560px) {
+@media (max-width: 1024px) {
   .tech-notes {
-    padding: 2rem 0.8rem 5rem;
+    padding-top: 0;
   }
+}
+
+@media (max-width: 768px) {
+  .tech-notes {
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tech-notes {
+    padding: 1rem 1rem 5rem;
+  }
+}
+
+@media (max-width: 560px) {
 
   .tech-notes-intro {
     margin-bottom: 2rem;

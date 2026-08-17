@@ -1,5 +1,5 @@
 .contact {
-  --contact-background: #050713;
+  --contact-background: rgba(5, 7, 19, 0.7);
   --contact-panel: rgba(255, 255, 255, 0.045);
   --contact-border: rgba(255, 255, 255, 0.16);
   --contact-text: #f4f5ff;

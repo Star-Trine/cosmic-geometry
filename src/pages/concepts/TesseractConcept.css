@@ -1,5 +1,5 @@
 .tesseract-concept {
-  --background: #050713;
+  --background: rgba(5, 7, 19, 0.7);
   --panel: rgba(255, 255, 255, 0.045);
   --panel-strong: rgba(255, 255, 255, 0.08);
   --border: rgba(255, 255, 255, 0.14);
@@ -9,7 +9,7 @@
   --accent-soft: rgba(157, 168, 255, 0.14);
 
   min-height: 100vh;
-  padding: 6rem clamp(1.25rem, 5vw, 6rem);
+  padding: 2rem clamp(1.25rem, 5vw, 6rem) 6rem;
   color: var(--text);
   background:
     radial-gradient(circle at 20% 10%, rgba(83, 73, 170, 0.2), transparent 30%),
@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-block: 3rem 7rem;
+  padding-block: 2rem 7rem;
 }
 
 .tesseract-eyebrow,
@@ -404,13 +404,14 @@
 
 @media (max-width: 700px) {
   .tesseract-concept {
+    padding-top: 1.5rem;
     padding-inline: 1.1rem;
     padding-bottom: 0;
   }
 
   .tesseract-hero {
     min-height: auto;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
   }
 
   .origin-grid,

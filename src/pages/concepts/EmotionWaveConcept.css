@@ -17,7 +17,7 @@
       rgba(70, 93, 189, 0.17),
       transparent 30%
     ),
-    #050713;
+    rgba(5, 7, 19, 0.7);
 }
 
 .concept-figure {
@@ -119,7 +119,7 @@
   }
 
   /* 本文 */
-  .emotion-wave-concept p,
+  .emotion-wave-concept p:not(.concept-eyebrow),
   .emotion-wave-concept li {
     max-width: 100%;
     font-size: clamp(1rem, 4.5vw, 1.2rem);

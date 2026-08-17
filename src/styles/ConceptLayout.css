@@ -1,5 +1,5 @@
 .concept-page {
-  --background: #050713;
+  --background: rgba(5, 7, 19, 0.7);
   --panel: rgba(255, 255, 255, 0.045);
   --panel-strong: rgba(255, 255, 255, 0.08);
   --border: rgba(255, 255, 255, 0.14);
@@ -14,7 +14,7 @@
   max-width: 100%;
 
   min-height: 100vh;
-  padding: 6rem clamp(1.25rem, 5vw, 6rem);
+  padding: 2rem clamp(1.25rem, 5vw, 6rem) 6rem;
   color: var(--text);
 
   background:
@@ -43,8 +43,8 @@
   min-height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-block: 3rem 7rem;
+  justify-content: flex-start;
+  padding-block: 2rem 7rem;
 }
 
 .concept-eyebrow,
@@ -206,6 +206,7 @@
 /* Responsive */
 @media (max-width: 700px) {
   .concept-page {
+    padding-top: 1.5rem;
     padding-inline: 1.1rem;
     padding-bottom: 0;
   }
@@ -221,7 +222,7 @@
 
   .concept-hero {
     min-height: auto;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     padding-bottom: 5rem;
   }
 

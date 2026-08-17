@@ -1,8 +1,9 @@
-import styles from './About.css';
+import './About.css';
+
 export default function About(){
   return(
-    <div className={styles.container}>
-      <section className="about-section" style={{ maxWidth: '800px', margin: 'auto', padding: '2rem' }}>
+    <div className="about">
+      <section className="about-section">
       <h1>このサイトについて</h1>
         <br>
         </br>

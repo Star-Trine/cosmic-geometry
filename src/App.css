@@ -112,7 +112,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .main-content {
     padding-bottom: calc(2rem + var(--mobile-navbar-height));
   }

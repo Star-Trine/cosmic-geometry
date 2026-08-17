@@ -1,5 +1,5 @@
 .tech-note-page {
-  --tech-note-background: #050713;
+  --tech-note-background: rgba(5, 7, 19, 0.7);
   --tech-note-panel: rgba(255, 255, 255, 0.045);
   --tech-note-border: rgba(255, 255, 255, 0.14);
   --tech-note-text: #f4f5ff;
@@ -9,7 +9,7 @@
   width: 100%;
   min-width: 0;
   min-height: 100vh;
-  padding: 5rem clamp(1.25rem, 5vw, 6rem) 8rem;
+  padding: 1.75rem clamp(1.25rem, 5vw, 6rem) 8rem;
   box-sizing: border-box;
   color: var(--tech-note-text);
   background:
@@ -25,7 +25,7 @@
 }
 
 .tech-note-hero {
-  padding-block: 2rem 5rem;
+  padding-block: 0 5rem;
 }
 
 .tech-note-eyebrow {
@@ -157,7 +157,7 @@
 
 @media (max-width: 700px) {
   .tech-note-page {
-    padding: 3rem 1.1rem 0;
+    padding: 1.5rem 1.1rem 0;
   }
 
   .tech-note-hero {

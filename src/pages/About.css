@@ -1,29 +1,48 @@
 /* About.css */
 
-.container {
+.about {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 5rem;
+  box-sizing: border-box;
+
   font-size: 18px;
   line-height: 1.6;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #222;
+  color: #d8dcf0;
 
   background: rgba(0, 0, 30, 0.2);
   backdrop-filter: blur(0.5px);
+}
 
-  padding: 2rem 1rem;
-  box-sizing: border-box;
+.about-section {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .about {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding-top: 1.5rem;
+  }
 }
 
 @media (max-width: 600px) {
-  .container {
-    padding: 1rem;
+  .about {
+    padding: 1rem 1rem 5rem;
     font-size: 1rem;
     line-height: 1.7;
   }
 }
 
 @media (max-width: 375px) {
-  .container {
-    padding: 0.75rem;
+  .about {
     font-size: 0.95rem;
   }
 }
