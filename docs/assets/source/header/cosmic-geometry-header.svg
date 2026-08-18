@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1920"
+     height="300"
+     viewBox="0 0 1920 300"
+     role="img"
+     aria-labelledby="header-title header-description">
+  <title id="header-title">Cosmic Geometry — geometry, wave, formula and cosmos</title>
+  <desc id="header-description">A continuous cyan-white technical diagram moving from geometry through waves and formulas to orbital structures.</desc>
+
+  <defs id="visual-definitions">
+    <linearGradient id="continuum-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#edfafa" stop-opacity="0.72"/>
+      <stop offset="0.34" stop-color="#b8e4e8" stop-opacity="0.56"/>
+      <stop offset="0.68" stop-color="#e4f6f7" stop-opacity="0.66"/>
+      <stop offset="1" stop-color="#a9dce1" stop-opacity="0.56"/>
+    </linearGradient>
+    <radialGradient id="observation-glow">
+      <stop offset="0" stop-color="#f1ffff" stop-opacity="0.72"/>
+      <stop offset="0.25" stop-color="#c6edf0" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#8bcbd2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-cyan-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="point-glow" x="-250%" y="-250%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+    <clipPath id="header-clip">
+      <rect x="24" y="20" width="1872" height="260" rx="4"/>
+    </clipPath>
+    <pattern id="micro-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#b9f6ff" stroke-opacity="0.08" stroke-width="0.7"/>
+    </pattern>
+  </defs>
+
+  <g id="guide-layer" clip-path="url(#header-clip)" fill="none">
+    <rect x="24" y="20" width="1872" height="260" rx="4" stroke="#c7f8ff" stroke-opacity="0.16"/>
+    <rect x="24" y="20" width="1872" height="260" fill="url(#micro-grid)" opacity="0.52"/>
+    <path d="M40 150H1880" stroke="#d9fbff" stroke-opacity="0.12" stroke-dasharray="3 11"/>
+    <path d="M480 32V268M960 32V268M1440 32V268" stroke="#9ceefa" stroke-opacity="0.1" stroke-dasharray="2 12"/>
+    <path d="M60 52H1860M60 248H1860" stroke="#d9fbff" stroke-opacity="0.08"/>
+    <path d="M53 146v8M469 146v8M949 146v8M1429 146v8M1867 146v8" stroke="#e8ffff" stroke-opacity="0.25"/>
+    <path d="M80 236C330 204 470 85 700 122S1060 235 1280 164 1600 45 1840 93" stroke="#7fe7f2" stroke-opacity="0.12" stroke-dasharray="5 9"/>
+  </g>
+
+  <g id="geometry-layer" clip-path="url(#header-clip)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g id="sacred-geometry" transform="translate(205 150)" stroke="url(#continuum-gradient)">
+      <circle r="92" stroke-opacity="0.54" stroke-width="1.2"/>
+      <circle cy="-31" r="36" stroke-opacity="0.48"/>
+      <circle cx="27" cy="-15" r="36" stroke-opacity="0.48"/>
+      <circle cx="27" cy="16" r="36" stroke-opacity="0.48"/>
+      <circle cy="31" r="36" stroke-opacity="0.48"/>
+      <circle cx="-27" cy="16" r="36" stroke-opacity="0.48"/>
+      <circle cx="-27" cy="-15" r="36" stroke-opacity="0.48"/>
+      <path d="M0-78 67 39-67 39ZM0 78 67-39-67-39Z" stroke-opacity="0.7" stroke-width="1.25"/>
+      <circle r="55" stroke-opacity="0.22" stroke-dasharray="3 7"/>
+      <path d="M-112 0H112M0-112V112" stroke-opacity="0.18"/>
+      <path d="M-101-48A112 112 0 0 1 101 48M-101 48A112 112 0 0 0 101-48" stroke-opacity="0.16"/>
+    </g>
+
+    <g id="dimensional-projection" transform="translate(420 150)" stroke="#c9f9ff">
+      <path d="M-76-57 30-69 78-14-33-5ZM-76-57-46 24 62 37 78-14M-33-5-46 24M30-69 62 37" stroke-opacity="0.7" stroke-width="1.25"/>
+      <path d="M-47-28 16-35 45-3-20 2ZM-47-28-30 21 34 27 45-3M-20 2-30 21M16-35 34 27" stroke-opacity="0.38"/>
+      <path d="M-76-57-47-28M30-69 16-35M78-14 45-3M-33-5-20 2M-46 24-30 21M62 37 34 27" stroke-opacity="0.27" stroke-dasharray="3 4"/>
+      <circle cx="-76" cy="-57" r="2.4" fill="#e9ffff" stroke="none"/>
+      <circle cx="78" cy="-14" r="2.4" fill="#b8f7ff" stroke="none"/>
+      <circle cx="62" cy="37" r="2.4" fill="#b8f7ff" stroke="none"/>
+    </g>
+
+    <g id="curvature-grid" transform="translate(555 160)" stroke="#8ee9f5" stroke-opacity="0.31">
+      <path d="M-92-50C-58-26-28-18 0-18S58-26 92-50M-101-25C-60-8-30 0 0 0s60-8 101-25M-105 0C-62 10-31 18 0 18s62-8 105-18M-101 25C-60 38-29 44 0 44s60-6 101-19M-92 50C-55 64-27 67 0 67s55-3 92-17"/>
+      <path d="M-80-61C-55-27-50 10-56 57M-42-68C-23-29-22 15-27 67M0-70V70M42-68C23-29 22 15 27 67M80-61C55-27 50 10 56 57"/>
+      <path d="M0 18C28 18 55 10 105 0" stroke="#e6ffff" stroke-opacity="0.54"/>
+      <circle cy="18" r="3" fill="#dfffff" stroke="none"/>
+    </g>
+
+    <g id="coordinate-vectors" transform="translate(55 232)" stroke="#dfffff">
+      <path d="M0 0H54M0 0V-52" stroke-opacity="0.52"/>
+      <path d="M54 0l-7-4v8ZM0-52l-4 7h8Z" fill="#dfffff" fill-opacity="0.55" stroke="none"/>
+      <path d="M0 0 37-34" stroke="#72deea" stroke-opacity="0.72" stroke-width="1.4"/>
+      <circle cx="37" cy="-34" r="3" fill="#bffaff" stroke="none"/>
+      <text x="58" y="4" fill="#dfffff" fill-opacity="0.5" stroke="none" font-size="11">x</text>
+      <text x="-4" y="-59" fill="#dfffff" fill-opacity="0.5" stroke="none" font-size="11">y</text>
+      <text x="27" y="-40" fill="#9ceef7" fill-opacity="0.58" stroke="none" font-size="10">v</text>
+    </g>
+  </g>
+
+  <g id="wave-layer" clip-path="url(#header-clip)" fill="none" stroke-linecap="round">
+    <path d="M610 150C641 86 674 86 706 150s65 64 97 0 65-64 97 0 65 64 97 0 65-64 98 0"
+          stroke="#dffcff" stroke-opacity="0.78" stroke-width="1.8"/>
+    <path d="M610 150C632 112 654 112 676 150s44 38 66 0 44-38 66 0 44 38 66 0 44-38 66 0 44 38 66 0 44-38 66 0"
+          stroke="#65d7e5" stroke-opacity="0.52" stroke-width="1.2"/>
+    <path d="M610 150C652 181 695 192 738 167s84-35 126-3 85 35 127 2 84-28 126 1"
+          stroke="#b8f7ff" stroke-opacity="0.29" stroke-width="1.1"/>
+    <path d="M610 105V196M706 105V196M803 105V196M900 105V196M997 105V196M1095 105V196"
+          stroke="#a8f4fc" stroke-opacity="0.12" stroke-dasharray="3 6"/>
+    <path d="M625 93H706M625 89v8M706 89v8" stroke="#dfffff" stroke-opacity="0.34"/>
+    <text x="660" y="84" fill="#dfffff" fill-opacity="0.48" font-family="Georgia, serif" font-size="13">λ</text>
+    <path d="M734 108V150M730 108h8M730 150h8" stroke="#dfffff" stroke-opacity="0.3"/>
+    <text x="743" y="128" fill="#dfffff" fill-opacity="0.43" font-family="Georgia, serif" font-size="12">A</text>
+    <text x="1014" y="205" fill="#a9f4fc" fill-opacity="0.43" font-family="Georgia, serif" font-size="12">φ</text>
+    <g id="wave-spectrum" transform="translate(750 235)" stroke="#7fe5f1">
+      <path d="M0 0H355" stroke-opacity="0.22"/>
+      <path d="M7 0v-8m7 8v-13m7 13v-6m7 6v-22m7 22v-31m7 31v-17m7 17v-42m7 42v-26m7 26v-54m7 54v-38m7 38v-64m7 64v-47m7 47v-73m7 73v-53m7 53v-62m7 62v-42m7 42v-56m7 56v-35m7 35v-46m7 46v-28m7 28v-37m7 37v-23m7 23v-31m7 31v-18m7 18v-24m7 24v-14m7 14v-20m7 20v-12m7 12v-16m7 16v-10m7 10v-14m7 14v-8m7 8v-12m7 12v-7m7 7v-10m7 10v-6m7 6v-9m7 9v-5m7 5v-8m7 8v-4m7 4v-7m7 7v-4m7 4v-6m7 6v-3m7 3v-5m7 5v-3m7 3v-4m7 4v-2m7 2v-4m7 4v-2m7 2v-3m7 3v-2m7 2v-3m7 3v-2m7 2v-3m7 3v-2m7 2v-2" stroke-opacity="0.38"/>
+    </g>
+  </g>
+
+  <g id="formula-layer" clip-path="url(#header-clip)" fill="#e7f0f1" font-family="Georgia, 'Times New Roman', serif">
+    <text x="770" y="70" font-size="20" letter-spacing="0.7" fill-opacity="0.58">e<tspan baseline-shift="super" font-size="13">iπ</tspan> + 1 = 0</text>
+    <text x="470" y="63" font-size="17" fill-opacity="0.44">∫<tspan baseline-shift="sub" font-size="11">M</tspan> K dA + ∫<tspan baseline-shift="sub" font-size="11">∂M</tspan> k<tspan baseline-shift="sub" font-size="11">g</tspan> ds = 2πχ(M)</text>
+    <text x="990" y="96" font-size="18" fill-opacity="0.48">∂²u/∂t² = c²∇²u</text>
+    <text x="1110" y="228" font-size="17" fill-opacity="0.41">G<tspan baseline-shift="sub" font-size="11">μν</tspan> + Λg<tspan baseline-shift="sub" font-size="11">μν</tspan> = (8πG/c⁴) T<tspan baseline-shift="sub" font-size="11">μν</tspan></text>
+    <text x="625" y="266" font-size="16" fill-opacity="0.39">∫<tspan baseline-shift="sub" font-size="10">∂Ω</tspan> ω = ∫<tspan baseline-shift="sub" font-size="10">Ω</tspan> dω</text>
+  </g>
+
+  <g id="cosmos-layer" clip-path="url(#header-clip)" fill="none" stroke-linecap="round">
+    <g id="orbital-system" transform="translate(1535 150) rotate(-8)">
+      <ellipse rx="325" ry="92" stroke="#c9f9ff" stroke-opacity="0.44" stroke-width="1.3"/>
+      <ellipse rx="250" ry="66" stroke="#75dfec" stroke-opacity="0.3" transform="rotate(18)"/>
+      <ellipse rx="178" ry="48" stroke="#dcfdff" stroke-opacity="0.25" transform="rotate(-19)"/>
+      <ellipse rx="106" ry="35" stroke="#80e6f2" stroke-opacity="0.23" transform="rotate(32)"/>
+      <circle r="18" stroke="#dfffff" stroke-opacity="0.6"/>
+      <circle r="4" fill="#e9ffff" fill-opacity="0.78" stroke="none" filter="url(#soft-cyan-glow)"/>
+      <circle cx="-230" cy="-69" r="7" fill="#9aeaf4" fill-opacity="0.55" stroke="#e6ffff" stroke-opacity="0.5"/>
+      <circle cx="179" cy="-58" r="5" fill="#dfffff" fill-opacity="0.7" stroke="none"/>
+      <circle cx="285" cy="32" r="9" fill="#70d7e4" fill-opacity="0.35" stroke="#dfffff" stroke-opacity="0.38"/>
+      <circle cx="-85" cy="61" r="4" fill="#e7ffff" fill-opacity="0.75" stroke="none"/>
+    </g>
+
+    <g id="celestial-sphere" transform="translate(1760 150)" stroke="#aaf1f9">
+      <circle r="83" stroke-opacity="0.42" stroke-width="1.2"/>
+      <ellipse rx="83" ry="28" stroke-opacity="0.3"/>
+      <ellipse rx="83" ry="56" stroke-opacity="0.2"/>
+      <ellipse rx="28" ry="83" stroke-opacity="0.3"/>
+      <ellipse rx="56" ry="83" stroke-opacity="0.2"/>
+      <path d="M-83 0H83M0-83V83" stroke-opacity="0.16" stroke-dasharray="3 5"/>
+      <path d="M-59 59 59-59" stroke="#e4ffff" stroke-opacity="0.37"/>
+      <circle cx="34" cy="-47" r="3" fill="#eaffff" fill-opacity="0.84" stroke="none"/>
+    </g>
+
+    <g id="spacetime-curves" stroke="#79dfeb" stroke-opacity="0.19">
+      <path d="M1200 44C1345 80 1430 79 1535 41s214-24 331 24"/>
+      <path d="M1180 68C1324 104 1427 108 1530 65s224-30 351 24"/>
+      <path d="M1192 244C1327 210 1420 206 1530 244s226 25 345-22"/>
+      <path d="M1215 267C1349 233 1432 231 1538 267s210 18 322-20"/>
+    </g>
+
+    <g id="observation-lines" stroke="#d9ffff">
+      <path d="M1535 150 1320 64M1535 150 1760 150M1535 150 1648 55M1535 150 1854 91" stroke-opacity="0.14" stroke-dasharray="4 7"/>
+      <circle cx="1320" cy="64" r="2" fill="#e9ffff" fill-opacity="0.7" stroke="none"/>
+      <circle cx="1648" cy="55" r="2.5" fill="#c8faff" fill-opacity="0.7" stroke="none"/>
+      <circle cx="1854" cy="91" r="2" fill="#e9ffff" fill-opacity="0.6" stroke="none"/>
+    </g>
+  </g>
+
+  <g id="glow-layer" clip-path="url(#header-clip)">
+    <circle cx="205" cy="150" r="32" fill="url(#observation-glow)" opacity="0.06"/>
+    <circle cx="803" cy="150" r="28" fill="url(#observation-glow)" opacity="0.065"/>
+    <circle cx="1535" cy="150" r="36" fill="url(#observation-glow)" opacity="0.075"/>
+    <g fill="#ddf8fa" filter="url(#point-glow)" opacity="0.28">
+      <circle cx="420" cy="93" r="3"/>
+      <circle cx="706" cy="150" r="2.5"/>
+      <circle cx="1095" cy="150" r="2.5"/>
+      <circle cx="1320" cy="64" r="2.5"/>
+      <circle cx="1760" cy="150" r="3"/>
+    </g>
+    <g fill="#eaffff" opacity="0.78">
+      <circle cx="420" cy="93" r="1.4"/>
+      <circle cx="706" cy="150" r="1.2"/>
+      <circle cx="1095" cy="150" r="1.2"/>
+      <circle cx="1320" cy="64" r="1.2"/>
+      <circle cx="1760" cy="150" r="1.5"/>
+    </g>
+  </g>
+</svg>
