@@ -11,6 +11,8 @@ import './components/Header.css';
 // ===== React =====
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // ===== Main Pages =====
 import Home from './pages/Home';
@@ -154,6 +156,8 @@ function App() {
           </footer>
         </div>
       </Router>
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 }
