@@ -1,5 +1,5 @@
 .privacy-policy {
-  --privacy-background: #050713;
+  --privacy-background: rgba(5, 7, 19, 0.7);
   --privacy-panel: rgba(255, 255, 255, 0.045);
   --privacy-border: rgba(255, 255, 255, 0.14);
   --privacy-text: #f4f5ff;

@@ -43,10 +43,10 @@ const policySections = [
       '入力値の検証、送信回数の制御、秘密情報の環境変数管理など、取り扱う情報への不正アクセス、漏えい、改ざん等を防ぐために必要な措置を講じます。',
   },
   {
-    title: 'アクセス解析',
+    title: 'アクセス解析・パフォーマンス計測',
     content: (
       <>
-        今後、アクセス状況の把握・サイト改善を目的として
+        当サイトでは、サイトの利用状況を把握し、改善することを目的として
         <a
           href="https://vercel.com/docs/analytics"
           target="_blank"
@@ -54,7 +54,17 @@ const policySections = [
         >
           Vercel Web Analytics
         </a>
-        を導入する場合があります。現時点では未導入です。導入時には、本ポリシーを実際の運用内容に合わせて更新します。
+        を利用しています。Vercel Web AnalyticsはCookieを使用せず、匿名化されたデータを扱います。
+        また、表示速度やWebパフォーマンスの把握・改善を目的として
+        <a
+          href="https://vercel.com/docs/speed-insights/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Vercel Speed Insights
+        </a>
+        を利用しています。Vercel Speed Insightsでは、URL、ブラウザ、端末種別、OS、国、Web Vitals等の匿名のパフォーマンス情報を扱います。
+        これらのサービスは、個人を特定したり、ページをまたぐ閲覧セッションを特定したりすることを目的として利用するものではありません。
       </>
     ),
   },
@@ -96,7 +106,7 @@ export default function PrivacyPolicy() {
 
       <footer className="privacy-policy-dates">
         <p>制定日：2026年8月13日</p>
-        <p>最終改定日：2026年8月14日</p>
+        <p>最終改定日：2026年8月18日</p>
       </footer>
     </main>
   );
