@@ -3,17 +3,17 @@ import './SiteArchitecture.css';
 
 const architectureSections = [
   {
-    title: 'Current Architecture',
+    title: 'Current Architecture(現在の構成)',
     description:
       '現在のサイトは、ReactによるSingle Page Applicationを中心に構成されています。共通のVisual Layerと各ページを組み合わせ、一つの世界観を保ちながらコンテンツを切り替えています。',
   },
   {
-    title: 'Page and Content Structure',
+    title: 'Page and Content Structure(ページとコンテンツ構成)',
     description:
       'Worksは作品を選ぶ場所、Conceptsは思想や背景を読む場所、TechNotesは実装方法を知る場所として、それぞれの役割を分けています。',
   },
   {
-    title: 'Shared Visual Shell',
+    title: 'Shared Visual Shell(共通ビジュアル構成)',
     description:
       'Header、StarCanvas、main-content、固定Navbarが全ページ共通の外枠をつくり、その内側に各ページ固有の内容を表示します。',
   },
@@ -23,7 +23,7 @@ const architectureSections = [
       'App.jsにReact RouterのRouteをまとめ、一覧ページ、作品、Concept、TechNoteなどのページ遷移を管理しています。',
   },
   {
-    title: 'Shared Components',
+    title: 'Shared Components(共通コンポーネント)',
     description:
       'Header、Navbar、StarCanvasをサイト全体で共有し、作品内では必要に応じて描画や操作のための部品を再利用しています。',
   },
@@ -33,36 +33,36 @@ const architectureSections = [
       '共通breakpointと固定Navbarの回避領域を基礎にしながら、共通レイアウトと作品固有の操作体験を分けて調整しています。',
   },
   {
-    title: 'Rendering and Interaction Technologies',
+    title: 'Rendering and Interaction Technologies(描画・インタラクション技術)',
     description:
       'SVG、Canvas 2D、Three.js、React Three Fiber、GSAP、KaTeX、TypeScriptなどを、表現や操作の目的に応じて使い分けています。',
   },
   {
-    title: 'Build and Version Control',
+    title: 'Build and Version Control(ビルド・バージョン管理)',
     description:
       'npmによる開発・本番buildとGitによる履歴管理を行っています。GitHubとVercelを利用する公開フローの詳細は、今後この章で整理します。',
   },
   {
-    title: 'Backend Status',
+    title: 'Backend Status（バックエンドの現状）',
     status: 'Current',
     description:
       'Contact Formは、/api/contactのVercel Functionで入力を検証し、Resendを通じてメールを送信します。リポジトリ内のbackend/はNode.jsとTypeScriptによる別系統の試作環境であり、本番Contact APIには使用していません。',
   },
   {
-    title: 'Planned / Future Architecture',
+    title: 'Planned / Future Architecture(将来の構成)',
     status: 'Planned',
     description:
       'Contact API以外のAPI拡張、Database、Authenticationなどは将来の構想です。採用技術や接続方法を含め、現時点では未実装です。',
   },
   {
-    title: 'Design & Development Records',
+    title: 'Design & Development Records(設計・開発記録)',
     description:
       'docs、Markdown設計資料、Concept参考資料、SVG原稿、screenshots、設計仕様書などを、制作過程を振り返るための記録として整理しています。',
   },
   {
-    title: 'Privacy and Contact Data',
+    title: 'Site Operations & Privacy(サイト運用・プライバシー)',
     description:
-      'Contact Formでは回答に必要な情報を扱い、入力検証やIPアドレスを用いたSpam対策を行います。詳しい取り扱いはPrivacy Policyに記載しています。',
+      'Vercel AnalyticsとSpeed Insightsを利用して、アクセス状況やWebパフォーマンスを確認しています。また、Contact Formでは回答に必要な情報を扱い、入力検証やSpam対策を行っています。各サービスによるデータの取り扱いなど、詳細はPrivacy Policyに記載しています。',
     privacyLink: true,
   },
 ];
@@ -72,7 +72,7 @@ export default function SiteArchitecture() {
     <main className="site-architecture">
       <header className="site-architecture-hero">
         <p className="site-architecture-eyebrow">Structure of Cosmic Geometry</p>
-        <h1>Site Architecture</h1>
+        <h1>Site Architecture (サイト構成)</h1>
         <p className="site-architecture-intro">
           このページでは、Cosmic Geometry全体の実装・技術・構造を整理します。
           ページへの導線を示すSitemap、作品の意味を扱うConcept、作品固有の実装を扱うTechNoteとは役割を分けています。
