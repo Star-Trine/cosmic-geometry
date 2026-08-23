@@ -1,17 +1,32 @@
 import type { AnglePoint } from '../../data/horoscope/types';
+import { formatDegreeInSign } from './informationFormatters';
 
 type Props = {
-  angle: AnglePoint;
+  angles: AnglePoint[];
 };
 
-export default function AngleTable({ angle }: Props) {
+export default function AngleTable({ angles }: Props) {
   return (
     <section>
-      <h2>AnglePoint</h2>
-      <p>Point: {angle.name}</p>
-      <p>Sign: {angle.sign}</p>
-      <p>Degree: {angle.degreeInSign}°</p>
-      <p>Longitude: {angle.longitude}°</p>
+      <h2>Angles</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Angle</th>
+            <th scope="col">Sign</th>
+            <th scope="col">Degree</th>
+          </tr>
+        </thead>
+        <tbody>
+          {angles.map((angle) => (
+            <tr key={angle.name}>
+              <th scope="row">{angle.name}</th>
+              <td>{angle.sign}</td>
+              <td>{formatDegreeInSign(angle.degreeInSign)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </section>
   );
 }

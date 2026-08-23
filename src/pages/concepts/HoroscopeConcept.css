@@ -1,3 +1,85 @@
 .horoscope-concept {
+  --background: rgba(7, 5, 16, 0.7);
+  --panel: rgba(213, 170, 255, 0.05);
+  --panel-strong: rgba(213, 170, 255, 0.09);
+  --border: rgba(225, 196, 255, 0.16);
+  --accent: #d7b7ff;
+  --accent-soft: rgba(188, 133, 255, 0.14);
+  background:
+    radial-gradient(circle at 50% 7%, rgba(126, 65, 170, 0.2), transparent 32%),
+    radial-gradient(circle at 88% 42%, rgba(76, 83, 178, 0.12), transparent 27%),
+    var(--background);
+}
+
+.horoscope-concept .concept-lead p { margin-block: 0 1rem; }
+.horoscope-concept .concept-figure { width: min(960px, 100%); }
+.horoscope-concept .concept-figure img {
+  border-color: rgba(215, 183, 255, 0.28);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45), 0 0 45px rgba(166, 102, 235, 0.12);
+}
+
+.horoscope-geometry-lines,
+.horoscope-data-flow,
+.visual-profile-map {
+  margin-block: 2.5rem;
   padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: var(--panel);
+}
+
+.horoscope-geometry-lines p { margin: 0.45rem 0; color: var(--text); }
+.visual-profile-map > div {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.7fr) minmax(0, 1.3fr);
+  gap: 1rem;
+  padding-block: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+.visual-profile-map > div:first-child { border-top: 0; }
+.visual-profile-map dt { color: var(--text); font-weight: 600; }
+.visual-profile-map dd { display: flex; gap: 1rem; margin: 0; }
+.visual-profile-map dd span { color: var(--accent); }
+.horoscope-data-flow {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  color: var(--text);
+  text-align: center;
+}
+.horoscope-data-flow span:nth-child(even) { color: var(--accent); }
+.horoscope-view-modes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0 auto 2rem;
+  padding: 0;
+  list-style: none;
+}
+.horoscope-view-modes li {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--panel-strong);
+}
+.horoscope-profile-flow {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 0.65rem 1rem;
+  margin: 0 auto 2rem;
+  color: var(--text);
+}
+.horoscope-profile-flow span:nth-child(2) { color: var(--accent); }
+
+.concept-quote {
+  margin: 2rem 0;
+}
+
+@media (max-width: 460px) {
+  .horoscope-geometry-lines, .horoscope-data-flow, .visual-profile-map { padding: 1.4rem; }
+  .visual-profile-map > div { grid-template-columns: 1fr; gap: 0.25rem; }
+  .horoscope-profile-flow { gap: 0.5rem; font-size: 0.86rem; }
 }

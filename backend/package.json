@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --env-file-if-exists=.env --import tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test:freeastro": "node --env-file-if-exists=.env --import tsx src/freeAstroMinimalTest.ts",
+    "test:freeastro:unknown-time": "node --env-file-if-exists=.env --import tsx src/freeAstroUnknownTimeTest.ts",
+    "test:horoscope-data": "node --import tsx --test src/freeAstro/normalizeNatalResponse.test.ts",
+    "test:horoscope-analysis": "node --import tsx --test src/horoscope/calculateBasicAnalysis.test.ts src/horoscope/calculateHouseDistribution.test.ts src/horoscope/calculatePlanetDistribution.test.ts",
+    "test:visual-profile": "node --import tsx --test src/horoscope/calculateVisualProfile.test.ts",
+    "test:horoscope-api": "node --import tsx --test src/api/validateHoroscopeRequest.test.ts src/freeAstro/client.test.ts src/services/createHoroscope.test.ts src/http/horoscopeServer.test.ts",
+    "test:location": "node --import tsx --test src/location/locationService.test.ts src/location/geoapifyGeocoder.test.ts src/location/geoTzTimezoneResolver.test.ts src/http/horoscopeServer.test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "tsx": "^4.23.11",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "geo-tz": "^8.1.8"
+  }
+}

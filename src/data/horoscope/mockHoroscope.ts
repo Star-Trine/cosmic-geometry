@@ -1,9 +1,10 @@
 import type { PlanetData, HouseData, AnglePoint, AspectData } from "./types";
 
 export const mockSun: PlanetData = {
+    id: "sun",
     name:"Sun",
     longitude: 135,
-    sign: "Leo",
+    sign: "leo",
     degreeInSign: 15,
     house: 10,
     retrograde: false,
@@ -17,13 +18,13 @@ export const mockHouse: HouseData = {
 export const mockAsc: AnglePoint = {
     name:"ASC",
     longitude: 201,
-    sign:"Scorpio",
+    sign:"scorpio",
     degreeInSign: 0,
 };
 
 export const mockAspect: AspectData = {
-  bodyA: "Sun",
-  bodyB: "Jupiter",
+  bodyA: "sun",
+  bodyB: "jupiter",
   type: "trine",
   angle: 118.4,
   orb: 1.6,
