@@ -26,3 +26,4 @@ yarn-debug.log*
 yarn-error.log*
 docs/screenshots/
 backend/node_modules/
+src/assets/horoscope/*.mov
