@@ -8,7 +8,12 @@ import PlanetTable from '../../components/horoscope/PlanetTable';
 import HouseTable from '../../components/horoscope/HouseTable';
 import AngleTable from '../../components/horoscope/AngleTable';
 import AspectTable from '../../components/horoscope/AspectTable';
-import VisualProfile from '../../components/horoscope/VisualProfile';
+import VisualProfile, {
+  VisualProfileInfo,
+  type VisualProfilePrototypeId,
+  type VisualProfileRelationSelection,
+  type VisualProfileViewMode,
+} from '../../components/horoscope/VisualProfile';
 import BirthInput from '../../components/horoscope/BirthInput';
 import HoroscopeResultSummary from '../../components/horoscope/HoroscopeResultSummary';
 import AnalysisTable from '../../components/horoscope/AnalysisTable';
@@ -45,6 +50,9 @@ export default function Horoscope() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isEditingBirthData, setIsEditingBirthData] = useState(true);
+  const [selectedVisualPrototype, setSelectedVisualPrototype] = useState<VisualProfilePrototypeId>('sun');
+  const [visualProfileView, setVisualProfileView] = useState<VisualProfileViewMode>('individual');
+  const [visualProfileRelation, setVisualProfileRelation] = useState<VisualProfileRelationSelection | null>(null);
 
   const generateHoroscope = async () => {
     setLoading(true);
@@ -155,11 +163,34 @@ export default function Horoscope() {
 
       {isVisualProfile ? (
         <div className="horoscope-profile-workspace">
+          <main className="horoscope-profile-canvas" aria-label="Visual Profile workspace">
+            <VisualProfile
+              planets={response?.visualProfile.planets ?? null}
+              aspects={response?.horoscope.aspects ?? null}
+              selectedPrototype={selectedVisualPrototype}
+              onSelectPrototype={setSelectedVisualPrototype}
+              viewMode={visualProfileView}
+              onChangeViewMode={setVisualProfileView}
+              onRelationSelectionChange={setVisualProfileRelation}
+            />
+          </main>
           <aside className="horoscope-panel horoscope-profile-info">
             <div className="horoscope-panel-heading">
-              <p>Profile Info / Controls</p>
-              <h2>Derived Structure</h2>
+              <p>Profile Info</p>
+              <h2>
+                {visualProfileView === 'relation'
+                  ? visualProfileRelation
+                    ? `Relation ${visualProfileRelation.index + 1} / ${visualProfileRelation.count}`
+                    : 'Relation'
+                  : 'Individual'}
+              </h2>
             </div>
+            <VisualProfileInfo
+              selectedPrototype={selectedVisualPrototype}
+              viewMode={visualProfileView}
+              planets={response?.visualProfile.planets ?? null}
+              relation={visualProfileRelation?.relation ?? null}
+            />
             {response ? <HoroscopeResultSummary response={response} /> : renderBirthData()}
             {response && (
               <button type="button" onClick={() => setIsEditingBirthData(true)}>
@@ -168,9 +199,6 @@ export default function Horoscope() {
             )}
             {response && isEditingBirthData && renderBirthData()}
           </aside>
-          <main className="horoscope-profile-canvas" aria-label="Visual Profile workspace">
-            <VisualProfile />
-          </main>
         </div>
       ) : (
         <div className="horoscope-workspace">

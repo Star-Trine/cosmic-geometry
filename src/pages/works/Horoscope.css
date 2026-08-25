@@ -564,7 +564,7 @@
 
 .horoscope-profile-workspace {
   display: grid;
-  grid-template-columns: minmax(280px, 0.72fr) minmax(560px, 2fr);
+  grid-template-columns: minmax(560px, 2fr) minmax(280px, 0.72fr);
   gap: 1rem;
   width: min(1500px, 100%);
   margin: 0 auto;
@@ -609,6 +609,1584 @@
   max-width: 34rem;
   color: var(--horoscope-muted);
   line-height: 1.8;
+}
+
+.visual-profile-prototype {
+  width: min(100%, 760px);
+}
+
+.visual-profile-view-selector {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin-bottom: 0.8rem;
+  padding: 0.22rem;
+  border: 1px solid rgba(133, 177, 255, 0.14);
+  border-radius: 0.65rem;
+  background: rgba(3, 7, 22, 0.42);
+}
+
+.horoscope-work .visual-profile-view-selector button {
+  min-width: 6.8rem;
+  padding: 0.42rem 0.7rem;
+  border-color: transparent;
+  color: var(--horoscope-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  background: transparent;
+  box-shadow: none;
+}
+
+.horoscope-work .visual-profile-view-selector button.is-active {
+  border-color: rgba(113, 220, 255, 0.24);
+  color: rgba(235, 249, 255, 0.98);
+  background: rgba(75, 164, 221, 0.11);
+}
+
+.visual-profile-selector {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.1rem;
+  padding: 0.28rem;
+  border: 1px solid rgba(133, 177, 255, 0.16);
+  border-radius: 0.75rem;
+  background: rgba(3, 7, 22, 0.5);
+}
+
+.horoscope-work .visual-profile-selector button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 7.2rem;
+  padding: 0.5rem 0.72rem;
+  border-color: transparent;
+  color: var(--horoscope-muted);
+  font-size: 0.72rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+.horoscope-work .visual-profile-selector button span {
+  font-family: "Noto Sans Symbols 2", "Apple Symbols", "Segoe UI Symbol", sans-serif;
+  font-size: 1rem;
+}
+
+.horoscope-work .visual-profile-selector button:hover {
+  color: var(--horoscope-text);
+  background: rgba(83, 170, 229, 0.07);
+}
+
+.horoscope-work .visual-profile-selector button:disabled {
+  cursor: not-allowed;
+  color: rgba(158, 172, 205, 0.34);
+  background: transparent;
+  opacity: 0.7;
+}
+
+.horoscope-work .visual-profile-selector button:disabled:hover {
+  color: rgba(158, 172, 205, 0.34);
+  background: transparent;
+}
+
+.horoscope-work .visual-profile-selector button.is-active {
+  border-color: rgba(113, 220, 255, 0.28);
+  color: rgba(235, 249, 255, 0.98);
+  background: linear-gradient(135deg, rgba(72, 178, 231, 0.14), rgba(123, 129, 224, 0.12));
+  box-shadow: inset 0 0 18px rgba(113, 220, 255, 0.05), 0 0 14px rgba(113, 220, 255, 0.06);
+}
+
+.visual-profile-prototype__heading {
+  margin-bottom: 1rem;
+}
+
+.visual-profile-prototype__heading > p {
+  margin: 0 0 0.35rem;
+  color: var(--horoscope-cyan);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.visual-profile-prototype__heading h2 {
+  margin: 0;
+  color: rgba(235, 244, 255, 0.94);
+  font-size: clamp(1.1rem, 2.2vw, 1.7rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.visual-profile-coverage-note {
+  max-width: 42rem;
+  margin: -0.35rem 0 0.85rem;
+  color: rgba(169, 191, 222, 0.7);
+  font-size: 0.68rem;
+  line-height: 1.55;
+  letter-spacing: 0.025em;
+}
+
+.visual-profile-prototype__svg {
+  display: block;
+  width: min(100%, 640px);
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.visual-profile-environment__depth {
+  fill: url(#visual-profile-depth);
+}
+
+.visual-profile-environment__neutral-field {
+  fill: rgba(70, 105, 143, 0.025);
+  stroke: rgba(135, 184, 224, 0.1);
+  stroke-width: 0.7;
+  stroke-dasharray: 2 7;
+}
+
+.visual-profile-environment__neutral-boundary {
+  fill: none;
+  stroke: rgba(135, 184, 224, 0.09);
+  stroke-width: 0.7;
+  stroke-dasharray: 1 10;
+}
+
+.visual-profile-environment__orbit {
+  fill: none;
+  stroke: rgba(133, 183, 225, 0.13);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-environment__orbit--far {
+  transform: rotate(-14deg);
+  transform-origin: 238px 248px;
+}
+
+.visual-profile-environment__orbit--near {
+  stroke: rgba(132, 148, 215, 0.1);
+  transform: rotate(21deg);
+  transform-origin: 246px 226px;
+}
+
+.visual-profile-environment__veil {
+  fill: url(#visual-profile-veil);
+  filter: url(#visual-profile-veil-blur);
+}
+
+.visual-profile-environment__veil--deep {
+  opacity: 0.52;
+}
+
+.visual-profile-planet__containment {
+  fill: none;
+  stroke: rgba(148, 215, 235, 0.19);
+  stroke-dasharray: 2 9;
+  stroke-width: 0.8;
+}
+
+.visual-profile-planet__radiation path {
+  fill: none;
+  stroke: rgba(143, 219, 238, 0.44);
+  stroke-linecap: round;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-planet__halo {
+  fill: rgba(106, 207, 229, 0.035);
+  stroke: rgba(164, 230, 245, 0.3);
+  stroke-width: 0.8;
+  filter: url(#visual-profile-soft-glow);
+}
+
+.visual-profile-planet__core {
+  fill: url(#visual-profile-core);
+  filter: url(#visual-profile-soft-glow);
+}
+
+.visual-profile-planet__core-ring {
+  fill: none;
+  stroke: rgba(218, 245, 255, 0.64);
+  stroke-width: 0.7;
+}
+
+.visual-profile-sign__crystal-rings polygon,
+.visual-profile-sign__lattice line {
+  fill: none;
+  stroke: rgba(129, 205, 218, 0.28);
+  stroke-width: 0.72;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-sign__crystal-rings polygon:nth-child(2) {
+  stroke: rgba(157, 219, 229, 0.38);
+}
+
+.visual-profile-sign__mutable-nodes circle {
+  fill: rgba(181, 236, 242, 0.68);
+  filter: drop-shadow(0 0 3px rgba(98, 213, 231, 0.42));
+}
+
+.visual-profile-environment__expressive-field {
+  fill: url(#visual-profile-fifth-house-field);
+}
+
+.visual-profile-environment__open-arcs path {
+  fill: none;
+  stroke: rgba(245, 218, 161, 0.2);
+  stroke-linecap: round;
+  stroke-width: 0.9;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-environment__open-arcs path:nth-child(2) {
+  stroke: rgba(143, 214, 233, 0.17);
+}
+
+.visual-profile-environment__open-arcs path:nth-child(3) {
+  stroke: rgba(249, 226, 175, 0.12);
+}
+
+.visual-profile-environment__stage-points circle {
+  fill: rgba(255, 235, 186, 0.72);
+  filter: drop-shadow(0 0 4px rgba(255, 202, 107, 0.34));
+}
+
+.visual-profile-leo-sun__outer-orbit {
+  fill: none;
+  stroke: rgba(252, 224, 167, 0.24);
+  stroke-dasharray: 1 8;
+  stroke-width: 0.8;
+}
+
+.visual-profile-leo-sun__radiation line {
+  stroke: url(#visual-profile-leo-ray);
+  stroke-linecap: round;
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 2.5px rgba(255, 211, 122, 0.24));
+}
+
+.visual-profile-leo-sun__radiation line:nth-child(odd) {
+  stroke-width: 1.5;
+}
+
+.visual-profile-leo-sun__halo {
+  fill: rgba(255, 212, 124, 0.055);
+  stroke: rgba(255, 232, 183, 0.4);
+  stroke-width: 0.85;
+  filter: url(#visual-profile-leo-glow);
+}
+
+.visual-profile-leo-sun__core {
+  fill: url(#visual-profile-leo-core);
+  filter: url(#visual-profile-leo-glow);
+}
+
+.visual-profile-leo-sun__core-ring {
+  fill: none;
+  stroke: rgba(255, 245, 218, 0.78);
+  stroke-width: 0.85;
+}
+
+.visual-profile-leo__fixed-ring {
+  fill: none;
+  stroke: rgba(255, 224, 164, 0.3);
+  stroke-width: 0.9;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-leo__fixed-ring--outer {
+  stroke: rgba(139, 214, 231, 0.2);
+  stroke-width: 0.7;
+}
+
+.visual-profile-leo__fire-points path {
+  fill: rgba(255, 210, 118, 0.035);
+  stroke: rgba(255, 225, 166, 0.46);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.85;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-label__symbol--leo-sun {
+  fill: rgba(255, 252, 237, 0.98);
+  filter: drop-shadow(0 0 5px rgba(255, 211, 124, 0.58));
+}
+
+.visual-profile-label__symbol {
+  fill: rgba(246, 252, 255, 0.96);
+  font-family: "Noto Sans Symbols 2", "Apple Symbols", "Segoe UI Symbol", sans-serif;
+  font-size: 18px;
+  text-anchor: middle;
+  filter: drop-shadow(0 0 4px rgba(168, 232, 255, 0.5));
+}
+
+.visual-profile-label__stage {
+  fill: rgba(155, 178, 215, 0.62);
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-anchor: middle;
+}
+
+.visual-profile-environment__front-field {
+  fill: url(#visual-profile-front-field);
+}
+
+.visual-profile-environment__clear-ring,
+.visual-profile-environment__clear-axis {
+  fill: none;
+  stroke: rgba(135, 218, 239, 0.19);
+  stroke-width: 0.72;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-environment__clear-ring--inner {
+  stroke: rgba(165, 229, 242, 0.12);
+  stroke-dasharray: 2 8;
+}
+
+.visual-profile-environment__clear-axis {
+  stroke: rgba(136, 205, 225, 0.1);
+  stroke-dasharray: 1 7;
+}
+
+.visual-profile-mercury__connections line {
+  stroke: rgba(142, 224, 239, 0.43);
+  stroke-width: 0.85;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-mercury__node-halo {
+  fill: rgba(108, 218, 236, 0.045);
+  stroke: rgba(116, 216, 235, 0.12);
+  stroke-width: 0.6;
+}
+
+.visual-profile-mercury__node {
+  fill: rgba(193, 245, 252, 0.88);
+  stroke: rgba(111, 213, 232, 0.8);
+  stroke-width: 0.7;
+  filter: url(#visual-profile-signal-glow);
+}
+
+.visual-profile-mercury__nodes .is-primary .visual-profile-mercury__node-halo {
+  fill: rgba(111, 221, 239, 0.08);
+  stroke: rgba(163, 235, 246, 0.3);
+}
+
+.visual-profile-mercury__nodes .is-primary .visual-profile-mercury__node {
+  fill: rgba(231, 252, 255, 0.96);
+}
+
+.visual-profile-libra__balance-axis {
+  stroke: rgba(197, 239, 246, 0.3);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-libra__signals line {
+  stroke: rgba(117, 223, 240, 0.56);
+  stroke-linecap: round;
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 2px rgba(88, 208, 231, 0.28));
+}
+
+.visual-profile-libra__signal-orbit {
+  fill: none;
+  stroke: rgba(131, 219, 235, 0.24);
+  stroke-dasharray: 1 9;
+  stroke-width: 0.75;
+}
+
+.visual-profile-label__symbol--mercury {
+  fill: rgba(230, 252, 255, 0.98);
+}
+
+.visual-profile-environment__held-field {
+  fill: url(#visual-profile-held-field);
+}
+
+.visual-profile-environment__held-boundary {
+  fill: none;
+  stroke: rgba(130, 184, 210, 0.2);
+  stroke-width: 0.9;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-environment__ground-layers path {
+  fill: url(#visual-profile-ground-layer);
+  stroke: rgba(124, 180, 202, 0.2);
+  stroke-width: 0.7;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-environment__ground-axis {
+  stroke: rgba(158, 207, 222, 0.3);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-mars__counter-vectors path {
+  fill: none;
+  stroke: rgba(116, 174, 197, 0.28);
+  stroke-linecap: round;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-mars__vector-rail {
+  fill: none;
+  stroke: rgba(145, 211, 226, 0.38);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-mars__vector-core {
+  fill: none;
+  stroke: url(#visual-profile-mars-vector);
+  stroke-linecap: round;
+  stroke-width: 2.2;
+  vector-effect: non-scaling-stroke;
+  filter: url(#visual-profile-mars-glow);
+}
+
+.visual-profile-mars__vector-tip {
+  fill: rgba(211, 246, 251, 0.42);
+  stroke: rgba(217, 250, 255, 0.74);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 3px rgba(110, 207, 227, 0.32));
+}
+
+.visual-profile-mars__compressed-halo {
+  fill: rgba(89, 172, 193, 0.055);
+  stroke: rgba(137, 209, 224, 0.24);
+  stroke-width: 0.8;
+}
+
+.visual-profile-mars__compressed-core {
+  fill: rgba(220, 249, 253, 0.9);
+  stroke: rgba(121, 208, 224, 0.7);
+  stroke-width: 0.7;
+  filter: url(#visual-profile-mars-glow);
+}
+
+.visual-profile-mars__core-ring {
+  fill: none;
+  stroke: rgba(160, 220, 231, 0.46);
+  stroke-width: 0.8;
+}
+
+.visual-profile-scorpio__contained-flow,
+.visual-profile-scorpio__return-flow {
+  fill: none;
+  stroke: rgba(103, 191, 211, 0.4);
+  stroke-linecap: round;
+  stroke-width: 1.1;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-scorpio__contained-flow--inner {
+  stroke: rgba(151, 218, 229, 0.48);
+  stroke-width: 0.9;
+}
+
+.visual-profile-scorpio__return-flow {
+  stroke: rgba(92, 163, 192, 0.26);
+}
+
+.visual-profile-scorpio__fixed-orbit {
+  fill: none;
+  stroke: rgba(119, 186, 207, 0.2);
+  stroke-dasharray: 4 6;
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-scorpio__anchors circle {
+  fill: rgba(179, 232, 239, 0.74);
+  filter: drop-shadow(0 0 3px rgba(92, 198, 217, 0.36));
+}
+
+/* Individual Visual Transformation: element color roles remain separate from planet identity. */
+.visual-profile-prototype__svg[data-texture] .visual-profile-leo-sun__radiation line {
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-ray-width);
+  opacity: var(--vp-opacity);
+  filter: drop-shadow(0 0 var(--vp-glow-radius) var(--vp-glow));
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-leo-sun__radiation line:nth-child(3n) {
+  stroke: var(--vp-secondary);
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-leo-sun__radiation line:nth-child(5n) {
+  stroke: var(--vp-accent);
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-leo-sun__core,
+.visual-profile-prototype__svg[data-texture] .visual-profile-mars__compressed-core {
+  fill: var(--vp-core);
+  filter: drop-shadow(0 0 var(--vp-core-glow-radius) var(--vp-glow));
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-leo-sun__core-ring,
+.visual-profile-prototype__svg[data-texture] .visual-profile-leo-sun__outer-orbit,
+.visual-profile-prototype__svg[data-texture] .visual-profile-mars__core-ring {
+  stroke: var(--vp-secondary);
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-mercury__connections line {
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-network-width);
+  opacity: var(--vp-opacity);
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-mercury__node {
+  fill: var(--vp-core);
+  stroke: var(--vp-accent);
+  filter: drop-shadow(0 0 var(--vp-glow-radius) var(--vp-glow));
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-mercury__node-halo {
+  fill: color-mix(in srgb, var(--vp-primary) 10%, transparent);
+  stroke: var(--vp-secondary);
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-mars__vector-core {
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-vector-width);
+  filter: drop-shadow(0 0 var(--vp-core-glow-radius) var(--vp-glow));
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-mars__vector-rail,
+.visual-profile-prototype__svg[data-texture] .visual-profile-mars__counter-vectors path {
+  stroke: var(--vp-secondary);
+}
+
+.visual-profile-prototype__svg[data-texture] .visual-profile-mars__vector-tip {
+  fill: color-mix(in srgb, var(--vp-accent) 42%, transparent);
+  stroke: var(--vp-accent);
+}
+
+.visual-profile-transform__crystal polygon,
+.visual-profile-transform__crystal line,
+.visual-profile-transform__network polygon,
+.visual-profile-transform__network line,
+.visual-profile-transform__fluid path,
+.visual-profile-transform__fluid ellipse,
+.visual-profile-transform__radiant circle,
+.visual-profile-transform__radiant path {
+  fill: none;
+  stroke: var(--vp-secondary);
+  stroke-width: var(--vp-texture-width);
+  opacity: var(--vp-opacity);
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-transform__crystal polygon:nth-child(2),
+.visual-profile-transform__fluid path:nth-child(2),
+.visual-profile-transform__radiant path:nth-child(3n) {
+  stroke: var(--vp-accent);
+}
+
+.visual-profile-transform__network circle {
+  fill: var(--vp-accent);
+  filter: drop-shadow(0 0 4px var(--vp-glow));
+}
+
+.visual-profile-transform__fluid path,
+.visual-profile-transform__fluid ellipse {
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 3px var(--vp-glow));
+}
+
+.visual-profile-transform__radiant path {
+  stroke: var(--vp-primary);
+  filter: drop-shadow(0 0 4px var(--vp-glow));
+}
+
+.visual-profile-moon__ripples ellipse,
+.visual-profile-moon__reflection-orbit {
+  fill: none;
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-texture-width);
+  opacity: var(--vp-opacity);
+  filter: drop-shadow(0 0 var(--vp-glow-radius) var(--vp-glow));
+}
+
+.visual-profile-moon__ripples ellipse:nth-child(even) { stroke: var(--vp-secondary); }
+.visual-profile-moon__core { fill: color-mix(in srgb, var(--vp-secondary) 12%, transparent); stroke: var(--vp-secondary); }
+.visual-profile-moon__crescent { fill: var(--vp-core); stroke: var(--vp-accent); filter: drop-shadow(0 0 var(--vp-core-glow-radius) var(--vp-glow)); }
+.visual-profile-moon__phase-nodes circle { fill: var(--vp-accent); filter: drop-shadow(0 0 3px var(--vp-glow)); }
+
+.visual-profile-venus__symmetry-axis,
+.visual-profile-venus__balance-orbit,
+.visual-profile-venus__attraction-paths path {
+  fill: none;
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-network-width);
+  opacity: var(--vp-opacity);
+}
+
+.visual-profile-venus__attraction-paths path:nth-child(even) { stroke: var(--vp-secondary); }
+.visual-profile-venus__paired-forms circle { fill: color-mix(in srgb, var(--vp-primary) 8%, transparent); stroke: var(--vp-accent); }
+.visual-profile-venus__paired-forms circle:nth-child(n + 3),
+.visual-profile-venus__attraction-core { fill: var(--vp-core); filter: drop-shadow(0 0 var(--vp-glow-radius) var(--vp-glow)); }
+.visual-profile-venus__attraction-core { stroke: var(--vp-secondary); }
+
+.visual-profile-jupiter__shells ellipse,
+.visual-profile-jupiter__growth-arcs path,
+.visual-profile-jupiter__seed-ring {
+  fill: none;
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-texture-width);
+  opacity: var(--vp-opacity);
+  filter: drop-shadow(0 0 var(--vp-glow-radius) var(--vp-glow));
+}
+
+.visual-profile-jupiter__shells ellipse:nth-child(even),
+.visual-profile-jupiter__growth-arcs path:nth-child(even) { stroke: var(--vp-secondary); }
+.visual-profile-jupiter__shells ellipse:last-child { stroke: var(--vp-accent); }
+.visual-profile-jupiter__seed { fill: var(--vp-core); stroke: var(--vp-accent); filter: drop-shadow(0 0 var(--vp-core-glow-radius) var(--vp-glow)); }
+.visual-profile-jupiter__seed-ring { stroke: var(--vp-secondary); }
+
+.visual-profile-saturn__frames rect,
+.visual-profile-saturn__walls path,
+.visual-profile-saturn__inner-frame {
+  fill: none;
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-texture-width);
+  opacity: var(--vp-opacity);
+}
+.visual-profile-saturn__frames rect:nth-child(even), .visual-profile-saturn__inner-frame { stroke: var(--vp-secondary); }
+.visual-profile-saturn__walls path { stroke: var(--vp-accent); stroke-width: var(--vp-ray-width); }
+.visual-profile-saturn__contained-core { fill: var(--vp-core); stroke: var(--vp-secondary); filter: drop-shadow(0 0 var(--vp-glow-radius) var(--vp-glow)); }
+
+.visual-profile-uranus__fractures path,
+.visual-profile-uranus__broken-axis {
+  fill: none;
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-network-width);
+  opacity: var(--vp-opacity);
+}
+.visual-profile-uranus__fractures g:nth-child(even) path { stroke: var(--vp-accent); }
+.visual-profile-uranus__fractures circle { fill: var(--vp-accent); filter: drop-shadow(0 0 var(--vp-glow-radius) var(--vp-glow)); }
+.visual-profile-uranus__broken-axis { stroke: var(--vp-secondary); stroke-width: var(--vp-vector-width); }
+.visual-profile-uranus__displaced-core { fill: var(--vp-core); stroke: var(--vp-accent); filter: drop-shadow(0 0 var(--vp-core-glow-radius) var(--vp-glow)); }
+
+.visual-profile-neptune__fields ellipse,
+.visual-profile-neptune__dissolving-contour {
+  fill: color-mix(in srgb, var(--vp-primary) 3%, transparent);
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-texture-width);
+  opacity: 0.58;
+}
+.visual-profile-neptune__fields ellipse:nth-child(even) { stroke: var(--vp-secondary); opacity: 0.36; }
+.visual-profile-neptune__dissolving-contour { fill: none; stroke: var(--vp-accent); filter: drop-shadow(0 0 var(--vp-glow-radius) var(--vp-glow)); }
+.visual-profile-neptune__source { fill: color-mix(in srgb, var(--vp-core) 48%, transparent); stroke: var(--vp-secondary); }
+.visual-profile-neptune__diffuse-points circle { fill: var(--vp-accent); opacity: 0.62; filter: drop-shadow(0 0 3px var(--vp-glow)); }
+
+.visual-profile-pluto__collapse-rings ellipse,
+.visual-profile-pluto__inward-vectors path,
+.visual-profile-pluto__rebuilt-core {
+  fill: none;
+  stroke: var(--vp-primary);
+  stroke-width: var(--vp-network-width);
+  opacity: var(--vp-opacity);
+}
+.visual-profile-pluto__collapse-rings ellipse:nth-child(even) { stroke: var(--vp-secondary); }
+.visual-profile-pluto__inward-vectors path { stroke: var(--vp-accent); filter: drop-shadow(0 0 var(--vp-glow-radius) var(--vp-glow)); }
+.visual-profile-pluto__compressed-core { fill: var(--vp-core); stroke: var(--vp-accent); filter: drop-shadow(0 0 var(--vp-core-glow-radius) var(--vp-glow)); }
+.visual-profile-pluto__rebuilt-core { fill: color-mix(in srgb, var(--vp-secondary) 9%, transparent); stroke: var(--vp-secondary); stroke-width: var(--vp-ray-width); }
+
+.visual-profile-label__symbol--mars {
+  fill: rgba(239, 252, 255, 0.97);
+  font-size: 16px;
+}
+
+.visual-profile-relation {
+  width: 100%;
+}
+
+.visual-profile-relation__heading {
+  margin-bottom: 0.6rem;
+}
+
+.visual-profile-relation__heading > p {
+  margin: 0 0 0.3rem;
+  color: var(--horoscope-cyan);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.visual-profile-relation__heading h2 {
+  margin: 0;
+  color: rgba(235, 244, 255, 0.94);
+  font-size: clamp(1.1rem, 2.2vw, 1.7rem);
+  font-weight: 500;
+}
+
+.visual-profile-relation__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+}
+
+.horoscope-work .visual-profile-relation__controls button {
+  min-width: 5.4rem;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.7rem;
+}
+
+.visual-profile-relation__controls span {
+  color: var(--horoscope-muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+}
+
+.visual-profile-relation__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0.5rem 0;
+}
+
+.horoscope-work .visual-profile-relation__navigation button {
+  min-width: 4.8rem;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.66rem;
+}
+
+.visual-profile-relation__navigation span {
+  min-width: 6.5rem;
+  color: var(--horoscope-muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.visual-profile-relation-stage {
+  position: relative;
+  width: min(100%, 590px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.visual-profile-relation__profile,
+.visual-profile-relation__operator {
+  position: absolute;
+  inset: 0;
+}
+
+.visual-profile-relation__profile .visual-profile-prototype__svg,
+.visual-profile-relation__operator-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.visual-profile-relation__profile--sun {
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+.visual-profile-relation__profile--mars,
+.visual-profile-relation__operator {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visual-profile-relation-stage.is-playing {
+  animation: visual-profile-relation-timer 8s linear forwards;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-relation__profile--sun {
+  animation: visual-profile-relation-sun 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-relation__profile--sun [aria-label="Twelfth house environment"] {
+  animation: visual-profile-relation-sun-environment 8s ease-in-out forwards;
+  transform-origin: center;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-relation__operator {
+  animation: visual-profile-relation-operator 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-relation__profile--mars {
+  animation: visual-profile-relation-mars 8s ease-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-relation__profile--mars [aria-label="Mars vector and impulse"] {
+  animation: visual-profile-relation-mars-vector 8s ease-out forwards;
+  transform-origin: 207px 286px;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-relation__profile--mars [aria-label="Second house environment"] {
+  animation: visual-profile-relation-mars-environment 8s ease-out forwards;
+}
+
+.visual-profile-relation-stage.is-complete .visual-profile-relation__profile--sun,
+.visual-profile-relation-stage.is-complete .visual-profile-relation__operator {
+  opacity: 0;
+}
+
+.visual-profile-relation-stage.is-complete .visual-profile-relation__profile--mars {
+  opacity: 1;
+  transform: none;
+}
+
+.visual-profile-conjunction__fusion-rings circle {
+  fill: none;
+  stroke: rgba(202, 242, 255, 0.58);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  filter: url(#visual-profile-conjunction-glow);
+}
+
+.visual-profile-conjunction__fusion-rings circle:nth-child(2) {
+  stroke: rgba(143, 221, 235, 0.48);
+  stroke-dasharray: 3 5;
+}
+
+.visual-profile-conjunction__fusion-rings circle:nth-child(3) {
+  stroke: rgba(226, 248, 255, 0.76);
+}
+
+.visual-profile-conjunction__fusion-core {
+  fill: rgba(235, 252, 255, 0.84);
+  filter: url(#visual-profile-conjunction-glow);
+}
+
+.visual-profile-conjunction__label {
+  fill: rgba(198, 238, 247, 0.84);
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-anchor: middle;
+}
+
+.visual-profile-relation-stage.is-playing.is-conjunction .visual-profile-relation__profile--sun {
+  animation: visual-profile-conjunction-source 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-conjunction .visual-profile-relation__profile--mars {
+  animation: visual-profile-conjunction-target 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-conjunction .visual-profile-relation__operator {
+  animation: visual-profile-conjunction-fusion 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-conjunction .visual-profile-conjunction__fusion-rings circle {
+  animation: visual-profile-conjunction-ring 2s ease-in-out infinite;
+}
+
+.visual-profile-relation-stage.is-playing.is-conjunction .visual-profile-conjunction__fusion-rings circle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.visual-profile-relation-stage.is-playing.is-conjunction .visual-profile-conjunction__fusion-rings circle:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.visual-profile-sextile__bridges path {
+  fill: none;
+  stroke: rgba(117, 226, 211, 0.64);
+  stroke-dasharray: 5 6;
+  stroke-linecap: round;
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+  filter: url(#visual-profile-sextile-glow);
+}
+
+.visual-profile-sextile__direction path {
+  fill: none;
+  stroke: rgba(172, 239, 227, 0.58);
+  stroke-linecap: round;
+  stroke-width: 0.9;
+  vector-effect: non-scaling-stroke;
+  filter: url(#visual-profile-sextile-glow);
+}
+
+.visual-profile-sextile__bridges path:nth-child(2) {
+  stroke: rgba(148, 232, 225, 0.48);
+  stroke-width: 0.9;
+}
+
+.visual-profile-sextile__bridges path:nth-child(3) {
+  stroke: rgba(103, 196, 199, 0.36);
+  stroke-width: 0.75;
+}
+
+.visual-profile-sextile__resonance {
+  fill: rgba(95, 214, 201, 0.025);
+  stroke: rgba(137, 231, 218, 0.42);
+  stroke-dasharray: 2 7;
+  stroke-width: 0.85;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-profile-sextile__nodes circle,
+.visual-profile-sextile__pulses circle {
+  fill: rgba(205, 252, 244, 0.9);
+  filter: drop-shadow(0 0 4px rgba(90, 222, 204, 0.5));
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-sextile__bridges path {
+  animation: visual-profile-sextile-flow 1.1s linear infinite;
+}
+
+.visual-profile-relation-stage.is-playing.is-sextile .visual-profile-relation__profile--sun {
+  animation: visual-profile-sextile-source 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-sextile .visual-profile-relation__operator {
+  animation: visual-profile-sextile-operator 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-sextile .visual-profile-relation__profile--mars {
+  animation: visual-profile-sextile-target 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-sextile .visual-profile-sextile__direction path {
+  stroke-dasharray: 4 7;
+  animation: visual-profile-sextile-direction 1.1s linear infinite;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-sextile__pulses circle {
+  animation: visual-profile-sextile-pulse 1.5s ease-in-out infinite;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-sextile__pulses circle:nth-child(2) {
+  animation-delay: 0.24s;
+}
+
+.visual-profile-relation-stage.is-playing .visual-profile-sextile__pulses circle:nth-child(3) {
+  animation-delay: 0.48s;
+}
+
+.visual-profile-sextile__label {
+  fill: rgba(167, 235, 225, 0.8);
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-anchor: middle;
+}
+
+.visual-profile-trine__field,
+.visual-profile-trine__circulation {
+  fill: rgba(88, 199, 218, 0.025);
+  stroke: rgba(124, 224, 240, 0.38);
+  stroke-width: 0.9;
+  vector-effect: non-scaling-stroke;
+  filter: url(#visual-profile-trine-glow);
+}
+
+.visual-profile-trine__field {
+  stroke-dasharray: 3 8;
+}
+
+.visual-profile-trine__flows path {
+  fill: none;
+  stroke: rgba(111, 222, 240, 0.58);
+  stroke-linecap: round;
+  stroke-width: 1.1;
+  vector-effect: non-scaling-stroke;
+  filter: url(#visual-profile-trine-glow);
+}
+
+.visual-profile-trine__flows path:nth-child(2) { opacity: 0.72; stroke-width: 0.9; }
+.visual-profile-trine__flows path:nth-child(3) { opacity: 0.52; stroke-width: 0.75; }
+
+.visual-profile-trine__nodes circle {
+  fill: rgba(211, 250, 255, 0.88);
+  filter: url(#visual-profile-trine-glow);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.visual-profile-trine__label {
+  fill: rgba(174, 237, 247, 0.84);
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.17em;
+  text-anchor: middle;
+}
+
+.visual-profile-relation-stage.is-playing.is-trine .visual-profile-relation__profile--sun {
+  animation: visual-profile-trine-source 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-trine .visual-profile-relation__operator {
+  animation: visual-profile-trine-operator 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-trine .visual-profile-relation__profile--mars {
+  animation: visual-profile-trine-target 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-trine .visual-profile-trine__flows path {
+  stroke-dasharray: 5 9;
+  animation: visual-profile-trine-flow 1.4s linear infinite;
+}
+
+.visual-profile-relation-stage.is-playing.is-trine .visual-profile-trine__circulation {
+  animation: visual-profile-trine-circulation 2.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.visual-profile-relation-stage.is-playing.is-trine .visual-profile-trine__nodes circle {
+  animation: visual-profile-trine-node 1.8s ease-in-out infinite;
+}
+
+.visual-profile-relation-stage.is-playing.is-trine .visual-profile-trine__nodes circle:nth-child(2) { animation-delay: 0.3s; }
+.visual-profile-relation-stage.is-playing.is-trine .visual-profile-trine__nodes circle:nth-child(3) { animation-delay: 0.6s; }
+
+.visual-profile-square__tension-frame {
+  fill: rgba(111, 125, 220, 0.025);
+  stroke: rgba(132, 150, 238, 0.52);
+  stroke-dasharray: 4 5;
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  filter: url(#visual-profile-square-glow);
+}
+
+.visual-profile-square__forces path,
+.visual-profile-square__force-heads path {
+  fill: none;
+  stroke: rgba(136, 153, 239, 0.72);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+  filter: url(#visual-profile-square-glow);
+}
+
+.visual-profile-square__impact {
+  fill: rgba(215, 224, 255, 0.88);
+  filter: url(#visual-profile-square-glow);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.visual-profile-square__label,
+.visual-profile-opposition__label {
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-anchor: middle;
+}
+
+.visual-profile-square__label { fill: rgba(190, 201, 255, 0.86); }
+
+.visual-profile-relation-stage.is-playing.is-square .visual-profile-relation__profile--sun {
+  animation: visual-profile-square-source 8s cubic-bezier(0.55, 0, 0.45, 1) forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-square .visual-profile-relation__operator {
+  animation: visual-profile-square-operator 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-square .visual-profile-relation__profile--mars {
+  animation: visual-profile-square-target 8s cubic-bezier(0.55, 0, 0.45, 1) forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-square .visual-profile-square__forces,
+.visual-profile-relation-stage.is-playing.is-square .visual-profile-square__force-heads {
+  animation: visual-profile-square-cross-force 1.15s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.visual-profile-relation-stage.is-playing.is-square .visual-profile-square__tension-frame {
+  animation: visual-profile-square-frame 1.5s ease-in-out infinite;
+}
+
+.visual-profile-relation-stage.is-playing.is-square .visual-profile-square__impact {
+  animation: visual-profile-square-impact 0.9s ease-in-out infinite;
+}
+
+.visual-profile-opposition__axis line,
+.visual-profile-opposition__axis path,
+.visual-profile-opposition__balance-line {
+  fill: none;
+  stroke: rgba(197, 162, 245, 0.72);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+  filter: url(#visual-profile-opposition-glow);
+}
+
+.visual-profile-opposition__poles circle {
+  fill: rgba(183, 143, 239, 0.055);
+  stroke: rgba(204, 174, 247, 0.68);
+  stroke-width: 1;
+  filter: url(#visual-profile-opposition-glow);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.visual-profile-opposition__balance {
+  fill: rgba(235, 219, 255, 0.88);
+  filter: url(#visual-profile-opposition-glow);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.visual-profile-opposition__label { fill: rgba(219, 194, 250, 0.88); }
+
+.visual-profile-relation-stage.is-playing.is-opposition .visual-profile-relation__profile--sun {
+  animation: visual-profile-opposition-source 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-opposition .visual-profile-relation__operator {
+  animation: visual-profile-opposition-operator 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-opposition .visual-profile-relation__profile--mars {
+  animation: visual-profile-opposition-target 8s ease-in-out forwards;
+}
+
+.visual-profile-relation-stage.is-playing.is-opposition .visual-profile-opposition__axis {
+  animation: visual-profile-opposition-axis 1.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.visual-profile-relation-stage.is-playing.is-opposition .visual-profile-opposition__poles circle {
+  animation: visual-profile-opposition-pole 1.6s ease-in-out infinite;
+}
+
+.visual-profile-relation-stage.is-playing.is-opposition .visual-profile-opposition__poles circle:last-child { animation-delay: 0.8s; }
+.visual-profile-relation-stage.is-playing.is-opposition .visual-profile-opposition__balance { animation: visual-profile-opposition-balance 1.2s ease-in-out infinite; }
+
+.visual-profile-relation__phases {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.3rem;
+  margin: -0.45rem auto 0;
+  padding: 0;
+  color: rgba(148, 166, 202, 0.4);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.visual-profile-relation__phases li:first-child,
+.visual-profile-relation-stage.is-complete + .visual-profile-relation__phases li:last-child {
+  color: rgba(179, 229, 241, 0.9);
+}
+
+.visual-profile-relation__phases--conjunction {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.visual-profile-relation-stage.is-playing + .visual-profile-relation__phases li {
+  animation: visual-profile-relation-phase 1.6s ease-in-out both;
+}
+
+.visual-profile-relation-stage.is-playing + .visual-profile-relation__phases li:nth-child(2) { animation-delay: 1.6s; }
+.visual-profile-relation-stage.is-playing + .visual-profile-relation__phases li:nth-child(3) { animation-delay: 3.2s; }
+.visual-profile-relation-stage.is-playing + .visual-profile-relation__phases li:nth-child(4) { animation-delay: 4.8s; }
+.visual-profile-relation-stage.is-playing + .visual-profile-relation__phases li:nth-child(5) { animation-delay: 6.4s; }
+
+.visual-profile-relation-info {
+  margin-bottom: 1.4rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(133, 177, 255, 0.14);
+}
+
+.visual-profile-relation-info__label {
+  margin: 0 0 0.8rem;
+  color: var(--horoscope-cyan);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.visual-profile-relation-info__endpoint {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0;
+}
+
+.visual-profile-relation-info__endpoint > span {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid rgba(113, 220, 255, 0.22);
+  border-radius: 50%;
+  color: rgba(230, 249, 255, 0.95);
+  font-family: "Noto Sans Symbols 2", "Apple Symbols", "Segoe UI Symbol", sans-serif;
+  font-size: 1rem;
+}
+
+.visual-profile-relation-info small {
+  display: block;
+  color: var(--horoscope-muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.visual-profile-relation-info strong {
+  display: block;
+  color: var(--horoscope-text);
+  font-size: 0.86rem;
+}
+
+.visual-profile-relation-info__endpoint p {
+  margin: 0.12rem 0 0;
+  color: var(--horoscope-muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.visual-profile-relation-info__aspect {
+  margin: 0.25rem 0;
+  padding: 0.75rem;
+  border: 1px solid rgba(90, 220, 190, 0.2);
+  border-radius: 0.65rem;
+  background: rgba(73, 174, 164, 0.045);
+}
+
+.visual-profile-relation-info__aspect dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin: 0.6rem 0 0;
+}
+
+.visual-profile-relation-info__aspect dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.visual-profile-relation-info__aspect dt,
+.visual-profile-relation-info__aspect dd {
+  margin: 0;
+  color: var(--horoscope-muted);
+  font-size: 0.68rem;
+}
+
+@keyframes visual-profile-relation-timer {
+  from { opacity: 1; }
+  to { opacity: 0.999; }
+}
+
+@keyframes visual-profile-relation-sun {
+  0%, 18% { opacity: 1; transform: scale(1); }
+  34% { opacity: 0.28; transform: scale(0.82); }
+  53% { opacity: 0.08; transform: scale(0.74); }
+  64%, 100% { opacity: 0; transform: scale(0.7); }
+}
+
+@keyframes visual-profile-relation-sun-environment {
+  0%, 14% { opacity: 1; transform: scale(1); }
+  36%, 100% { opacity: 0; transform: scale(0.88); }
+}
+
+@keyframes visual-profile-relation-operator {
+  0%, 27% { opacity: 0; transform: scale(0.82); }
+  39%, 57% { opacity: 0.94; transform: scale(1); }
+  70%, 100% { opacity: 0; transform: scale(1.08); }
+}
+
+@keyframes visual-profile-relation-mars {
+  0%, 48% { opacity: 0; transform: scale(0.74); }
+  66% { opacity: 0.56; transform: scale(0.9); }
+  84%, 100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes visual-profile-relation-mars-vector {
+  0%, 53% { opacity: 0; transform: scale(0.25); }
+  76%, 100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes visual-profile-relation-mars-environment {
+  0%, 58% { opacity: 0; transform: translateY(18px); }
+  83%, 100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes visual-profile-sextile-flow {
+  to { stroke-dashoffset: -22; }
+}
+
+@keyframes visual-profile-sextile-source {
+  0%, 18% { opacity: 1; transform: translate(0, 0) scale(1); }
+  36% { opacity: 0.48; transform: translate(30px, -52px) scale(0.82); }
+  52%, 100% { opacity: 0; transform: translate(42px, -73px) scale(0.7); }
+}
+
+@keyframes visual-profile-sextile-operator {
+  0%, 27% { opacity: 0; transform: scale(0.82); }
+  42%, 66% { opacity: 0.94; transform: scale(1); }
+  80%, 100% { opacity: 0; transform: scale(1.08); }
+}
+
+@keyframes visual-profile-sextile-target {
+  0%, 64% { opacity: 0; transform: translate(-30px, 52px) scale(0.74); }
+  80% { opacity: 0.62; transform: translate(-12px, 21px) scale(0.9); }
+  92%, 100% { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+
+@keyframes visual-profile-sextile-direction {
+  to { stroke-dashoffset: -22; }
+}
+
+@keyframes visual-profile-sextile-pulse {
+  0%, 100% { opacity: 0.28; transform: scale(0.75); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+
+@keyframes visual-profile-trine-source {
+  0%, 18% { opacity: 1; transform: scale(1) rotate(0deg); }
+  36% { opacity: 0.55; transform: scale(0.82) rotate(-36deg); }
+  50%, 100% { opacity: 0; transform: scale(0.72) rotate(-120deg); }
+}
+
+@keyframes visual-profile-trine-operator {
+  0%, 25% { opacity: 0; transform: scale(0.76) rotate(-24deg); }
+  43%, 68% { opacity: 0.94; transform: scale(1) rotate(0deg); }
+  82%, 100% { opacity: 0; transform: scale(1.12) rotate(24deg); }
+}
+
+@keyframes visual-profile-trine-target {
+  0%, 62% { opacity: 0; transform: scale(0.74) rotate(120deg); }
+  78% { opacity: 0.62; transform: scale(0.9) rotate(36deg); }
+  92%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes visual-profile-trine-flow {
+  to { stroke-dashoffset: -28; }
+}
+
+@keyframes visual-profile-trine-circulation {
+  0%, 100% { opacity: 0.34; transform: scale(0.82) rotate(0deg); }
+  50% { opacity: 0.9; transform: scale(1.18) rotate(120deg); }
+}
+
+@keyframes visual-profile-trine-node {
+  0%, 100% { opacity: 0.3; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+
+@keyframes visual-profile-square-source {
+  0%, 18% { opacity: 1; transform: translate(0, 0) scale(1) skew(0deg); }
+  34% { opacity: 0.8; transform: translate(46px, 0) scale(0.88) skew(0deg); }
+  48% { opacity: 0.4; transform: translate(46px, -26px) scale(0.78) skew(-9deg); }
+  58%, 100% { opacity: 0; transform: translate(12px, -62px) scale(0.68) skew(-14deg); }
+}
+
+@keyframes visual-profile-square-operator {
+  0%, 30% { opacity: 0; transform: scale(0.74); }
+  43%, 66% { opacity: 0.96; transform: scale(1); }
+  80%, 100% { opacity: 0; transform: scale(1.1); }
+}
+
+@keyframes visual-profile-square-target {
+  0%, 64% { opacity: 0; transform: translate(-18px, 58px) scale(0.7) skew(10deg); }
+  80% { opacity: 0.62; transform: translate(-8px, 22px) scale(0.9) skew(3deg); }
+  92%, 100% { opacity: 1; transform: translate(0, 0) scale(1) skew(0deg); }
+}
+
+@keyframes visual-profile-square-cross-force {
+  0%, 100% { opacity: 0.42; transform: scaleX(0.82) scaleY(1.08); }
+  50% { opacity: 1; transform: scaleX(1.08) scaleY(0.86); }
+}
+
+@keyframes visual-profile-square-frame {
+  0%, 100% { opacity: 0.38; transform: scale(0.9) skew(0deg); }
+  50% { opacity: 0.9; transform: scale(1.08) skew(-5deg); }
+}
+
+@keyframes visual-profile-square-impact {
+  0%, 100% { opacity: 0.3; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.45); }
+}
+
+@keyframes visual-profile-opposition-source {
+  0%, 18% { opacity: 1; transform: translateX(0) scale(1); }
+  35% { opacity: 0.85; transform: translateX(58px) scale(0.88); }
+  48% { opacity: 0.48; transform: translateX(34px) scaleX(-0.8) scaleY(0.8); }
+  60%, 100% { opacity: 0; transform: translateX(-54px) scaleX(-0.68) scaleY(0.68); }
+}
+
+@keyframes visual-profile-opposition-operator {
+  0%, 30% { opacity: 0; transform: scaleX(0.65); }
+  45%, 68% { opacity: 0.96; transform: scaleX(1); }
+  82%, 100% { opacity: 0; transform: scaleX(1.14); }
+}
+
+@keyframes visual-profile-opposition-target {
+  0%, 64% { opacity: 0; transform: translateX(62px) scaleX(-0.7) scaleY(0.7); }
+  80% { opacity: 0.64; transform: translateX(22px) scaleX(-0.9) scaleY(0.9); }
+  92%, 100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes visual-profile-opposition-axis {
+  0%, 100% { opacity: 0.42; transform: scaleX(0.76); }
+  50% { opacity: 1; transform: scaleX(1.08); }
+}
+
+@keyframes visual-profile-opposition-pole {
+  0%, 100% { opacity: 0.36; transform: scale(0.78); }
+  50% { opacity: 1; transform: scale(1.22); }
+}
+
+@keyframes visual-profile-opposition-balance {
+  0%, 100% { opacity: 0.42; transform: scale(0.75); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+
+@keyframes visual-profile-conjunction-source {
+  0%, 18% { opacity: 1; transform: scale(1); }
+  32% { opacity: 0.94; transform: scale(0.82); }
+  52% { opacity: 0.78; transform: scale(0.9); filter: brightness(1.12); }
+  66% { opacity: 0.48; transform: scale(0.94); }
+  86%, 100% { opacity: 0; transform: scale(1.04); }
+}
+
+@keyframes visual-profile-conjunction-target {
+  0%, 22% { opacity: 0; transform: scale(0.76); }
+  42% { opacity: 0.46; transform: scale(0.86); }
+  55% { opacity: 0.82; transform: scale(0.9); filter: brightness(1.12); }
+  72% { opacity: 0.9; transform: scale(0.96); }
+  88%, 100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes visual-profile-conjunction-fusion {
+  0%, 22% { opacity: 0; transform: scale(0.65); }
+  42% { opacity: 0.62; transform: scale(0.88); }
+  52%, 64% { opacity: 1; transform: scale(1); }
+  82%, 100% { opacity: 0; transform: scale(1.18); }
+}
+
+@keyframes visual-profile-conjunction-ring {
+  0%, 100% { opacity: 0.36; transform: scale(0.82); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes visual-profile-relation-phase {
+  0%, 100% { color: rgba(148, 166, 202, 0.4); }
+  22%, 78% { color: rgba(179, 229, 241, 0.95); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual-profile-relation-stage.is-conjunction.is-reduced-motion .visual-profile-relation__profile--sun,
+  .visual-profile-relation-stage.is-conjunction.is-reduced-motion .visual-profile-relation__profile--mars {
+    opacity: 0.48;
+    transform: scale(0.88);
+  }
+
+  .visual-profile-relation-stage.is-conjunction.is-reduced-motion .visual-profile-relation__operator {
+    opacity: 0.78;
+    transform: scale(0.9);
+  }
+
+  .visual-profile-relation-stage.is-reduced-motion .visual-profile-relation__profile--sun {
+    opacity: 0.18;
+    transform: translateX(-82px) scale(0.7);
+  }
+
+  .visual-profile-relation-stage.is-reduced-motion .visual-profile-relation__operator {
+    opacity: 0.62;
+    transform: scale(0.78);
+  }
+
+  .visual-profile-relation-stage.is-reduced-motion .visual-profile-relation__profile--mars {
+    opacity: 0.6;
+    transform: translateX(82px) scale(0.7);
+  }
+
+  .visual-profile-relation-stage.is-reduced-motion *,
+  .visual-profile-relation-stage.is-reduced-motion + .visual-profile-relation__phases * {
+    animation: none !important;
+  }
+}
+
+.visual-profile-prototype-info {
+  margin-bottom: 1.4rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(133, 177, 255, 0.14);
+}
+
+.visual-profile-prototype-info__identity {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.visual-profile-prototype-info__identity > span {
+  display: grid;
+  place-items: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border: 1px solid rgba(113, 220, 255, 0.25);
+  border-radius: 50%;
+  color: rgba(232, 249, 255, 0.96);
+  font-family: "Noto Sans Symbols 2", "Apple Symbols", "Segoe UI Symbol", sans-serif;
+  font-size: 1.35rem;
+  box-shadow: inset 0 0 18px rgba(113, 220, 255, 0.08), 0 0 16px rgba(113, 220, 255, 0.07);
+}
+
+.visual-profile-prototype-info__identity p {
+  margin: 0 0 0.15rem;
+  color: var(--horoscope-muted);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.visual-profile-prototype-info__identity h3 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.visual-profile-prototype-info dl {
+  margin: 0;
+}
+
+.visual-profile-prototype-info dl > div {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 0.7rem;
+  padding: 0.58rem 0;
+  border-bottom: 1px solid rgba(133, 177, 255, 0.1);
+}
+
+.visual-profile-prototype-info dt {
+  color: var(--horoscope-muted);
+  font-size: 0.72rem;
+}
+
+.visual-profile-prototype-info dd {
+  margin: 0;
+  color: rgba(226, 239, 255, 0.94);
+  font-size: 0.76rem;
 }
 
 @media (max-width: 1180px) {

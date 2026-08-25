@@ -378,10 +378,12 @@
 /* Concept art */
 
 .time-vector-concept-figure {
-  width: min(1080px, 100%);
+  width: min(720px, 100%);
 }
 
 .time-vector-concept-figure img {
+  width: 100%;
+  height: auto;
   border-color: rgba(157, 150, 255, 0.3);
   box-shadow:
     0 28px 90px rgba(0, 0, 0, 0.5),

@@ -1,19 +1,19 @@
 import '../../styles/ConceptLayout.css';
 import './HoroscopeConcept.css';
 import horoscopeConceptArt from '../../assets/Conceptart-horoscope.png';
+import completionNatalChart from '../../assets/horoscope/horoscope-completion-natal-chart.png';
+import completionIndividualProfile from '../../assets/horoscope/horoscope-completion-moon-aquarius.png';
+import completionRelationProfile from '../../assets/horoscope/horoscope-visual-profile-moon-conjunction-pluto-420w.gif';
 import { Link } from 'react-router-dom';
 
 const visualProfileMappings = [
-  ['2区分', 'Direction（方向性） / Energy Direction（エネルギーの方向性）'],
-  ['3区分', 'Motion（動き） / Shape（形状）'],
-  ['4区分', 'Color（色） / Texture（質感）'],
-  ['Planet', 'Light（光） / Emphasis（強調）'],
-  ['House', 'Brightness（明るさ） / Stage（舞台）'],
-  ['Aspect', 'Line（線） / Relationship（関係性）'],
-  ['Retrograde', 'Reverse（反転） / Special Motion（特殊な動き）'],
+  ['Planet', 'Actor / Geometry（主体 / 幾何学）'],
+  ['Sign', 'Behavior / Transformation（振る舞い / 変形）'],
+  ['House', 'Stage / Environment（舞台 / 環境）'],
+  ['Aspect', 'Relation / Transition Operator（関係 / 状態遷移）'],
 ];
 
-const viewModes = ['Chart', 'Planets', 'Houses', 'Angles', 'Aspects', 'Visual Profile'];
+const viewModes = ['Planets', 'Houses', 'Angles', 'Aspects', 'Analysis', 'Visual Profile'];
 
 function Section({ number, label, title, children }) {
   return (
@@ -82,7 +82,7 @@ export default function HoroscopeConcept() {
         <p>ハウスは、出生時刻と出生地を基準として空を12の領域に分割したものです。</p>
         <p>12サインが黄道上の位置を示すのに対し、ハウスは出生地点から見た空間的な区分として扱われます。</p>
         <p>西洋占星術では、それぞれのハウスが異なる人生領域を象徴すると考えられています。</p>
-        <p>Horoscopeでは、このハウス配置をチャート上の空間的な構造として扱うと同時に、Visual Profileではどの領域に天体が集中しているかを表現するための「舞台」として利用します。</p>
+        <p>Horoscopeでは、このハウス配置をチャート上の空間的な構造として扱うと同時に、Visual Profileでは、各天体が存在するStage / Environmentとして利用します。</p>
       </Section>
 
       <Section number="06" label="Angles" title="主要感受点">
@@ -114,23 +114,111 @@ export default function HoroscopeConcept() {
       </Section>
 
       <Section number="09" label="Visual Profile" title="Visual Profile">
-        <p>Visual Profileは、出生図に含まれる複雑な情報を、色・光・形・線・動き・方向性といった視覚言語へ変換するCosmic Geometry独自の表現です。</p>
-        <p>西洋占星術の出生図には、天体、サイン、ハウス、アスペクトなど、多くの情報が同時に存在しています。</p>
-        <p>それらを文章だけで読む場合、出生図全体にどのような構造的傾向があるのかを直感的に把握することは簡単ではありません。</p>
-        <p>Visual Profileでは、出生図に含まれる情報を一定のルールによって整理し、視覚パラメータへ変換します。</p>
-        <p>現在想定している基本対応は以下です。</p>
-        <dl className="visual-profile-map">
-          {visualProfileMappings.map(([source, target]) => (
-            <div key={source}><dt>{source}</dt><dd><span aria-hidden="true">→</span>{target}</dd></div>
-          ))}
-        </dl>
-        <p>ただし、これらは完全な一対一変換ではなく、必要に応じて複数の視覚パラメータを組み合わせます。</p>
-        <p>例えば、火の元素が多い、活動宮が多い、男性区分が優勢であるという構造があった場合、暖色・外向きの方向性・活発な形状変化などとして視覚化できます。</p>
-        <p>ここで生成するものは、「この人物は情熱的である」「この人物は内向的である」といった人物像の断定ではありません。</p>
-        <blockquote className="concept-quote"><p>「この出生図にはどのような構造的特徴があり、それを視覚言語へ変換するとどのような形になるのか」</p></blockquote>
-        <p>という対応関係そのものを観察するための表現です。</p>
-        <p>Visual Profileは、出生図を別の理論へ置き換えるものではなく、既存の占星術データをCosmic Geometry独自の視覚モデルによって再可視化する試みです。</p>
-      </Section>
+  <p>
+    Visual Profileは、出生図に含まれる天体・サイン・ハウス・アスペクトを、
+    色・形・動き・空間といった視覚言語へ変換するCosmic Geometry独自の表現です。
+  </p>
+
+  <p>
+    Visual Profileでは、出生図の主要要素を次のような役割として扱います。
+  </p>
+
+  <dl className="visual-profile-map">
+    {visualProfileMappings.map(([source, target]) => (
+      <div key={source}>
+        <dt>{source}</dt>
+        <dd><span aria-hidden="true">→</span>{target}</dd>
+      </div>
+    ))}
+  </dl>
+
+  <p>
+    SignはPolarity（2区分）、Modality（3区分）、Element（4元素）の分類をもとに、
+    Planet Geometryの方向性、対称性、分岐、密度、曲率、色彩などへ変化を与えます。
+    HouseはGeometryそのものを変形させるのではなく、
+    その構造が存在するStage / Environmentとして空間表現へ作用します。
+  </p>
+
+  <p>
+    Visual Profileには、単一の天体構造を観察するIndividualと、
+    天体同士のアスペクトを状態遷移として可視化するRelationがあります。
+  </p>
+
+  <p>
+    Relationでは、アスペクトを単なる接続線として扱いません。
+    Planet AのGeometryが、アスペクト固有のTransition Operatorを通過し、
+    Planet BのGeometryへ変化していく一種の写像として表現します。
+  </p>
+
+  <p>
+    Conjunction（0°）はMerge / Fusion、Sextile（60°）はBridge / Exchange、
+    Trine（120°）はResonance / Flow、Square（90°）はTension / Cross-force、
+    Opposition（180°）はAxis / Polarityとして、それぞれ異なる状態遷移を持ちます。
+  </p>
+
+  <p>
+    アスペクト自体に一方向の意味を与えているわけではなく、
+    観察するPlanetを変更することで、同じ関係を双方のPlanetを起点として確認できます。
+  </p>
+
+  <p>
+    ここで生成するものは、
+    「この人物は情熱的である」「この人物は内向的である」といった人物像の断定ではありません。
+  </p>
+
+  <blockquote className="concept-quote">
+    <p>
+      「この出生図にはどのような構造的特徴があり、
+      それを視覚言語へ変換するとどのような形になるのか」
+    </p>
+  </blockquote>
+
+  <p>
+    Visual Profileは人物そのものを定義するものではなく、
+    出生図に含まれる構造と視覚表現の対応関係を観察するための試みです。
+  </p>
+</Section>
+
+      <section className="concept-section visual-profile-completion">
+        <p className="section-label">Completion Moment</p>
+        <div className="section-heading">
+          <h2>Visual Profile Completion Moment</h2>
+        </div>
+        <div className="section-text narrow-text visual-profile-completion__intro">
+          <p>Visual Profileは、2026年8月25日 18:54 JSTに完成しました。</p>
+          <p>Horoscopeが出生時刻を扱う作品であることから、この時刻をVisual Profile自身の一つの「birth time」として記録しています。</p>
+          <p>以下は、その完成時刻をHoroscopeへ入力して生成したNatal Chart、Individual Visual Profile、Relation Visual Profileです。</p>
+        </div>
+
+        <div className="visual-profile-completion__figures">
+          <figure className="concept-figure visual-profile-completion__figure visual-profile-completion__figure--natal">
+            <div className="visual-profile-completion__figure-heading">
+              <p>Natal Chart</p>
+              <h3>Completion Moment — 2026.08.25 18:54 JST</h3>
+            </div>
+            <img src={completionNatalChart} alt="Visual Profile完成時刻 2026年8月25日18時54分のNatal Chart" />
+            <figcaption>Visual Profile自身のbirth timeとして記録した完成時刻のNatal Chart。</figcaption>
+          </figure>
+
+          <figure className="concept-figure visual-profile-completion__figure visual-profile-completion__figure--individual">
+            <div className="visual-profile-completion__figure-heading">
+              <p>Individual</p>
+              <h3>Moon in Aquarius / 11th House</h3>
+            </div>
+            <img src={completionIndividualProfile} alt="Visual Profile完成時刻のMoon in Aquarius 11th House Individual Profile" />
+            <figcaption>Visual Profile完成時刻に生成されたMoonのIndividual Profile。</figcaption>
+          </figure>
+
+          <figure className="concept-figure visual-profile-completion__figure visual-profile-completion__figure--relation">
+            <div className="visual-profile-completion__figure-heading">
+              <p>Relation</p>
+              <h3>Moon → Conjunction → Pluto</h3>
+            </div>
+            <img src={completionRelationProfile} alt="MoonからPlutoへのConjunction Relation Transition" />
+            <figcaption>ConjunctionをMerge / FusionのTransition Operatorとして表現したRelation View。</figcaption>
+          </figure>
+        </div>
+      </section>
 
       <Section number="10" label="Data and Visualization" title="データと可視化">
         <p>Horoscopeでは、外部APIを出生図生成に必要な基礎データの取得に利用します。</p>

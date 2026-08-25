@@ -6,89 +6,106 @@ const sections = [
     number: '01',
     title: 'Overview（概要）',
     paragraphs: [
-      'Horoscopeは、出生情報から一般的なネイタルチャートを生成し、その構造をCosmic Geometry独自の視覚表現へ変換することを目的とした作品です。',
-      'v1では、惑星・サイン・ハウス・主要感受点・アスペクト・逆行などの一般的なホロスコープ情報を扱い、それらをVisualProfileへ変換する構成を検討しています。',
-      '通常の占星術解釈文を表示するのではなく、出生図に含まれる構造的特徴を色・光・形・線・動きとして可視化し、直感的に理解できる体験を目指します。',
+      'Horoscopeは、出生日時と場所から一般的なNatal Chartを生成し、その構造をCosmic Geometry独自のVisual Profileへ変換する作品です。',
+      '現在は主要10天体、12サイン、Placidus方式の12 House、ASC・MC・DSC・IC、主要5 Aspect、Retrograde情報を扱い、標準的なAnalysis、SVG Natal Chart、出生時刻の有無に応じたFull / Partial、Visual Profileまでを実装しています。',
+      '占星術解釈文を中心に提示するのではなく、出生図を構成する位置・分類・関係をデータとして解析し、色・形・線・空間関係へ変換して複数の視点から観察できることを作品の特徴としています。',
     ],
   },
   {
     number: '02',
     title: 'Technology Stack（使用技術）',
     paragraphs: [
-      'フロントエンドにはReactとTypeScriptを使用し、ネイタルチャートやVisualProfileの描画にはSVGとCSSを使用する予定です。',
-      'バックエンドにはNode.jsとTypeScriptを使用し、外部APIとの通信、データの正規化、アスペクト計算、区分集計、VisualProfile生成などを担当させる構成を検討しています。',
-      'TypeScriptは、外部APIから取得したデータをPlanetData、HouseData、AnglePoint、AspectDataなどの内部データモデルへ段階的に変換する際に、データ構造と役割を明示する目的で採用しています。',
-      '既存のCosmic Geometry作品はJavaScriptのまま維持し、Horoscopeを新規TypeScript作品として開発しています。',
+      'フロントエンドにはReactとTypeScriptを使用し、Natal ChartとVisual ProfileはSVGとCSSで描画しています。バックエンドはNode.jsとTypeScriptで構築し、FreeAstroAPIとの通信とVercel Functionsによる本番Endpointを実装しています。',
+      'frontend API clientとbackendでは、HTTP responseをunknownとして受け取り、最低限のruntime validationを通してから正式な型へ接続しています。API keyはserver sideの環境変数で管理し、frontendへ露出させません。',
+      'TypeScriptは、FreeAstroAPI response、validation済みデータ、HoroscopeData、HoroscopeAnalysis、VisualProfileData、HoroscopeResponseという複数段階の境界を明確にし、フィールドの不一致や変換ミスを早期に検出するために採用しました。',
+      '既存のCosmic Geometry作品はJavaScriptを維持しつつ、Horoscopeとその周辺機能ではJavaScriptとTypeScriptが共存する構成を採用しています。',
     ],
   },
   {
     number: '03',
     title: 'Component Structure（コンポーネント構成）',
     paragraphs: [
-      '画面は、出生情報を入力するBirth Inputと、表示内容を切り替えるメイン表示領域から構成する予定です。',
-      'メイン表示では、Chart、Planets、Houses、Angles、Aspects、Visual Profileをボタンで切り替えられる構成を検討しています。',
-      '表示切り替えUIはTime Vector Spaceなど他作品でも再利用できる共通コンポーネントとして設計することも検討しています。',
-      'ネイタルチャート本体、惑星表、ハウス表、感受点表、アスペクト表、VisualProfileは、それぞれ責務を分離したコンポーネントとして実装する予定です。',
+      'Horoscope.tsxが画面全体のstateと表示モードを管理し、BirthInput、NatalChart、PlanetTable、HouseTable、AngleTable、AspectTable、AnalysisTable、VisualProfileへ正式データを渡します。生成後の出生情報はBirth Data Summaryとして表示し、Edit / Recalculateから入力状態へ戻せます。',
+      'Information ModeはPlanets、Houses、Angles、Aspects、Analysis、Visual Profileの6種類です。独立したChart Modeは設けず、Visual Profile以外の通常ModeではNatal ChartをWorkspace中央へ常時表示し、右側のInformation内容を切り替えます。',
+      'Visual Profile Modeでは通常のNatal Chartを表示せず、VisualizationとProfile Infoを組み合わせた専用Workspaceへ切り替えます。Visual Profile内部のGeometryとRelationの構成は、08で詳しく扱います。',
     ],
   },
   {
     number: '04',
     title: 'Data Flow（データフロー）',
     paragraphs: [
-      '基本的なデータフローは、Birth Input → React → Node.js API → External Astrology API → Node.jsによる変換・計算 → Reactによる可視化、という構成を想定しています。',
-      '外部APIから取得したデータをそのままフロントエンドへ渡すのではなく、Node.js側でCosmic Geometry独自の安定したデータモデルへ変換します。',
-      'フロントエンドでは、PlanetData、HouseData、AnglePoint、AspectDataなどの共通データから、円形チャートと各種データ表を描画します。',
-      'VisualProfileは、一般的なホロスコープデータをさらに解析し、視覚表現用の特徴量へ変換したCosmic Geometry独自のデータレイヤーとして扱います。',
+      'アプリケーション全体は、Birth Input → frontend API client → POST /api/horoscope → request validation → FreeAstroAPI → response validation → normalization → HoroscopeData → HoroscopeAnalysis → VisualProfileData → HoroscopeResponse → React state → Natal Chart / Tables / Analysis / Visual Profile、という流れで接続されています。',
+      'FreeAstroAPI固有のabs_pos、sign_id、dcなどをそのままfrontendへ渡さず、Node.js側でPlanetData、HouseData、AnglePoint、AspectDataを持つCosmic Geometry用のHoroscopeDataへ正規化します。これにより、外部仕様と作品内部の責務を分離しています。',
+      'HoroscopeResponseはhoroscope、analysis、visualProfileを返します。Reactはこの単一responseをstateに保持し、HoroscopeDataをNatal ChartとInformation Tablesへ、HoroscopeAnalysisをAnalysis表示へ、VisualProfileDataをVisual Profileへ渡します。',
     ],
   },
   {
     number: '05',
-    title: 'Rendering and Calculation（描画・計算の仕組み）',
+    title: 'Backend Architecture（バックエンド構成）',
     paragraphs: [
-      'ネイタルチャートは一般的なホロスコープの構造を基礎とし、ASCを左側に固定した円形レイアウトを採用する予定です。',
-      '10天体、12サイン、Placidus方式の12ハウス、ASC・MC・DSC・IC、主要5アスペクトを表示対象とします。',
-      '主要アスペクトはConjunction、Sextile、Square、Trine、Oppositionの5種類とし、v1ではすべて一律±5度のorbで判定します。',
-      'アスペクトは外部APIの判定結果に依存せず、惑星間の角距離からNode.js側で計算します。実際のorb値は、線の太さ・透明度・発光などの視覚強度へ利用する予定です。',
-      '逆行情報もPlanetDataに保持し、通常とは異なる動きや反転表現へ利用することを検討しています。',
+      '複雑な天文暦計算を作品内部で一から構築する代わりに、出生図の基礎データ取得にはFreeAstroAPIを採用しました。Node.js backendが外部通信とAPI keyをserver sideへ隔離し、Reactと同じJavaScript / TypeScript系の技術スタックでデータ処理を構築しています。入力された出生情報は処理中のstateとrequestとして扱い、Cosmic Geometry独自のデータベースへ永続保存しません。',
+      'backendではHoroscopeRequestを検証し、FreeAstroAPIへ通信した後、生responseを再度runtime validationします。検証済みデータをHoroscopeDataへ正規化し、主要10天体の選別、HouseとAngleの整理、主要5 Aspectの独自計算、HoroscopeAnalysisとVisualProfileDataの生成を行い、HoroscopeResponseへ統合します。',
+      'この構成でbackendは単なる外部APIの中継ではなく、外部の占星術データをCosmic Geometryで扱える安定したデータへ翻訳する境界として機能します。各変換段階をTypeScript型で分けることで、API依存の構造がfrontendへ漏れることも防いでいます。',
+      '本番環境ではVercel FunctionのPOST /api/horoscopeをHTTPの入口とし、既存のvalidation、FreeAstroAPI client、normalizer、Analysis、Visual Profile生成serviceを再利用しています。このEndpointによって、backend側で必要な処理を完了してから整えたresponseをfrontendへ渡す責務が明確になりました。',
     ],
   },
   {
     number: '06',
-    title: 'Interaction Design（インタラクション設計）',
+    title: 'Rendering and Calculation（描画・計算の仕組み）',
     paragraphs: [
-      'ユーザーは出生年月日、出生時刻、出生場所を入力し、ネイタルチャートを生成します。',
-      '生成後はChart、Planets、Houses、Angles、Aspects、Visual Profileの各表示モードを切り替えながら、出生図を異なる視点から観察できる構成を予定しています。',
-      'チャート構造は一般的なネイタルチャートを維持しつつ、配色、光、線、背景などのデザインはCosmic Geometry全体の世界観に調和させます。',
-      '惑星記号やサイン記号にはUnicode記号を第一候補として使用し、フォント、サイズ、発光、背景処理などでCosmic Geometryらしい表現が可能か検討します。',
+      'Natal ChartはSVGのレイヤー構造で構成し、固定円環と12 Zodiac、主要10 Planet、Placidus方式の12 House、ASC・MC・DSC・IC、Aspectを描画しています。FullではASC longitudeを左9時方向の基準とし、PartialではASCを要求せずAries 0°を左基準としてZodiacとPlanetを配置します。',
+      '主要AspectはConjunction、Sextile、Square、Trine、Oppositionの5種類です。Node.js側で天体ペアを一度ずつ評価し、360°境界を考慮した最短角距離と一律±5°のorbから再計算するため、FreeAstroAPIのAspect判定結果には依存しません。',
+      'frontendのgeometry helperはlongitudeを共通座標系へ変換し、近接Planetの半径レーン、House cusp間の中間角、Angle位置、Aspect接続点を計算します。Conjunctionは近接位置を局所線で結び、それ以外のAspectは中央領域を横断する線として描画します。',
+      'RetrogradeはPlanetDataに保持し、Table表示とNatal Chart上の色分けに反映していますが、Visual Profileで運動方向を反転する表現は未実装です。orbから0〜1のstrengthを生成するbackend処理は実装済みですが、線幅・透明度・発光などの描画値への全面的な接続は今後の調整項目です。',
     ],
   },
   {
     number: '07',
-    title: 'Challenges and Solutions（課題と解決方法）',
+    title: 'Interaction Design（インタラクション設計）',
     paragraphs: [
-      '既存のCosmic GeometryはJavaScriptを中心に構築されているため、HoroscopeのみをTypeScriptで新規開発できるよう、JavaScriptとTypeScriptを共存させる構成を導入しました。',
-      'フロントエンド側ではtsconfig.jsonを追加し、既存の.jsファイルを維持したまま.tsおよび.tsxファイルを使用できる環境を整えています。',
-      '初期実装ではPlanetDataの型定義とmockデータを作成し、TypeScriptによる型チェックを確認しました。スペルミスや型の不一致をコンパイル段階で検出できることも確認しています。',
-      '今後は、外部APIの仕様差異、出生場所から緯度経度・タイムゾーンへの変換、SVG円環の配置計算、VisualProfileの数値変換ルールなどが技術的な検討課題になります。',
+      'Birth Inputでは出生年月日、出生時刻、City、Country、緯度、経度、IANA timezoneを扱います。Location検索で候補を選ぶと座標とtimezoneが自動反映され、必要に応じて手動でも修正できます。出生時刻不明を選択した場合はtimeをnullとして送信し、Partialデータを生成します。',
+      '生成後はBirth Data SummaryでDate、Time、Location、Timezone、Full / Partialを確認でき、Edit / Recalculateから入力へ戻れます。Mode SelectorではPlanets、Houses、Angles、Aspects、Analysis、Visual Profileを切り替えます。',
+      '通常ModeはBirth Data、Natal Chart、InformationのWorkspaceとして構成し、Visual ProfileではNatal Chartを外してVisualizationとProfile Infoの専用構成へ切り替えます。Partialでは利用できないHouse、Angle、House Distributionをエラーにせず、その理由を画面上へ表示します。',
+      'Natal Chartでは惑星とサインにUnicode記号を採用し、細い線、透明度、発光、寒色系の配色によって一般的な出生図の読み方とCosmic Geometryの視覚世界を両立させています。',
     ],
   },
   {
     number: '08',
-    title: 'AI-assisted Development（AIを活用した開発）',
+    title: 'Visual Profile（独自可視化）',
     paragraphs: [
-      '作品コンセプト、技術選定、データモデル、UI構成、VisualProfileの設計についてAIとの対話を通して整理しています。',
-      '実装では、TypeScript導入、型定義、コンパイルエラーの確認などを一つずつ検証しながら進めています。',
-      'AIが提案した内容をそのまま採用するのではなく、作品の意味や既存プロジェクトへの影響を確認しながら、必要な技術と実装範囲を選択しています。',
+      'Visual Profileは、HoroscopeDataを直接SVGへ置き換えるのではなく、HoroscopeAnalysisと組み合わせてbackendでVisualProfileDataへ変換した後に描画する、Cosmic Geometry独自の可視化レイヤーです。VisualProfileDataはFull / Partial、Direction、Motion、Palette、Planet、House、Aspectの描画に必要な共通パラメータを保持します。',
+      'frontendではVisualProfileData.planetsをPlanetVisualParameterへ派生させ、Planet Actor、Sign Transformation、House Environmentとして分担します。主要10天体は独立したGeometry rendererを持ち、サインのPolarity・Modality・Elementが形状や質感を変化させ、HouseEnvironmentLayerが12 Houseの空間条件を描画します。Partialではhouseをnullとしてneutral environmentへ安全にフォールバックします。',
+      'VisualProfile.tsxはIndividual / Relationの選択、実データとの対応、Profile Infoを統括し、planetRenderersのmapから各天体SVGを呼び出します。Geometryは天体別componentへ、House描画はHouseEnvironmentLayerへ分離し、Sign Transformationは純粋な変換helperとして共有しています。',
+      'Relation ViewはHoroscopeData.aspectsから選択天体に関係するAspectを取り出し、Conjunction、Sextile、Square、Trine、OppositionをRelation / Transitionとして描画します。各SVGレイヤーとCSS animationを合成し、reduced motionにも対応しています。',
     ],
   },
   {
     number: '09',
+    title: 'Challenges and Solutions（課題と解決方法）',
+    paragraphs: [
+      'JavaScript中心の既存projectへTypeScriptを導入する際は、既存の.jsを維持しながら.tsと.tsxを共存させました。frontendとbackendの型を用途ごとに整理し、外部API型とCosmic Geometry内部型を直接共有しない境界を設けています。',
+      'FreeAstroAPIの実responseに対してruntime validationとnormalizationを実装し、出生時刻不明時に省略されるHouse・Angle情報やAPIが返す基準時刻を安全に扱いました。Location検索はGeoapifyとgeo-tzをserver sideで組み合わせ、都市候補から緯度・経度・IANA timezoneを取得しています。',
+      'SVG描画では共通のlongitude変換、ASC基準回転、360°境界、近接Planet、Houseの不均等幅、Aspect接続点を純粋関数へ分離しました。AnalysisとVisual Profileも副作用のない変換層として構築し、Full / Partialの両方を自動テストで確認しています。',
+      '現在残る課題は、Visual ProfileへのRetrograde運動修飾、orb strengthの描画値への本格接続、hoverやselectionなどのInteraction拡張、描画componentとbundleの最適化です。',
+    ],
+  },
+  {
+    number: '10',
+    title: 'AI-assisted Development（AIを活用した開発）',
+    paragraphs: [
+      'AI支援を利用して、既存コードの調査、技術構成の比較、TypeScript導入、型設計、backendとAPI境界、validation / normalization、SVG geometry、Visual Profile、Full / Partial対応の実装を段階的に進めました。',
+      '各工程では自動テスト、typecheck、production buildを実行し、結果と変更内容を確認しながら次の仕様と実装範囲を決定しています。',
+      '作品コンセプト、UI / UX、Visual ProfileにおけるPlanet・Sign・House・Aspectの意味付け、採用する視覚表現は、対話と実画面の比較を通して判断しました。AIの提案をそのまま採用せず、既存projectへの影響と作品としての意味を確認しながら選択しています。',
+    ],
+  },
+  {
+    number: '11',
     title: 'Future Development（今後の拡張）',
     paragraphs: [
-      'v1では一般的なネイタルチャートとVisualProfileの2D可視化に集中し、機能を広げすぎない方針です。',
-      '将来的な拡張候補として、詳細な占星術鑑定文、AIによる解釈、相性診断、トランジット、プログレス、恒星占星術、3D Celestial Sphere連携などを検討しています。',
-      'ユーザーアカウントやチャート保存機能も将来候補ですが、v1では出生情報を永続保存しない設計とします。',
-      'VisualProfileでは、2区分をDirection、3区分をMotion / Shape、4区分をColor / Textureの基礎レイヤーとし、その上に惑星、ハウス、アスペクト、逆行の視覚情報を重ねる構成を検討しています。',
+      '将来的な機能候補には、詳細な占星術解釈、AIによる解釈、相性診断、Transit、Progression、恒星占星術、Celestial Sphereとの連携があります。ユーザーアカウントとChart保存も候補ですが、現在は出生情報をCosmic Geometry独自のデータベースへ永続保存しない方針です。',
+      'Visual Profileでは、Retrogradeによる運動方向の修飾、orb strengthを利用した線幅・透明度・発光の強化、hover・selection・比較表示などのInteractionを拡張できます。',
+      '実装規模の拡大に合わせ、SVG componentの描画負荷、animation、bundle size、外部API通信を含むperformanceと保守性の最適化も継続課題です。',
+      '本作品は初期設計からbackend、Natal Chart、Analysis、Visual Profileの実装・調整まで、約1か月をかけて制作しました。',
     ],
   },
 ];
@@ -103,11 +120,11 @@ export default function HoroscopeTechNote() {
           
         <div className="tech-note-intro">
           <p>
-          このページでは、Horoscopeの初期設計、技術構成、
-          データモデル、可視化の考え方について整理します。
+          このページでは、Horoscopeの設計、frontend / backend構成、
+          データ処理、Natal Chart、Analysis、Visual Profileの実装について整理します。
           </p>
           <p>
-          内容は実装の進行に合わせて更新します。
+          外部の占星術データをCosmic Geometry独自の構造と可視化へ変換するまでの技術的な流れを解説します。
           </p>
         </div>
       </header>
