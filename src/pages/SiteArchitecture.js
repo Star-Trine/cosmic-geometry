@@ -38,21 +38,26 @@ const architectureSections = [
       'SVG、Canvas 2D、Three.js、React Three Fiber、GSAP、KaTeX、TypeScriptなどを、表現や操作の目的に応じて使い分けています。',
   },
   {
-    title: 'Build and Version Control(ビルド・バージョン管理)',
-    description:
-      'npmによる開発・本番buildとGitによる履歴管理を行っています。GitHubとVercelを利用する公開フローの詳細は、今後この章で整理します。',
+  title: 'Build and Version Control（ビルド・バージョン管理）',
+  description:
+    'npmによる開発・本番buildを行い、Gitで変更履歴を管理しています。ソースコードはGitHubで管理し、mainブランチへの反映後はVercelと連携してProduction環境へデプロイします。これにより、開発・履歴管理・公開までを一連のフローとして運用しています。',
   },
   {
-    title: 'Backend Status（バックエンドの現状）',
-    status: 'Current',
-    description:
-      'Contact Formは、/api/contactのVercel Functionで入力を検証し、Resendを通じてメールを送信します。リポジトリ内のbackend/はNode.jsとTypeScriptによる別系統の試作環境であり、本番Contact APIには使用していません。',
+  title: 'Backend & API Architecture（バックエンド・API構成）',
+  status: 'Current',
+  description:
+    'Contact Form、Horoscope、Locationなどの機能では、Vercel FunctionsをAPI境界として利用しています。Horoscopeでは、Frontendから送信された入力をVercel Functionで受け取り、Node.js / TypeScriptによるBackend Serviceへ渡します。Backend側ではValidation、External APIとの通信、Normalization、Calculationなどを担当し、Frontendが表示に利用できるデータへ整形して返します。',
   },
   {
-    title: 'Planned / Future Architecture(将来の構成)',
-    status: 'Planned',
-    description:
-      'Contact API以外のAPI拡張、Database、Authenticationなどは将来の構想です。採用技術や接続方法を含め、現時点では未実装です。',
+  title: 'Application Responsibility（アプリケーションの責務分離）',
+  description:
+    'FrontendはUI、入力、表示、インタラクションを担当し、Vercel FunctionsはHTTP/API境界として機能します。Backend Serviceは検証・正規化・計算・外部サービスとの接続を担当します。作品固有の計算やVisual Data生成も、可能な範囲でRenderingから分離しています。',
+  },
+  {
+  title: 'Planned / Future Architecture（将来の構成）',
+  status: 'Planned',
+  description:
+    '次の拡張候補として、PostgreSQLを利用したDatabase層の導入を検討しています。Frontend、API、Backendに加えてデータの永続化まで扱うことで、より広いアプリケーション構成へ発展させます。AuthenticationやCloud Infrastructureなどについては、今後の作品や機能で必要性が生じた段階で導入を検討します。',
   },
   {
     title: 'Design & Development Records(設計・開発記録)',
