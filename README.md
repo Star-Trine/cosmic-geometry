@@ -62,7 +62,11 @@ React / Three.js などのWeb技術を用いて可視化・体験化していま
 
 ```bash
 npm install
+npm --prefix backend install
 ```
+
+Frontend と Vercel Function の検証には root の依存関係を、Backend の検証には
+`backend/` の依存関係を使用します。
 
 開発サーバーを起動します。
 
@@ -81,6 +85,18 @@ http://localhost:3000
 ```bash
 npm run build
 ```
+
+主要な品質確認をまとめて実行します。
+
+```bash
+npm run verify
+```
+
+Frontend と Backend の型チェック、Frontend Test、Backend Test、Vercel Function
+Test、本番用ビルドを順番に実行し、いずれかが失敗した時点で停止します。
+FreeAstroAPI へ実際に接続する確認は外部サービスと環境変数に依存するため、通常の
+`verify` には含まれません。必要な場合は `backend/` で
+`npm run test:freeastro` または `npm run test:freeastro:unknown-time` を個別に実行します。
 
 ---
 
@@ -269,7 +285,11 @@ Install dependencies:
 
 ```bash
 npm install
+npm --prefix backend install
 ```
+
+The root dependencies are used by the frontend and Vercel Function checks, while
+the dependencies under `backend/` are used by the backend checks.
 
 Start the development server:
 
@@ -288,6 +308,19 @@ Create a production build:
 ```bash
 npm run build
 ```
+
+Run the main quality checks from a single entry point:
+
+```bash
+npm run verify
+```
+
+This runs the frontend and backend type checks, frontend tests, backend tests,
+Vercel Function tests, and the production build in sequence, stopping at the first
+failure. Live FreeAstroAPI checks depend on an external service and environment
+variables, so they are not part of the normal `verify` command. Run
+`npm run test:freeastro` or `npm run test:freeastro:unknown-time` from `backend/`
+when needed.
 
 ---
 

@@ -6,7 +6,7 @@ type Props = {
 
 export default function AnalysisTable({ analysis }: Props) {
   return (
-    <section>
+    <section className="horoscope-analysis">
       <h2>Analysis</h2>
 
       <h3>Polarity</h3>

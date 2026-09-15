@@ -1,7 +1,20 @@
 import {
   formatDegreeInSign,
+  formatLongitudeAsSignDegree,
   formatRoundedAngle,
 } from './informationFormatters';
+
+test.each([
+  [0, 'Aries', '0.00°'],
+  [29.999, 'Aries', '29.99°'],
+  [30, 'Taurus', '0.00°'],
+  [66.509, 'Gemini', '6.50°'],
+  [308.14, 'Aquarius', '8.14°'],
+  [359.999, 'Pisces', '29.99°'],
+  [360, 'Aries', '0.00°'],
+])('formats cusp longitude %s as separate sign and degree fields', (longitude, sign, degree) => {
+  expect(formatLongitudeAsSignDegree(longitude)).toEqual({ sign, degree });
+});
 
 test('truncates sign-relative degrees to two decimal places', () => {
   expect(formatDegreeInSign(29.999)).toBe('29.99°');

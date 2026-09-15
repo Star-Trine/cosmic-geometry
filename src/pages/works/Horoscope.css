@@ -144,8 +144,15 @@
 
 .horoscope-information-panel {
   grid-area: information;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   max-height: min(76vh, 860px);
   overflow: hidden;
+}
+
+.horoscope-information-panel > .horoscope-panel-heading {
+  flex-shrink: 0;
 }
 
 .horoscope-panel-heading {
@@ -345,7 +352,7 @@
 }
 
 .horoscope-information-content {
-  max-height: calc(min(76vh, 860px) - 5.5rem);
+  min-height: 0;
   overflow: auto;
   padding-right: 0.25rem;
 }
@@ -385,6 +392,15 @@
 
 .horoscope-information-content td {
   color: var(--horoscope-muted);
+}
+
+.horoscope-analysis table {
+  table-layout: fixed;
+}
+
+.horoscope-analysis th:first-child,
+.horoscope-analysis td:first-child {
+  width: 72%;
 }
 
 .horoscope-empty {

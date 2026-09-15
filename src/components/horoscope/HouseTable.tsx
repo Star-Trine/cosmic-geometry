@@ -1,5 +1,5 @@
 import type { HouseData } from '../../data/horoscope/types';
-import { formatRoundedAngle } from './informationFormatters';
+import { formatLongitudeAsSignDegree } from './informationFormatters';
 
 type Props = {
   houses: HouseData[];
@@ -13,16 +13,21 @@ export default function HouseTable({ houses }: Props) {
         <thead>
           <tr>
             <th scope="col">House</th>
-            <th scope="col">Cusp Longitude</th>
+            <th scope="col">Sign</th>
+            <th scope="col">Degree</th>
           </tr>
         </thead>
         <tbody>
-          {houses.map((house) => (
-            <tr key={house.house}>
-              <th scope="row">House {house.house}</th>
-              <td>{formatRoundedAngle(house.cuspLongitude)}</td>
-            </tr>
-          ))}
+          {houses.map((house) => {
+            const { sign, degree } = formatLongitudeAsSignDegree(house.cuspLongitude);
+            return (
+              <tr key={house.house}>
+                <th scope="row">House {house.house}</th>
+                <td>{sign}</td>
+                <td>{degree}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </section>

@@ -29,6 +29,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "typecheck:frontend": "tsc --noEmit -p tsconfig.json",
+    "typecheck:backend": "npm --prefix backend run typecheck",
+    "test:frontend": "react-scripts test --watchAll=false --runInBand",
+    "test:backend": "npm --prefix backend test",
+    "test:api": "node --import ./backend/node_modules/tsx/dist/loader.mjs --test tests/vercelFunctions.test.ts",
+    "verify": "npm run typecheck:frontend && npm run typecheck:backend && npm run test:frontend && npm run test:backend && npm run test:api && npm run build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -36,6 +42,12 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^react-router-dom$": "<rootDir>/node_modules/react-router-dom/dist/index.js",
+      "^react-router/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js"
+    }
   },
   "browserslist": {
     "production": [

@@ -221,7 +221,12 @@ export default function Horoscope() {
               <p>Information</p>
               <h2>{MODES.find((mode) => mode.id === viewMode)?.label}</h2>
             </div>
-            <div className="horoscope-information-content">
+            <div
+              className="horoscope-information-content"
+              role="region"
+              aria-label={`${MODES.find((mode) => mode.id === viewMode)?.label} information`}
+              tabIndex={0}
+            >
               {renderInformation()}
             </div>
           </aside>
