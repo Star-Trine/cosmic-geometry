@@ -1,6 +1,4 @@
-/* Home.css */
-
-.hero-container {
+.sacred-geometry-genesis {
   width: 100%;
   height: 100vh;
   padding: 2rem;
@@ -19,13 +17,13 @@
   box-shadow: 0 0 20px rgba(220, 240, 255, 0.06);
 }
 
-.hero-content {
+.sacred-geometry-genesis .hero-content {
   z-index: 2;
   margin-bottom: 2rem;
   text-align: center;
 }
 
-.hero-content h1 {
+.sacred-geometry-genesis .hero-content h1 {
   margin-bottom: 1rem;
 
   white-space: nowrap;
@@ -37,14 +35,14 @@
   text-shadow: 2px 2px 8px rgba(0, 255, 255, 0.4);
 }
 
-.hero-content p {
+.sacred-geometry-genesis .hero-content p {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.5rem;
   text-shadow: 1px 1px 6px rgba(0, 255, 255, 0.3);
 }
 
 /* SVGアニメーションのレイヤーを重ねるラッパー */
-.svg-wrapper {
+.sacred-geometry-genesis .svg-wrapper {
   position: relative;
   width: 100%;
   max-width: 800px;
@@ -52,7 +50,7 @@
   margin: 0 auto;
 }
 
-.layer {
+.sacred-geometry-genesis .layer {
   position: absolute;
   inset: 0;
 
@@ -64,18 +62,27 @@
 }
 
 /* フッター表示 */
-.space-footer {
+.sacred-geometry-genesis .space-footer {
   position: fixed;
   right: 20px;
   bottom: 10px;
 
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.6);
+  text-align: right;
+}
+
+.sacred-geometry-genesis .sacred-geometry-genesis__note {
+  max-width: min(90vw, 40rem);
+  margin: 0 0 0.7rem auto;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 
 /* スマホ */
 @media (max-width: 600px) {
-  .hero-container {
+  .sacred-geometry-genesis {
     height: auto;
     min-height: 0;
     flex: 1;
@@ -85,50 +92,76 @@
     justify-content: flex-start;
   }
 
-  .hero-content {
+  .sacred-geometry-genesis .hero-content {
     margin-bottom: 1rem;
   }
 
-  .hero-content h1 {
+  .sacred-geometry-genesis .hero-content h1 {
     font-size: 2.2rem;
   }
 
-  .hero-content p {
+  .sacred-geometry-genesis .hero-content p {
     font-size: 1.2rem;
   }
 
-  .svg-wrapper {
+  .sacred-geometry-genesis .svg-wrapper {
     height: 240px;
   }
 
-  .space-footer {
+  .sacred-geometry-genesis .space-footer {
     position: static;
     margin-top: auto;
     padding-top: 1rem;
     text-align: center;
   }
+
+  .sacred-geometry-genesis .sacred-geometry-genesis__note {
+    margin-inline: auto;
+  }
 }
 
 /* 小型スマホ */
 @media (max-width: 375px) {
-  .hero-container {
+  .sacred-geometry-genesis {
     padding: 0.75rem;
   }
 
-  .hero-content {
+  .sacred-geometry-genesis .hero-content {
     margin-bottom: 0.5rem;
     padding: 0 0.5rem;
   }
 
-  .hero-content h1 {
+  .sacred-geometry-genesis .hero-content h1 {
     font-size: 1.8rem;
   }
 
-  .hero-content p {
+  .sacred-geometry-genesis .hero-content p {
     font-size: 0.8rem;
   }
 
-  .svg-wrapper {
+  .sacred-geometry-genesis .svg-wrapper {
     height: 180px;
   }
+}
+
+.sacred-geometry-genesis__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  z-index: 2;
+}
+
+.sacred-geometry-genesis__links a {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #f4f5ff;
+  background: linear-gradient(135deg, rgba(78, 216, 255, 0.08), rgba(157, 123, 255, 0.1));
+  text-decoration: none;
+}
+
+.sacred-geometry-genesis__links a:hover {
+  border-color: rgba(183, 167, 255, 0.55);
 }

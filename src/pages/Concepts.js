@@ -11,6 +11,11 @@ const conceptCategories = [
     englishTitle: 'Interpretation',
     concepts: [
       {
+        title: 'Sacred Geometry Genesis（フラワー・オブ・ライフ）',
+        path: '/concepts/sacred-geometry-genesis',
+        summary: '神聖幾何学の生成を、図形が重なり発展するアニメーションとして表現する。',
+      },
+      {
         title: 'Tesseract（テッセラクト）',
         path: '/concepts/tesseract',
         summary: '見えない第4の空間軸を、次元生成と3次元投影から観察する。',

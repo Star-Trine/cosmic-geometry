@@ -1,18 +1,17 @@
-// src/pages/Home.js
-
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import './Home.css';
+import { Link } from 'react-router-dom';
+import './SacredGeometryGenesis.css';
 
 // SVG各種
-import { ReactComponent as Circle }           from '../components/svg/circle.svg';
-import { ReactComponent as SeedOfLife }       from '../components/svg/seedoflife.svg';
-import { ReactComponent as MiniFlowerOfLife } from '../components/svg/minifloweroflife.svg';
-import { ReactComponent as FlowerOfLife }     from '../components/svg/floweroflife.svg';
-import { ReactComponent as FruitOfLife }      from '../components/svg/fruitsoflife.svg';
-import { ReactComponent as MetatronLines }    from '../components/svg/metatronlines.svg';
+import { ReactComponent as Circle }           from '../../components/svg/circle.svg';
+import { ReactComponent as SeedOfLife }       from '../../components/svg/seedoflife.svg';
+import { ReactComponent as MiniFlowerOfLife } from '../../components/svg/minifloweroflife.svg';
+import { ReactComponent as FlowerOfLife }     from '../../components/svg/floweroflife.svg';
+import { ReactComponent as FruitOfLife }      from '../../components/svg/fruitsoflife.svg';
+import { ReactComponent as MetatronLines }    from '../../components/svg/metatronlines.svg';
 
-export default function Home() {
+export default function SacredGeometryGenesis() {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -71,7 +70,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="hero-container">
+    <div className="hero-container sacred-geometry-genesis">
 
       <div className="hero-content">
         <h1 ref={titleRef}>Cosmic Geometry</h1>
@@ -87,7 +86,16 @@ export default function Home() {
         <MetatronLines className="layer metatronlines" />
       </div>
 
+      <nav className="sacred-geometry-genesis__links" aria-label="作品の解説">
+        <Link to="/concepts/sacred-geometry-genesis">Conceptを見る</Link>
+        <Link to="/tech-notes/sacred-geometry-genesis">Tech Noteを見る</Link>
+      </nav>
       <footer className="space-footer">
+        <p className="sacred-geometry-genesis__note">
+          ※ 中央の神聖幾何学は、フラワー・オブ・ライフ（Flower of Life）をもとに構成しています。
+            <br />
+          旧Homeで使用していた作品であり、現在はWorksに移設しています。
+        </p>
         <p>&copy; 2025 Cosmic Geometry</p>
       </footer>
     </div>

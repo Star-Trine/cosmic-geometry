@@ -9,6 +9,12 @@ const techNoteCategories = [
     englishTitle: 'Interpretation',
     techNotes: [
       {
+        title: 'Sacred Geometry Genesis（フラワー・オブ・ライフ）',
+        path: '/tech-notes/sacred-geometry-genesis',
+        type: 'Sacred Geometry / SVG Animation',
+        technologies: ['SVG', 'GSAP', 'JavaScript', 'React', 'CSS'],
+      },
+      {
         title: 'Tesseract（テッセラクト）',
         path: '/tech-notes/tesseract',
         type: '4D Projection / Particle Visualization',

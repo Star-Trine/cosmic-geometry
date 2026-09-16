@@ -1,0 +1,113 @@
+.main-content > .home-visual-experiment {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 100vw;
+  width: 100vw;
+  max-width: none;
+  min-height: max(420px, calc(100svh - 210px));
+  overflow: hidden;
+  background: transparent;
+}
+
+.home-visual-experiment__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.home-visual-experiment__content {
+  position: relative;
+  width: min(900px, calc(100% - 2rem));
+  margin: clamp(2.5rem, 8vh, 7rem) auto 0;
+  text-align: center;
+  color: #f1f5ff;
+}
+
+.home-visual-experiment__content h1 {
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: normal;
+  text-shadow: 2px 2px 8px rgba(0, 255, 255, 0.4);
+}
+
+.home-visual-experiment__content p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: normal;
+  text-shadow: 1px 1px 6px rgba(0, 255, 255, 0.3);
+}
+
+.home-visual-experiment .space-footer {
+  position: fixed;
+  right: 35px;
+  bottom: 67px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: normal;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .home-visual-experiment .space-footer {
+    right: 0;
+    left: 0;
+    bottom: calc(var(--mobile-navbar-height) + 2rem);
+    margin-top: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-content > .home-visual-experiment {
+    display: flex;
+    flex-direction: column;
+    min-height: max(360px, calc(100svh - 170px - var(--mobile-navbar-height)));
+  }
+
+  .home-visual-experiment__content {
+    margin-top: 2rem;
+  }
+
+  .home-visual-experiment .space-footer {
+    right: 0;
+    left: 0;
+    bottom: calc(var(--mobile-navbar-height) + 2rem);
+    margin-top: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-visual-experiment__content h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-visual-experiment__content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .home-visual-experiment__content h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-visual-experiment__content p {
+    font-size: 0.8rem;
+  }
+}

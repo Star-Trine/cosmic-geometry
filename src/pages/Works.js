@@ -11,6 +11,10 @@ const worksCategories = [
     englishTitle: 'Interpretation',
     works: [
       {
+        title: 'Sacred Geometry Genesis（フラワー・オブ・ライフ）',
+        path: '/works/sacred-geometry-genesis',
+      },
+      {
         title: 'Tesseract（テッセラクト）',
         path: '/works/tesseract',
       },

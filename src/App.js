@@ -15,7 +15,6 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // ===== Main Pages =====
-import Home from './pages/Home';
 import About from './pages/About';
 import Works from './pages/Works';
 import Concepts from './pages/Concepts';
@@ -24,6 +23,7 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import SiteArchitecture from './pages/SiteArchitecture';
 import Sitemap from './pages/Sitemap';
+import HomeVisual from './experiments/homeVisual/HomeVisual';
 
 // ===== Works =====
 import CelestialSphere from './pages/works/CelestialSphere';
@@ -39,6 +39,9 @@ import Horoscope from './pages/works/Horoscope';
 import ComplexGeometry from './pages/works/ComplexGeometry';
 import EmotionWave from './pages/works/EmotionWave';
 import Synthesizer from './pages/works/Synthesizer';
+import SacredGeometryGenesis from './pages/works/SacredGeometryGenesis';
+import SacredGeometryGenesisConcept from './pages/concepts/SacredGeometryGenesisConcept';
+import SacredGeometryGenesisTechNote from './pages/techNotes/SacredGeometryGenesisTechNote';
 
 // ===== Concepts =====
 import MerkabaVectorEquilibriumConcept from './pages/concepts/MerkabaVectorEquilibriumConcept';
@@ -84,7 +87,10 @@ function App() {
           <main className="main-content">
          <Routes>
   {/* メインページ */}
-  <Route path="/" element={<Home />} />
+  <Route path="/" element={<HomeVisual />} />
+  {process.env.NODE_ENV === 'development' && (
+    <Route path="/experiments/home-visual" element={<HomeVisual />} />
+  )}
   <Route path="/about" element={<About />} />
   <Route path="/works" element={<Works />} />
   <Route path="/concepts" element={<Concepts />} />
@@ -108,6 +114,7 @@ function App() {
   <Route path="/works/complex-geometry" element={<ComplexGeometry />} />
   <Route path="/works/emotion-wave" element={<EmotionWave />} />
   <Route path="/works/synthesizer" element={<Synthesizer />} />
+  <Route path="/works/sacred-geometry-genesis" element={<SacredGeometryGenesis />} />
 
   {/* Concepts */}
   <Route path="/concepts/merkaba-vector-equilibrium" element={<MerkabaVectorEquilibriumConcept />} />
@@ -132,6 +139,7 @@ function App() {
   <Route path="/concepts/complex-geometry" element={<ComplexGeometryConcept />} />
   <Route path="/concepts/emotion-wave" element={<EmotionWaveConcept />} />
   <Route path="/concepts/synthesizer" element={<SynthesizerConcept />} />
+  <Route path="/concepts/sacred-geometry-genesis" element={<SacredGeometryGenesisConcept />} />
 
   {/* TechNotes */}
   <Route path="/tech-notes/platonic-solids" element={<PlatonicSolidsTechNote />} />
@@ -146,6 +154,7 @@ function App() {
   <Route path="/tech-notes/time-geometry" element={<TimeGeometryTechNote />} />
   <Route path="/tech-notes/emotion-wave" element={<EmotionWaveTechNote />} />
   <Route path="/tech-notes/synthesizer" element={<SynthesizerTechNote />} />
+  <Route path="/tech-notes/sacred-geometry-genesis" element={<SacredGeometryGenesisTechNote />} />
   <Route path="/tech-notes/complex-geometry" element={<ComplexGeometryTechNote />} />
 </Routes>
           </main>
